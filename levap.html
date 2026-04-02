@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Levap OY — Marine Engineering | Finland</title>
+<meta name="description" content="Marine refit, piping, steel, HVAC and interior — delivered on schedule at Europe's most demanding shipyards.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+
+/* ─────────────────────────────
+   TOKENS
+───────────────────────────── */
+:root {
+  --bg:    #F8F7F4;   /* warm parchment */
+  --s1:    #F1F0EB;   /* slightly deeper */
+  --s2:    #E9E7E0;   /* section contrast */
+  --ink:   #111110;   /* near-black */
+  --ink2:  #54524C;   /* body */
+  --ink3:  #9E9C96;   /* captions */
+  --ink4:  #C8C6BE;   /* faint lines */
+  --gold:  #9A7428;   /* muted brass */
+  --gold2: #B88C3A;   /* hover */
+  --line:  rgba(17,17,16,.08);
+  --lineg: rgba(154,116,40,.18);
+
+  --disp: 'Bebas Neue', sans-serif;
+  --body: 'DM Sans', sans-serif;
+  --max:  1160px;
+  --px:   clamp(24px, 5.5vw, 72px);
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--body);
+  background:var(--bg);
+  color:var(--ink);
+  font-size:15px;
+  line-height:1.65;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit}
+
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--px)}
+
+/* ─────────────────────────────
+   REVEAL
+───────────────────────────── */
+.rv{opacity:0;transform:translateY(20px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
+.rv.in,.js-loaded .rv.in{opacity:1;transform:none}
+/* fallback: if JS never fires, show everything */
+body:not(.js-ready) .rv{opacity:1;transform:none}
+.d1{transition-delay:.07s}.d2{transition-delay:.14s}.d3{transition-delay:.21s}
+.d4{transition-delay:.28s}.d5{transition-delay:.35s}.d6{transition-delay:.42s}
+
+/* ─────────────────────────────
+   LABEL
+───────────────────────────── */
+.lbl{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--body);font-size:10px;font-weight:500;
+  letter-spacing:.24em;text-transform:uppercase;color:var(--gold);
+}
+.lbl::before{content:'';width:20px;height:1px;background:var(--gold);flex-shrink:0}
+
+/* ─────────────────────────────
+   NAV
+───────────────────────────── */
+#nav{
+  position:fixed;top:0;left:0;right:0;z-index:800;
+  height:64px;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 var(--px);
+  border-bottom:1px solid transparent;
+  transition:background .3s,border-color .3s;
+}
+#nav.s{
+  background:rgba(248,247,244,.96);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border-color:var(--line);
+}
+
+.logo{font-family:var(--disp);font-size:24px;letter-spacing:.1em;color:var(--ink)}
+.logo em{font-style:normal;color:var(--gold)}
+
+.nav-links{display:flex;align-items:center;gap:32px;list-style:none}
+.nav-links a{
+  font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--ink3);transition:color .2s;
+}
+.nav-links a:hover{color:var(--ink)}
+
+.nav-cta{
+  padding:9px 20px;
+  border:1px solid var(--ink4);
+  color:var(--ink2)!important;
+  font-size:11px!important;font-weight:500!important;letter-spacing:.14em!important;
+  transition:border-color .2s,color .2s!important;
+}
+.nav-cta:hover{border-color:var(--gold);color:var(--gold)!important}
+
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+.burger span{display:block;width:20px;height:1.5px;background:var(--ink);transition:.3s}
+
+#mob{
+  display:none;position:fixed;inset:0;background:var(--bg);z-index:900;
+  flex-direction:column;align-items:center;justify-content:center;gap:6px;
+}
+#mob.open{display:flex}
+#mob a{font-family:var(--disp);font-size:52px;letter-spacing:.06em;color:var(--ink3);transition:color .2s;line-height:1.1}
+#mob a:hover{color:var(--ink)}
+.mob-x{position:absolute;top:20px;right:var(--px);background:none;border:none;font-size:24px;cursor:pointer;color:var(--ink3)}
+
+/* ─────────────────────────────
+   HERO
+───────────────────────────── */
+#hero{
+  min-height:100svh;padding-top:64px;
+  display:flex;flex-direction:column;
+  position:relative;overflow:hidden;background:var(--bg);
+}
+
+
+
+.hero-body{
+  flex:1;display:flex;flex-direction:column;justify-content:center;
+  padding:80px var(--px) 48px;
+  max-width:var(--max);width:100%;margin:0 auto;
+  position:relative;z-index:2;
+}
+
+.hero-tag{
+  margin-bottom:32px;
+  opacity:0;animation:up .6s cubic-bezier(.16,1,.3,1) .05s forwards;
+}
+
+h1.hero-h1{
+  font-family:var(--disp);
+  font-size:clamp(80px,12vw,172px);
+  line-height:.88;letter-spacing:.025em;
+  color:var(--ink);margin-bottom:0;
+  opacity:0;animation:up .8s cubic-bezier(.16,1,.3,1) .18s forwards;
+}
+h1.hero-h1 .gold{color:var(--gold)}
+h1.hero-h1 .ghost{
+  -webkit-text-stroke:1.5px var(--ink4);
+  color:transparent;
+}
+
+.hero-bottom{
+  display:flex;align-items:flex-end;justify-content:space-between;
+  gap:40px;margin-top:48px;padding-top:40px;
+  border-top:1px solid var(--line);
+  opacity:0;animation:up .75s cubic-bezier(.16,1,.3,1) .42s forwards;
+  flex-wrap:wrap;
+}
+
+.hero-sub{
+  font-size:15px;font-weight:300;line-height:1.72;
+  color:var(--ink2);max-width:380px;
+}
+
+.hero-btns{display:flex;gap:10px;align-items:center;flex-shrink:0}
+
+.btn-dark{
+  display:inline-flex;align-items:center;
+  padding:12px 28px;
+  background:var(--ink);color:var(--bg);
+  font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;
+  transition:background .2s;
+}
+.btn-dark:hover{background:var(--gold)}
+
+.btn-out{
+  display:inline-flex;align-items:center;
+  padding:11px 28px;
+  border:1px solid var(--ink4);color:var(--ink2);
+  font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;
+  transition:border-color .2s,color .2s;
+}
+.btn-out:hover{border-color:var(--gold);color:var(--gold)}
+
+/* STATS STRIP */
+.hero-stats{position:relative;z-index:2;border-top:1px solid var(--line);background:var(--bg)}
+.hero-stats-row{
+  max-width:var(--max);margin:0 auto;padding:0 var(--px);
+  display:grid;grid-template-columns:repeat(4,1fr);
+}
+.hs{padding:22px 0 22px 28px;border-right:1px solid var(--line)}
+.hs:first-child{padding-left:0}
+.hs:last-child{border-right:none}
+.hs-n{font-family:var(--disp);font-size:32px;letter-spacing:.03em;line-height:1;display:block;color:var(--ink)}
+.hs-n b{color:var(--gold)}
+.hs-l{font-size:10px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--ink3);margin-top:5px;display:block}
+
+/* ─────────────────────────────
+   TICKER
+───────────────────────────── */
+.ticker{
+  overflow:hidden;padding:10px 0;
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  background:var(--s2);
+  -webkit-mask-image:linear-gradient(to right,transparent,black 8%,black 92%,transparent);
+  mask-image:linear-gradient(to right,transparent,black 8%,black 92%,transparent);
+}
+.ticker-t{display:inline-flex;white-space:nowrap;animation:tk 42s linear infinite}
+.ticker-t:hover{animation-play-state:paused}
+.tick{
+  display:inline-flex;align-items:center;gap:12px;padding:0 32px;
+  font-size:10px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--ink3);
+}
+.tick::after{content:'·';color:var(--gold);font-size:14px;opacity:.7}
+
+/* ─────────────────────────────
+   ABOUT
+───────────────────────────── */
+#about{padding:120px 0;background:var(--s1);border-top:1px solid var(--line)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+
+.about-h{
+  font-family:var(--disp);
+  font-size:clamp(52px,6.5vw,88px);
+  line-height:.88;letter-spacing:.025em;color:var(--ink);margin:20px 0 32px;
+}
+.about-h .gold{color:var(--gold)}
+.about-h .ghost{-webkit-text-stroke:1.5px var(--ink4);color:transparent}
+
+.about-p{font-size:15px;font-weight:300;color:var(--ink2);line-height:1.8;margin-bottom:14px}
+.about-p:last-of-type{margin-bottom:0}
+.about-p strong{color:var(--ink);font-weight:500}
+
+.nums{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);overflow:hidden}
+.num{padding:28px 24px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg)}
+.num:nth-child(2n){border-right:none}
+.num:nth-child(n+3){border-bottom:none}
+.num.gl{background:var(--ink)}
+.num-n{font-family:var(--disp);font-size:54px;letter-spacing:.02em;line-height:1;display:block;color:var(--ink)}
+.num-n sup{font-size:18px;color:var(--gold);vertical-align:super}
+.gl .num-n{color:var(--bg)}
+.gl .num-n sup{color:rgba(154,116,40,.8)}
+.num-l{font-size:10px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--ink3);margin-top:8px;display:block}
+.gl .num-l{color:rgba(248,247,244,.45)}
+
+/* ─────────────────────────────
+   SERVICES
+───────────────────────────── */
+#services{padding:120px 0;background:var(--bg);border-top:1px solid var(--line)}
+
+.svc-hd{
+  display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;
+  padding-bottom:40px;border-bottom:1px solid var(--line);margin-bottom:1px;
+}
+.svc-h{font-family:var(--disp);font-size:clamp(50px,6vw,84px);line-height:.88;letter-spacing:.025em;color:var(--ink);margin-top:18px}
+.svc-h em{color:var(--gold);font-style:normal}
+.svc-note{font-size:14px;font-weight:300;color:var(--ink3);line-height:1.72;align-self:end}
+
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);border-top:none}
+.svc{
+  padding:36px 28px 30px;
+  border-right:1px solid var(--line);border-bottom:1px solid var(--line);
+  position:relative;transition:background .25s;cursor:default;
+}
+.svc:nth-child(3n){border-right:none}
+.svc:nth-child(n+4){border-bottom:none}
+.svc::after{
+  content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:var(--gold);transform:scaleX(0);transform-origin:left;
+  transition:transform .35s cubic-bezier(.16,1,.3,1);
+}
+.svc:hover{background:var(--s1)}
+.svc:hover::after{transform:scaleX(1)}
+
+.svc-n{
+  font-family:var(--disp);font-size:44px;letter-spacing:.04em;
+  color:var(--ink4);line-height:1;display:block;margin-bottom:20px;
+  transition:color .25s;
+}
+.svc:hover .svc-n{color:rgba(154,116,40,.4)}
+.svc-name{font-size:14px;font-weight:500;color:var(--ink);margin-bottom:10px;line-height:1.3}
+.svc-desc{font-size:13px;font-weight:300;color:var(--ink3);line-height:1.74}
+
+/* ─────────────────────────────
+   PROJECTS
+───────────────────────────── */
+#projects{padding:120px 0;background:var(--ink);border-top:1px solid var(--line)}
+
+.proj-hd{
+  display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;
+  padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:0;
+}
+.proj-h{
+  font-family:var(--disp);font-size:clamp(50px,6vw,84px);
+  line-height:.88;letter-spacing:.025em;color:var(--bg);margin-top:18px;
+}
+.proj-h em{color:var(--gold2);font-style:normal}
+.proj-lbl{display:inline-flex;align-items:center;gap:10px;font-size:10px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:rgba(154,116,40,.6)}
+.proj-lbl::before{content:'';width:20px;height:1px;background:rgba(154,116,40,.4);flex-shrink:0}
+.proj-note{font-size:14px;font-weight:300;color:rgba(248,247,244,.35);line-height:1.72;align-self:end}
+
+.proj-list{list-style:none}
+.prow{
+  display:grid;
+  grid-template-columns:52px 1fr auto auto;
+  align-items:center;
+  column-gap:32px;
+  padding:26px 0;
+  border-bottom:1px solid rgba(255,255,255,.07);
+  cursor:default;
+  transition:opacity .2s;
+}
+.proj-list:hover .prow{opacity:.45}
+.proj-list:hover .prow:hover{opacity:1}
+.prow:hover .prow-name{color:var(--gold2)}
+
+.prow-i{
+  font-family:var(--disp);font-size:11px;letter-spacing:.1em;
+  color:rgba(255,255,255,.2);text-align:right;
+}
+.prow-name{
+  font-family:var(--disp);font-size:clamp(22px,2.4vw,30px);
+  letter-spacing:.04em;color:var(--bg);line-height:1;
+  transition:color .22s;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.prow-yard{
+  font-size:10.5px;font-weight:400;letter-spacing:.16em;text-transform:uppercase;
+  color:rgba(255,255,255,.22);white-space:nowrap;
+}
+.prow-tag{
+  font-size:9.5px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;
+  color:rgba(255,255,255,.35);border:1px solid rgba(255,255,255,.14);
+  padding:6px 14px;white-space:nowrap;
+  transition:color .22s,border-color .22s;
+}
+.prow:hover .prow-tag{color:var(--gold2);border-color:rgba(184,140,58,.4)}
+
+.proj-foot{
+  display:flex;justify-content:space-between;align-items:center;gap:20px;
+  margin-top:36px;flex-wrap:wrap;
+}
+.proj-foot-t{font-size:12px;font-weight:300;letter-spacing:.06em;color:rgba(255,255,255,.22);line-height:1.7}
+.ctags{display:flex;gap:6px;flex-wrap:wrap}
+.ctag{
+  font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;
+  color:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.1);padding:4px 11px;
+  transition:color .2s,border-color .2s;
+}
+.ctag:hover{color:var(--gold2);border-color:rgba(184,140,58,.35)}
+
+/* ─────────────────────────────
+   CONTACT
+───────────────────────────── */
+#contact{padding:120px 0;background:var(--s1);border-top:1px solid var(--line)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+
+.contact-h{
+  font-family:var(--disp);font-size:clamp(50px,6vw,84px);
+  line-height:.88;letter-spacing:.025em;color:var(--ink);margin:18px 0 20px;
+}
+.contact-h em{color:var(--gold);font-style:normal}
+.contact-body{font-size:15px;font-weight:300;color:var(--ink2);line-height:1.78;max-width:360px;margin-bottom:40px}
+
+.cdet{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+.cico{
+  width:38px;height:38px;border:1px solid var(--line);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.cico svg{width:15px;height:15px;stroke:var(--gold);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.ctxt strong{display:block;font-size:9px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--ink3);margin-bottom:2px}
+.ctxt a,.ctxt span{font-size:14px;font-weight:300;color:var(--ink);transition:color .2s}
+.ctxt a:hover{color:var(--gold)}
+
+.fwrap{border:1px solid var(--line);border-top:1px solid var(--lineg);padding:32px;background:var(--bg)}
+.form{display:flex;flex-direction:column;gap:14px}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.fg{display:flex;flex-direction:column;gap:6px}
+.fg label{font-size:9px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--ink3)}
+.fg input,.fg select,.fg textarea{
+  background:transparent;border:none;border-bottom:1px solid var(--ink4);
+  padding:10px 0;font-family:var(--body);font-size:14px;font-weight:300;color:var(--ink);
+  outline:none;transition:border-color .2s;width:100%;
+}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--gold)}
+.fg input::placeholder,.fg textarea::placeholder{color:var(--ink4);opacity:1}
+.fg textarea{resize:vertical;min-height:100px}
+.fg select{
+  cursor:pointer;appearance:none;-webkit-appearance:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23C8C6BE' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 4px center;padding-right:22px;
+}
+.fsub{
+  margin-top:6px;align-self:flex-start;
+  display:inline-flex;align-items:center;gap:10px;
+  padding:12px 28px;
+  background:transparent;border:1px solid var(--gold);color:var(--gold);
+  font-family:var(--body);font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;
+  cursor:pointer;transition:background .22s,color .22s;
+}
+.fsub:hover{background:var(--gold);color:var(--bg)}
+.fsub:disabled{opacity:.4;cursor:default}
+
+/* ─────────────────────────────
+   FOOTER
+───────────────────────────── */
+footer{background:var(--ink);border-top:1px solid var(--line);padding:64px 0 0}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.2fr;gap:48px}
+.foot-logo{font-family:var(--disp);font-size:24px;letter-spacing:.1em;color:var(--bg);display:block;margin-bottom:12px}
+.foot-logo em{font-style:normal;color:var(--gold2)}
+.foot-tag{font-size:13px;font-weight:300;color:rgba(248,247,244,.32);line-height:1.72;max-width:210px}
+.foot-col h5{font-size:9px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:rgba(248,247,244,.22);margin-bottom:16px}
+.foot-col ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+.foot-col ul a{font-size:13px;font-weight:300;color:rgba(248,247,244,.45);transition:color .2s}
+.foot-col ul a:hover{color:rgba(248,247,244,.88)}
+.foot-bar{
+  margin-top:56px;border-top:1px solid rgba(255,255,255,.06);
+  padding:18px var(--px);
+  display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;
+}
+.foot-copy{font-size:10px;font-weight:400;letter-spacing:.1em;color:rgba(248,247,244,.22)}
+
+/* ─────────────────────────────
+   KEYFRAMES
+───────────────────────────── */
+@keyframes up{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes tk{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ─────────────────────────────
+   RESPONSIVE
+───────────────────────────── */
+@media(max-width:1024px){
+  .nav-links{display:none}.burger{display:flex}
+  #hero::before{display:none}
+  .hero-bottom{flex-direction:column;align-items:flex-start;gap:24px}
+  .hero-stats-row{grid-template-columns:1fr 1fr}
+  .hs{padding-left:20px}
+  .hs:nth-child(odd){padding-left:0}
+  .hs:nth-child(2){border-right:none}
+  .about-grid{grid-template-columns:1fr;gap:48px}
+  .svc-hd{grid-template-columns:1fr;align-items:start;gap:12px}
+  .svc-grid{grid-template-columns:1fr 1fr}
+  .svc:nth-child(3n){border-right:1px solid var(--line)}
+  .svc:nth-child(2n){border-right:none}
+  .proj-hd{grid-template-columns:1fr;gap:12px}
+  .prow{grid-template-columns:40px 1fr auto;column-gap:20px}
+  .prow-yard{display:none}
+  .contact-grid{grid-template-columns:1fr;gap:52px}
+  .foot-grid{grid-template-columns:1fr 1fr;gap:32px}
+}
+@media(max-width:600px){
+  .svc-grid{grid-template-columns:1fr}
+  .svc{border-right:none!important}
+  .frow{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr}
+  .prow{grid-template-columns:1fr auto;column-gap:16px}
+  .prow-i{display:none}
+  .proj-foot{flex-direction:column;align-items:flex-start}
+  .nums{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<div id="mob">
+  <button class="mob-x" onclick="closeMob()">&#x2715;</button>
+  <a href="#about"    onclick="closeMob()">About</a>
+  <a href="#services" onclick="closeMob()">Services</a>
+  <a href="#projects" onclick="closeMob()">Projects</a>
+  <a href="#contact"  onclick="closeMob()">Contact</a>
+</div>
+
+<nav id="nav">
+  <a href="#" class="logo">LEVA<em>P</em></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact" class="nav-cta">Request a quote</a></li>
+  </ul>
+  <button class="burger" onclick="openMob()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-body">
+    <div class="hero-tag">
+      <span class="lbl">Marine &amp; Offshore Engineering — Finland</span>
+    </div>
+    <h1 class="hero-h1">
+      WE BUILD<br>
+      <span class="gold">SHIPS.</span><br>
+      <span class="ghost">WE KEEP</span><br>
+      THEM RUNNING.
+    </h1>
+    <div class="hero-bottom">
+      <p class="hero-sub">Refit, piping, steel, HVAC and interior — delivered on schedule at Europe's most demanding shipyards.</p>
+      <div class="hero-btns">
+        <a href="#projects" class="btn-dark">See our work</a>
+        <a href="#contact"  class="btn-out">Request a quote</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="hero-stats-row">
+      <div class="hs"><span class="hs-n">8<b>+</b></span><span class="hs-l">Years experience</span></div>
+      <div class="hs"><span class="hs-n">6</span><span class="hs-l">Countries active</span></div>
+      <div class="hs"><span class="hs-n">10<b>+</b></span><span class="hs-l">Major vessels</span></div>
+      <div class="hs"><span class="hs-n">500<b>+</b></span><span class="hs-l">Workers deployed</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-t">
+    <span class="tick">Icon of the Seas</span>
+    <span class="tick">Ritz-Carlton Ilma</span>
+    <span class="tick">Mein Schiff 7</span>
+    <span class="tick">MSC World America</span>
+    <span class="tick">Tallink MyStar</span>
+    <span class="tick">Aurora Botnia</span>
+    <span class="tick">Meyer Turku</span>
+    <span class="tick">Chantiers de l'Atlantique</span>
+    <span class="tick">Icon of the Seas</span>
+    <span class="tick">Ritz-Carlton Ilma</span>
+    <span class="tick">Mein Schiff 7</span>
+    <span class="tick">MSC World America</span>
+    <span class="tick">Tallink MyStar</span>
+    <span class="tick">Aurora Botnia</span>
+    <span class="tick">Meyer Turku</span>
+    <span class="tick">Chantiers de l'Atlantique</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div>
+        <div class="lbl rv d1">About Levap</div>
+        <h2 class="about-h rv d2">
+          8 YEARS.<br>
+          <span class="gold">ZERO</span><br>
+          <span class="ghost">SHORTCUTS.</span>
+        </h2>
+        <p class="about-p rv d3">Levap operates at the sharp end of marine engineering — where deadlines are tight, tolerances are tighter, and the margin for error is <strong>zero</strong>.</p>
+        <p class="about-p rv d4">We've delivered for Meyer Turku, Chantiers de l'Atlantique, and Tallink. That's not a credential. That's a standard.</p>
+        <p class="about-p rv d5">Based in Turku, Finland. Operating in Germany, Netherlands, France and Sweden.</p>
+      </div>
+      <div class="nums rv d2">
+        <div class="num"><span class="num-n">8<sup>+</sup></span><span class="num-l">Years exp.</span></div>
+        <div class="num gl"><span class="num-n">6</span><span class="num-l">Countries</span></div>
+        <div class="num"><span class="num-n">10<sup>+</sup></span><span class="num-l">Projects</span></div>
+        <div class="num"><span class="num-n">500<sup>+</sup></span><span class="num-l">Workers</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="wrap">
+    <div class="svc-hd rv">
+      <div>
+        <div class="lbl">What we do</div>
+        <h2 class="svc-h">SIX DISCIPLINES.<br><em>ONE CREW.</em></h2>
+      </div>
+      <p class="svc-note">Executed with the precision applied on the world's biggest ships.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc rv d1"><span class="svc-n">01</span><h3 class="svc-name">Piping Installation &amp; Maintenance</h3><p class="svc-desc">Complex systems, clean installs. Full piping scopes from routing to pressure testing — with crews who've done it on the world's biggest ships.</p></div>
+      <div class="svc rv d2"><span class="svc-n">02</span><h3 class="svc-name">Steel &amp; Welding Works</h3><p class="svc-desc">Structural and outfitting steel, certified welding to classification society standards. When the weld has to hold, we're who you call.</p></div>
+      <div class="svc rv d3"><span class="svc-n">03</span><h3 class="svc-name">Engine Maintenance</h3><p class="svc-desc">Routine overhauls to emergency repairs. Our engine teams work fast under pressure and always to spec. No guessing. No delays.</p></div>
+      <div class="svc rv d4"><span class="svc-n">04</span><h3 class="svc-name">HVAC Installation &amp; Maintenance</h3><p class="svc-desc">Climate systems for vessels where downtime isn't an option. Installed right the first time, maintained to keep them that way.</p></div>
+      <div class="svc rv d5"><span class="svc-n">05</span><h3 class="svc-name">Interior Installation &amp; Maintenance</h3><p class="svc-desc">From crew quarters to passenger areas — joinery, panels, flooring. We turn raw steel into spaces people want to be in.</p></div>
+      <div class="svc rv d6"><span class="svc-n">06</span><h3 class="svc-name">Manning &amp; Workforce Solutions</h3><p class="svc-desc">Skilled hands on short notice. Pre-vetted welders, fitters and pipe engineers — ready to integrate with your team from day one.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="wrap">
+    <div class="proj-hd rv">
+      <div>
+        <div class="proj-lbl">Portfolio</div>
+        <h2 class="proj-h">THE WORK<br><em>SPEAKS.</em></h2>
+      </div>
+      <p class="proj-note">Selected projects. Every name on this list is a reference you can call.</p>
+    </div>
+    <ul class="proj-list rv">
+      <li class="prow"><span class="prow-i">01</span><span class="prow-name">Icon of the Seas</span><span class="prow-yard">Meyer Turku Shipyard</span><span class="prow-tag">Piping &amp; Steel</span></li>
+      <li class="prow"><span class="prow-i">02</span><span class="prow-name">Mein Schiff 7</span><span class="prow-yard">Meyer Turku Shipyard</span><span class="prow-tag">Interior &amp; HVAC</span></li>
+      <li class="prow"><span class="prow-i">03</span><span class="prow-name">Ritz-Carlton Ilma</span><span class="prow-yard">Chantiers de l'Atlantique</span><span class="prow-tag">Full refit</span></li>
+      <li class="prow"><span class="prow-i">04</span><span class="prow-name">MSC World America</span><span class="prow-yard">Chantiers de l'Atlantique</span><span class="prow-tag">Piping</span></li>
+      <li class="prow"><span class="prow-i">05</span><span class="prow-name">MyStar</span><span class="prow-yard">Tallink</span><span class="prow-tag">Steel &amp; outfitting</span></li>
+      <li class="prow"><span class="prow-i">06</span><span class="prow-name">Aurora Botnia</span><span class="prow-yard">Tallink</span><span class="prow-tag">Manning</span></li>
+    </ul>
+    <div class="proj-foot rv">
+      <p class="proj-foot-t">Based in Turku, Finland — operating wherever the project demands.</p>
+      <div class="ctags">
+        <span class="ctag">Finland</span><span class="ctag">Germany</span>
+        <span class="ctag">Netherlands</span><span class="ctag">France</span><span class="ctag">Sweden</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div>
+        <div class="lbl rv d1">Get in touch</div>
+        <h2 class="contact-h rv d2">LET'S TALK<br><em>SCOPE.</em></h2>
+        <p class="contact-body rv d3">Tell us about your project — yard, vessel type, timeline, scope. We'll come back with a concrete plan, not a brochure.</p>
+        <div class="cdet rv d4">
+          <div class="cico"><svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.32.57 3.58.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.82 21 3 13.18 3 4c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.24 1.02L6.6 10.8z"/></svg></div>
+          <div class="ctxt"><strong>Phone</strong><a href="tel:+358449536292">+358 449 536 292</a></div>
+        </div>
+        <div class="cdet rv d5">
+          <div class="cico"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="1"/><polyline points="2,6 12,14 22,6"/></svg></div>
+          <div class="ctxt"><strong>Email</strong><a href="/cdn-cgi/l/email-protection#acc5c2cac3ecc0c9dacddc82cac5"><span class="__cf_email__" data-cfemail="30595e565f705c554651401e5659">[email&#160;protected]</span></a></div>
+        </div>
+        <div class="cdet rv d6">
+          <div class="cico"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5" fill="none"/></svg></div>
+          <div class="ctxt"><strong>Address</strong><span>Kupittaankatu 63 A32, Turku</span></div>
+        </div>
+      </div>
+      <div class="rv d2">
+        <div class="fwrap">
+          <form class="form" onsubmit="sendForm(event)">
+            <div class="frow">
+              <div class="fg"><label for="fn">Full name</label><input type="text" id="fn" placeholder="John Smith" required></div>
+              <div class="fg"><label for="fc">Company</label><input type="text" id="fc" placeholder="Shipping Co."></div>
+            </div>
+            <div class="frow">
+              <div class="fg"><label for="fe">Email</label><input type="email" id="fe" placeholder="john@company.com" required></div>
+              <div class="fg"><label for="fp">Phone</label><input type="tel" id="fp" placeholder="+358 …"></div>
+            </div>
+            <div class="fg">
+              <label for="fs">Project type</label>
+              <select id="fs"><option value="">Select scope…</option><option>Piping installation</option><option>Steel &amp; welding</option><option>HVAC installation</option><option>Interior installation</option><option>Engine maintenance</option><option>Manning / workforce</option><option>Full refit</option><option>Other</option></select>
+            </div>
+            <div class="fg">
+              <label for="fm">Project details</label>
+              <textarea id="fm" placeholder="Vessel type, yard, timeline — any context helps us respond faster."></textarea>
+            </div>
+            <button type="submit" class="fsub" id="fsub">Send enquiry →</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a href="#" class="foot-logo">LEVA<em>P</em></a>
+        <p class="foot-tag">Leading marine and offshore engineering across Europe. Based in Turku, Finland.</p>
+      </div>
+      <div class="foot-col">
+        <h5>Company</h5>
+        <ul><li><a href="#about">About</a></li><li><a href="#services">Services</a></li><li><a href="#projects">Projects</a></li></ul>
+      </div>
+      <div class="foot-col">
+        <h5>Services</h5>
+        <ul><li><a href="#services">Piping</a></li><li><a href="#services">Steel works</a></li><li><a href="#services">HVAC</a></li><li><a href="#services">Interior</a></li><li><a href="#services">Manning</a></li></ul>
+      </div>
+      <div class="foot-col">
+        <h5>Contact</h5>
+        <ul><li><a href="tel:+358449536292">+358 449 536 292</a></li><li><a href="/cdn-cgi/l/email-protection#b3daddd5dcf3dfd6c5d2c39dd5da"><span class="__cf_email__" data-cfemail="7a13141c153a161f0c1b0a541c13">[email&#160;protected]</span></a></li><li><a href="#contact">Get a quote</a></li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="foot-bar">
+    <span class="foot-copy">© 2025 Levap OY · Reg. 53477472-5 · All rights reserved</span>
+    <span class="foot-copy">Built to last. At sea.</span>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('s', window.scrollY > 30), { passive: true });
+function openMob()  { document.getElementById('mob').classList.add('open');    document.body.style.overflow = 'hidden'; }
+function closeMob() { document.getElementById('mob').classList.remove('open'); document.body.style.overflow = ''; }
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const id = a.getAttribute('href');
+    if (id === '#') return;
+    const el = document.querySelector(id);
+    if (!el) return;
+    e.preventDefault(); closeMob();
+    window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 64, behavior: 'smooth' });
+  });
+});
+document.body.classList.add('js-ready');
+const ro = new IntersectionObserver(entries => {
+  entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in'); ro.unobserve(en.target); } });
+}, { threshold: 0.05, rootMargin: '0px 0px -10px 0px' });
+document.querySelectorAll('.rv').forEach(el => ro.observe(el));
+// Force trigger any .rv elements already in view on load
+setTimeout(() => {
+  document.querySelectorAll('.rv:not(.in)').forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight) el.classList.add('in');
+  });
+}, 100);
+function sendForm(e) {
+  e.preventDefault();
+ 
