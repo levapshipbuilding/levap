@@ -7,7 +7,7 @@ const up = {
   show: (delay: number) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.75, ease: [0.16, 1, 0.3, 1], delay },
+    transition: { duration: 0.65, ease: [0.16, 1, 0.3, 1], delay },
   }),
 }
 
@@ -17,22 +17,33 @@ export default function Hero() {
       id="hero"
       className="relative flex min-h-[100svh] flex-col overflow-hidden pt-16"
       style={{
-        backgroundColor: '#071628',
+        backgroundColor: '#060606',
         backgroundImage: 'url(/hero-ship.png)',
         backgroundSize: 'cover',
-        backgroundPosition: 'center 30%',
+        backgroundPosition: 'center 40%',
       }}
     >
-      {/* Gradient overlay */}
-      <div className="absolute inset-0 z-[1]" style={{ background: 'linear-gradient(to right, rgba(4,12,28,0.88) 0%, rgba(4,12,28,0.62) 45%, rgba(4,12,28,0.22) 100%)' }} />
-      {/* Top fade so nav stays legible */}
-      <div className="absolute inset-x-0 top-0 z-[1]" style={{ height: 120, background: 'linear-gradient(to bottom, rgba(4,12,28,0.55) 0%, transparent 100%)' }} />
+      {/* Left-to-right gradient */}
+      <div className="absolute inset-0 z-[1]" style={{ background: 'linear-gradient(to right, rgba(4,4,4,0.95) 0%, rgba(4,4,4,0.72) 45%, rgba(4,4,4,0.3) 100%)' }} />
+      {/* Top fade for nav */}
+      <div className="absolute inset-x-0 top-0 z-[1]" style={{ height: 100, background: 'linear-gradient(to bottom, rgba(4,4,4,0.7) 0%, transparent 100%)' }} />
 
       {/* Hero body */}
       <div
         className="relative z-[2] flex flex-1 flex-col justify-center"
-        style={{ padding: '80px var(--px) 48px', maxWidth: 'var(--max)', width: '100%', margin: '0 auto' }}
+        style={{ padding: '80px var(--px) 40px', maxWidth: 'var(--max)', width: '100%', margin: '0 auto' }}
       >
+        <motion.div
+          variants={up}
+          initial="hidden"
+          animate="show"
+          custom={0.05}
+          className="lbl"
+          style={{ color: '#FF6B00', marginBottom: 20 }}
+        >
+          Marine &amp; Offshore Engineering — Finland
+        </motion.div>
+
         <motion.h1
           variants={up}
           initial="hidden"
@@ -40,16 +51,16 @@ export default function Hero() {
           custom={0.1}
           style={{
             fontFamily: 'var(--font-bebas)',
-            fontSize: 'clamp(52px,13vw,172px)',
+            fontSize: 'clamp(64px,15vw,200px)',
             lineHeight: '0.88',
-            letterSpacing: '0.025em',
+            letterSpacing: '0.02em',
             color: '#FFFFFF',
             marginBottom: 0,
           }}
         >
           WE BUILD<br />
-          <span style={{ color: '#5AAED0' }}>SHIPS.</span><br />
-          <span style={{ WebkitTextStroke: '1.5px rgba(232,241,255,.25)', color: 'transparent' }}>WE KEEP</span><br />
+          <span style={{ color: '#FF6B00' }}>SHIPS.</span><br />
+          <span style={{ color: '#FFFFFF' }}>WE KEEP</span><br />
           THEM RUNNING.
         </motion.h1>
 
@@ -57,38 +68,26 @@ export default function Hero() {
           variants={up}
           initial="hidden"
           animate="show"
-          custom={0.32}
-          className="mt-10 flex flex-col gap-4"
+          custom={0.28}
+          className="mt-6 flex flex-col gap-3"
         >
-          <span
-            style={{
-              fontSize: '10px',
-              fontWeight: 500,
-              letterSpacing: '0.24em',
-              textTransform: 'uppercase',
-              color: '#5AAED0',
-            }}
-          >
-            Marine &amp; Offshore Engineering — Finland
-          </span>
           <p
-            className="font-light leading-[1.72]"
-            style={{ fontSize: '15px', color: 'rgba(168,196,222,.9)', maxWidth: '480px' }}
+            style={{ fontSize: '15px', fontWeight: 400, color: 'rgba(200,200,200,.85)', maxWidth: '440px', lineHeight: '1.6' }}
           >
             Refit, piping, steel, HVAC and interior — delivered on schedule at Europe&apos;s most demanding shipyards.
           </p>
           <span
             style={{
-              fontSize: '9.5px',
-              fontWeight: 500,
-              letterSpacing: '0.2em',
+              fontSize: '10px',
+              fontWeight: 700,
+              letterSpacing: '0.22em',
               textTransform: 'uppercase',
-              color: 'rgba(232,241,255,.3)',
+              color: 'rgba(255,255,255,.2)',
             }}
           >
             60.4519° N &nbsp;·&nbsp; 22.2666° E &nbsp;·&nbsp; Est. 2017
           </span>
-          <div className="flex gap-[10px] items-center flex-wrap mt-2">
+          <div className="hero-btns flex gap-[10px] items-center flex-wrap mt-3">
             <HeroBtn href="#projects" solid>See our work</HeroBtn>
             <HeroBtn href="#contact">Request a quote</HeroBtn>
           </div>
@@ -99,8 +98,8 @@ export default function Hero() {
       <div
         className="relative z-[2]"
         style={{
-          borderTop: '1px solid rgba(255,255,255,.08)',
-          background: 'rgba(7,22,44,0.72)',
+          borderTop: '1px solid rgba(255,255,255,.1)',
+          background: 'rgba(6,6,6,0.8)',
           backdropFilter: 'blur(20px)',
           WebkitBackdropFilter: 'blur(20px)',
         }}
@@ -108,28 +107,28 @@ export default function Hero() {
         <div className="hero-stats-grid">
           {[
             { n: '8', sup: '+', l: 'Years experience' },
-            { n: '6', sup: '', l: 'Countries active' },
+            { n: '6', sup: '',  l: 'Countries active' },
             { n: '10', sup: '+', l: 'Major vessels' },
             { n: '500', sup: '+', l: 'Workers deployed' },
           ].map((s, i) => (
             <div
               key={i}
-              className="hero-stat py-[22px]"
+              className="hero-stat py-[18px]"
               style={{
-                paddingLeft: i === 0 ? 0 : '28px',
-                borderRight: i < 3 ? '1px solid rgba(255,255,255,.08)' : 'none',
+                paddingLeft: i === 0 ? 0 : '24px',
+                borderRight: i < 3 ? '1px solid rgba(255,255,255,.1)' : 'none',
               }}
             >
               <span
                 className="block leading-none"
-                style={{ fontFamily: 'var(--font-bebas)', fontSize: '44px', letterSpacing: '0.03em', color: '#FFFFFF' }}
+                style={{ fontFamily: 'var(--font-bebas)', fontSize: '64px', letterSpacing: '0.02em', color: '#FFFFFF' }}
               >
                 {s.n}
-                {s.sup && <b style={{ color: '#5AAED0' }}>{s.sup}</b>}
+                {s.sup && <b style={{ color: '#FF6B00' }}>{s.sup}</b>}
               </span>
               <span
-                className="block mt-[5px]"
-                style={{ fontSize: '10px', fontWeight: 500, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(168,196,222,.6)' }}
+                className="block mt-[4px]"
+                style={{ fontSize: '10px', fontWeight: 700, letterSpacing: '0.22em', textTransform: 'uppercase', color: 'rgba(255,255,255,.35)' }}
               >
                 {s.l}
               </span>
@@ -161,10 +160,10 @@ function HeroBtn({
       <a
         href={href}
         onClick={(e) => { e.preventDefault(); scrollTo(href) }}
-        className="inline-flex items-center text-[11px] font-medium tracking-[.16em] uppercase transition-all duration-200"
-        style={{ padding: '12px 28px', background: '#5AAED0', border: '1px solid #5AAED0', color: '#071628', borderRadius: '4px' }}
-        onMouseEnter={(e) => { e.currentTarget.style.background = '#70C0E4'; e.currentTarget.style.borderColor = '#70C0E4' }}
-        onMouseLeave={(e) => { e.currentTarget.style.background = '#5AAED0'; e.currentTarget.style.borderColor = '#5AAED0' }}
+        className="hero-btn inline-flex items-center justify-center text-[11px] font-bold tracking-[.2em] uppercase transition-all duration-200"
+        style={{ padding: '14px 32px', background: '#FF6B00', border: '1px solid #FF6B00', color: '#000000' }}
+        onMouseEnter={(e) => { e.currentTarget.style.background = '#FF8534'; e.currentTarget.style.borderColor = '#FF8534' }}
+        onMouseLeave={(e) => { e.currentTarget.style.background = '#FF6B00'; e.currentTarget.style.borderColor = '#FF6B00' }}
       >
         {children}
       </a>
@@ -175,16 +174,10 @@ function HeroBtn({
     <a
       href={href}
       onClick={(e) => { e.preventDefault(); scrollTo(href) }}
-      className="inline-flex items-center text-[11px] font-medium tracking-[.16em] uppercase transition-all duration-200"
-      style={{ padding: '12px 28px', border: '1px solid rgba(255,255,255,.28)', color: 'rgba(232,241,255,.9)', borderRadius: '4px' }}
-      onMouseEnter={(e) => {
-        e.currentTarget.style.borderColor = 'rgba(255,255,255,.6)'
-        e.currentTarget.style.color = '#fff'
-      }}
-      onMouseLeave={(e) => {
-        e.currentTarget.style.borderColor = 'rgba(255,255,255,.28)'
-        e.currentTarget.style.color = 'rgba(232,241,255,.9)'
-      }}
+      className="hero-btn inline-flex items-center justify-center text-[11px] font-bold tracking-[.2em] uppercase transition-all duration-200"
+      style={{ padding: '14px 32px', border: '1px solid rgba(255,255,255,.3)', color: '#FFFFFF' }}
+      onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#FF6B00'; e.currentTarget.style.color = '#FF6B00' }}
+      onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,.3)'; e.currentTarget.style.color = '#FFFFFF' }}
     >
       {children}
     </a>

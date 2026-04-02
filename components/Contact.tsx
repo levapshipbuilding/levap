@@ -50,7 +50,7 @@ function ContactDetail({ icon, label, children }: { icon: React.ReactNode; label
       <div>
         <strong
           className="block"
-          style={{ fontSize: '9px', fontWeight: 500, letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--ink3)', marginBottom: 2 }}
+          style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--ink3)', marginBottom: 2 }}
         >
           {label}
         </strong>
@@ -77,11 +77,11 @@ export default function Contact() {
   const inputStyle: React.CSSProperties = {
     background: 'transparent',
     border: 'none',
-    borderBottom: '1px solid rgba(12,28,46,.15)',
+    borderBottom: '1px solid rgba(255,255,255,.12)',
     padding: '10px 0',
-    fontFamily: 'var(--font-dm-sans)',
+    fontFamily: 'var(--font-body)',
     fontSize: '14px',
-    fontWeight: 300,
+    fontWeight: 400,
     color: 'var(--ink)',
     outline: 'none',
     width: '100%',
@@ -90,7 +90,7 @@ export default function Contact() {
 
   const labelStyle: React.CSSProperties = {
     fontSize: '9px',
-    fontWeight: 500,
+    fontWeight: 700,
     letterSpacing: '0.22em',
     textTransform: 'uppercase',
     color: 'var(--ink3)',
@@ -99,7 +99,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="py-[120px]"
+      className="py-[72px]"
       style={{ background: 'var(--bg)' }}
       ref={ref}
     >
@@ -117,11 +117,11 @@ export default function Contact() {
               className="mb-5"
               style={{
                 fontFamily: 'var(--font-bebas)',
-                fontSize: 'clamp(50px,6vw,84px)',
+                fontSize: 'clamp(52px,7vw,88px)',
                 lineHeight: '0.88',
                 letterSpacing: '0.025em',
                 color: 'var(--ink)',
-                marginTop: 16,
+                marginTop: 14,
               }}
             >
               LET&apos;S TALK<br />
@@ -131,8 +131,8 @@ export default function Contact() {
               variants={up(0.19)}
               initial="hidden"
               animate={inView ? 'show' : 'hidden'}
-              className="font-light leading-[1.78] mb-10 max-w-[360px]"
-              style={{ fontSize: '15px', color: 'var(--ink2)' }}
+              className="leading-[1.7] mb-8 max-w-[360px]"
+              style={{ fontSize: '14px', color: 'var(--ink2)' }}
             >
               Tell us about your project — yard, vessel type, timeline, scope. We&apos;ll come back with a concrete plan, not a brochure.
             </motion.p>
@@ -141,7 +141,7 @@ export default function Contact() {
               <ContactDetail icon={<PhoneIcon />} label="Phone">
                 <a
                   href="tel:+358449536292"
-                  className="font-light transition-colors duration-200"
+                  className="transition-colors duration-200"
                   style={{ fontSize: '14px', color: 'var(--ink)' }}
                   onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--gold)')}
                   onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--ink)')}
@@ -155,7 +155,7 @@ export default function Contact() {
               <ContactDetail icon={<EmailIcon />} label="Email">
                 <a
                   href="mailto:info@levap.fi"
-                  className="font-light transition-colors duration-200"
+                  className="transition-colors duration-200"
                   style={{ fontSize: '14px', color: 'var(--ink)' }}
                   onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--gold)')}
                   onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--ink)')}
@@ -167,7 +167,7 @@ export default function Contact() {
 
             <motion.div variants={up(0.38)} initial="hidden" animate={inView ? 'show' : 'hidden'}>
               <ContactDetail icon={<MapIcon />} label="Address">
-                <span className="font-light" style={{ fontSize: '14px', color: 'var(--ink)' }}>
+                <span style={{ fontSize: '14px', color: 'var(--ink)' }}>
                   Kupittaankatu 63 A32, Turku
                 </span>
               </ContactDetail>
@@ -178,14 +178,14 @@ export default function Contact() {
               initial="hidden"
               animate={inView ? 'show' : 'hidden'}
               className="flex gap-6 flex-wrap"
-              style={{ marginTop: 32, paddingTop: 24, borderTop: '1px solid var(--line)' }}
+              style={{ marginTop: 28, paddingTop: 20, borderTop: '1px solid var(--line)' }}
             >
               {['Reg. 53477472-5', 'Turku, Finland', 'Est. 2017'].map((item) => (
                 <span
                   key={item}
                   style={{
                     fontSize: '9px',
-                    fontWeight: 500,
+                    fontWeight: 700,
                     letterSpacing: '0.22em',
                     textTransform: 'uppercase',
                     color: 'var(--ink4)',
@@ -203,13 +203,13 @@ export default function Contact() {
               className="p-8"
               style={{
                 border: '1px solid var(--line)',
-                borderTop: '2px solid var(--gold)',
+                borderTop: '3px solid var(--gold)',
                 background: 'var(--s1)',
               }}
             >
               {submitted ? (
                 <p
-                  className="font-light leading-[1.72]"
+                  className="leading-[1.7]"
                   style={{ fontSize: '15px', color: 'var(--ink2)', padding: '40px 0' }}
                 >
                   Thank you — we&apos;ll be in touch shortly.
@@ -227,7 +227,7 @@ export default function Contact() {
                         value={form.name}
                         onChange={(e) => setForm({ ...form, name: e.target.value })}
                         onFocus={(e) => (e.currentTarget.style.borderBottomColor = 'var(--gold)')}
-                        onBlur={(e) => (e.currentTarget.style.borderBottomColor = 'rgba(12,28,46,.15)')}
+                        onBlur={(e) => (e.currentTarget.style.borderBottomColor = 'rgba(255,255,255,.12)')}
                       />
                     </div>
                     <div className="flex flex-col gap-[6px]">
@@ -239,7 +239,7 @@ export default function Contact() {
                         value={form.company}
                         onChange={(e) => setForm({ ...form, company: e.target.value })}
                         onFocus={(e) => (e.currentTarget.style.borderBottomColor = 'var(--gold)')}
-                        onBlur={(e) => (e.currentTarget.style.borderBottomColor = 'rgba(12,28,46,.15)')}
+                        onBlur={(e) => (e.currentTarget.style.borderBottomColor = 'rgba(255,255,255,.12)')}
                       />
                     </div>
                   </div>
@@ -255,7 +255,7 @@ export default function Contact() {
                         value={form.email}
                         onChange={(e) => setForm({ ...form, email: e.target.value })}
                         onFocus={(e) => (e.currentTarget.style.borderBottomColor = 'var(--gold)')}
-                        onBlur={(e) => (e.currentTarget.style.borderBottomColor = 'rgba(12,28,46,.15)')}
+                        onBlur={(e) => (e.currentTarget.style.borderBottomColor = 'rgba(255,255,255,.12)')}
                       />
                     </div>
                     <div className="flex flex-col gap-[6px]">
@@ -267,7 +267,7 @@ export default function Contact() {
                         value={form.phone}
                         onChange={(e) => setForm({ ...form, phone: e.target.value })}
                         onFocus={(e) => (e.currentTarget.style.borderBottomColor = 'var(--gold)')}
-                        onBlur={(e) => (e.currentTarget.style.borderBottomColor = 'rgba(12,28,46,.15)')}
+                        onBlur={(e) => (e.currentTarget.style.borderBottomColor = 'rgba(255,255,255,.12)')}
                       />
                     </div>
                   </div>
@@ -280,7 +280,7 @@ export default function Contact() {
                         cursor: 'pointer',
                         appearance: 'none',
                         WebkitAppearance: 'none',
-                        backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%230c1c2e' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E")`,
+                        backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23666' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E")`,
                         backgroundRepeat: 'no-repeat',
                         backgroundPosition: 'right 4px center',
                         paddingRight: '22px',
@@ -288,7 +288,7 @@ export default function Contact() {
                       value={form.scope}
                       onChange={(e) => setForm({ ...form, scope: e.target.value })}
                       onFocus={(e) => (e.currentTarget.style.borderBottomColor = 'var(--gold)')}
-                      onBlur={(e) => (e.currentTarget.style.borderBottomColor = 'rgba(12,28,46,.15)')}
+                      onBlur={(e) => (e.currentTarget.style.borderBottomColor = 'rgba(255,255,255,.12)')}
                     >
                       <option value="">Select scope…</option>
                       <option>Piping installation</option>
@@ -310,7 +310,7 @@ export default function Contact() {
                       value={form.message}
                       onChange={(e) => setForm({ ...form, message: e.target.value })}
                       onFocus={(e) => (e.currentTarget.style.borderBottomColor = 'var(--gold)')}
-                      onBlur={(e) => (e.currentTarget.style.borderBottomColor = 'rgba(12,28,46,.15)')}
+                      onBlur={(e) => (e.currentTarget.style.borderBottomColor = 'rgba(255,255,255,.12)')}
                     />
                   </div>
 
@@ -318,23 +318,22 @@ export default function Contact() {
                     type="submit"
                     className="mt-[6px] self-start inline-flex items-center gap-[10px] cursor-pointer transition-[background,color] duration-[.22s]"
                     style={{
-                      padding: '12px 28px',
-                      background: 'transparent',
+                      padding: '13px 28px',
+                      background: 'var(--gold)',
                       border: '1px solid var(--gold)',
-                      color: 'var(--gold)',
+                      color: '#000000',
                       fontSize: '11px',
-                      fontWeight: 500,
+                      fontWeight: 700,
                       letterSpacing: '0.2em',
                       textTransform: 'uppercase',
-                      borderRadius: '4px',
                     }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.background = 'var(--gold)'
-                      e.currentTarget.style.color = '#fff'
+                      e.currentTarget.style.background = 'var(--gold2)'
+                      e.currentTarget.style.borderColor = 'var(--gold2)'
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.background = 'transparent'
-                      e.currentTarget.style.color = 'var(--gold)'
+                      e.currentTarget.style.background = 'var(--gold)'
+                      e.currentTarget.style.borderColor = 'var(--gold)'
                     }}
                   >
                     Send enquiry →

@@ -23,11 +23,11 @@ function ProjectRow({
 
   return (
     <li
-      className="prow-layout py-[26px] cursor-default"
+      className="prow-layout py-[20px] cursor-default"
       style={{
         borderBottom: '1px solid var(--line)',
-        boxShadow: hovered ? 'inset 3px 0 0 var(--gold)' : 'inset 3px 0 0 transparent',
-        opacity: listHovered ? (hovered ? 1 : 0.35) : 1,
+        boxShadow: hovered ? 'inset 4px 0 0 var(--gold)' : 'inset 4px 0 0 transparent',
+        opacity: listHovered ? (hovered ? 1 : 0.3) : 1,
         transition: 'opacity .2s, box-shadow .28s cubic-bezier(0.16,1,0.3,1)',
       }}
       onMouseEnter={() => setHovered(true)}
@@ -48,7 +48,7 @@ function ProjectRow({
         className="prow-name leading-none overflow-hidden text-ellipsis whitespace-nowrap transition-colors duration-[.22s]"
         style={{
           fontFamily: 'var(--font-bebas)',
-          fontSize: 'clamp(24px, 3vw, 40px)',
+          fontSize: 'clamp(24px, 3vw, 42px)',
           letterSpacing: '0.04em',
           color: hovered ? 'var(--gold)' : 'var(--ink)',
         }}
@@ -58,8 +58,8 @@ function ProjectRow({
       <span
         className="prow-yard whitespace-nowrap"
         style={{
-          fontSize: '10.5px',
-          fontWeight: 400,
+          fontSize: '10px',
+          fontWeight: 500,
           letterSpacing: '0.16em',
           textTransform: 'uppercase',
           color: 'var(--ink4)',
@@ -80,11 +80,11 @@ function ProjectRow({
         {p.year}
       </span>
       <span
-        className="prow-tag whitespace-nowrap px-[14px] py-[6px] transition-[color,border-color] duration-[.22s]"
+        className="prow-tag whitespace-nowrap px-[14px] py-[5px] transition-[color,border-color] duration-[.22s]"
         style={{
-          fontSize: '9.5px',
-          fontWeight: 500,
-          letterSpacing: '0.16em',
+          fontSize: '9px',
+          fontWeight: 700,
+          letterSpacing: '0.18em',
           textTransform: 'uppercase',
           color: hovered ? 'var(--gold)' : 'var(--ink3)',
           border: `1px solid ${hovered ? 'var(--gold)' : 'var(--line)'}`,
@@ -104,7 +104,7 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="py-[120px]"
+      className="py-[72px]"
       style={{ background: 'var(--s1)' }}
       ref={ref}
     >
@@ -116,18 +116,18 @@ export default function Projects() {
           }}
           initial="hidden"
           animate={inView ? 'show' : 'hidden'}
-          className="pb-10"
+          className="pb-8"
           style={{ borderBottom: '1px solid var(--line)' }}
         >
           <div className="lbl">Portfolio</div>
           <h2
             style={{
               fontFamily: 'var(--font-bebas)',
-              fontSize: 'clamp(50px,6vw,84px)',
+              fontSize: 'clamp(52px,7vw,88px)',
               lineHeight: '0.88',
               letterSpacing: '0.025em',
               color: 'var(--ink)',
-              marginTop: 16,
+              marginTop: 14,
             }}
           >
             THE WORK<br />

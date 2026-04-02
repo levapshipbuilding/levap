@@ -48,7 +48,7 @@ function ServiceRow({ s, delay, inView }: { s: typeof services[0]; delay: number
       initial="hidden"
       animate={inView ? 'show' : 'hidden'}
       className="svc-row"
-      style={{ background: hovered ? 'var(--s1)' : 'transparent', transition: 'background .22s' }}
+      style={{ background: hovered ? 'rgba(255,107,0,0.04)' : 'transparent', transition: 'background .22s' }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
@@ -81,8 +81,8 @@ function ServiceRow({ s, delay, inView }: { s: typeof services[0]; delay: number
         {s.name}
       </h3>
       <p
-        className="svc-row-desc font-light leading-[1.74]"
-        style={{ fontSize: '13px', color: 'var(--ink3)' }}
+        className="svc-row-desc leading-[1.7]"
+        style={{ fontSize: '13px', color: 'var(--ink3)', fontWeight: 400 }}
       >
         {s.desc}
       </p>
@@ -114,7 +114,7 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="py-[120px]"
+      className="py-[72px]"
       style={{ background: 'var(--bg)' }}
       ref={ref}
     >
@@ -132,11 +132,11 @@ export default function Services() {
           <h2
             style={{
               fontFamily: 'var(--font-bebas)',
-              fontSize: 'clamp(50px, 6vw, 84px)',
+              fontSize: 'clamp(52px, 7vw, 88px)',
               lineHeight: '0.88',
               letterSpacing: '0.025em',
               color: 'var(--ink)',
-              marginTop: 16,
+              marginTop: 14,
               marginBottom: 0,
             }}
           >
@@ -145,7 +145,7 @@ export default function Services() {
           </h2>
         </motion.div>
 
-        <div className="svc-list" style={{ marginTop: 48 }}>
+        <div className="svc-list" style={{ marginTop: 36 }}>
           {services.map((s, i) => (
             <ServiceRow key={s.n} s={s} delay={0.07 * (i + 1)} inView={inView} />
           ))}

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Bebas_Neue, DM_Sans } from 'next/font/google'
+import { Bebas_Neue, Space_Grotesk } from 'next/font/google'
 import './globals.css'
 
 const bebasNeue = Bebas_Neue({
@@ -9,17 +9,17 @@ const bebasNeue = Bebas_Neue({
   display: 'swap',
 })
 
-const dmSans = DM_Sans({
-  weight: ['300', '400', '500'],
+const spaceGrotesk = Space_Grotesk({
+  weight: ['400', '500', '700'],
   subsets: ['latin'],
-  variable: '--font-dm-sans',
+  variable: '--font-body',
   display: 'swap',
 })
 
 export const metadata: Metadata = {
   title: 'Levap OY — Marine Engineering | Finland',
   description:
-    'Marine refit, piping, steel, HVAC and interior — delivered on schedule at Europe\'s most demanding shipyards.',
+    "Marine refit, piping, steel, HVAC and interior — delivered on schedule at Europe's most demanding shipyards.",
 }
 
 export default function RootLayout({
@@ -28,7 +28,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${bebasNeue.variable} ${dmSans.variable}`}>
+    <html lang="en" className={`${bebasNeue.variable} ${spaceGrotesk.variable}`}>
       <body>{children}</body>
     </html>
   )
