@@ -24,26 +24,15 @@ export default function Hero() {
       }}
     >
       {/* Gradient overlay */}
-      <div
-        className="absolute inset-0 z-[1]"
-        style={{
-          background: 'linear-gradient(135deg, rgba(7,22,44,0.93) 0%, rgba(10,28,56,0.56) 55%, rgba(7,22,44,0.42) 100%)',
-        }}
-      />
+      <div className="absolute inset-0 z-[1]" style={{ background: 'linear-gradient(to right, rgba(4,12,28,0.88) 0%, rgba(4,12,28,0.62) 45%, rgba(4,12,28,0.22) 100%)' }} />
+      {/* Top fade so nav stays legible */}
+      <div className="absolute inset-x-0 top-0 z-[1]" style={{ height: 120, background: 'linear-gradient(to bottom, rgba(4,12,28,0.55) 0%, transparent 100%)' }} />
 
       {/* Hero body */}
       <div
         className="relative z-[2] flex flex-1 flex-col justify-center"
         style={{ padding: '80px var(--px) 48px', maxWidth: 'var(--max)', width: '100%', margin: '0 auto' }}
       >
-        <motion.div
-          variants={up}
-          initial="hidden"
-          animate="show"
-          custom={0.05}
-          style={{ display: 'block', width: 32, height: 2, background: '#5AAED0', marginBottom: 28, flexShrink: 0 }}
-        />
-
         <motion.h1
           variants={up}
           initial="hidden"

@@ -107,86 +107,87 @@ export default function Nav() {
 
       {/* Nav bar */}
       <nav
-        className="fixed top-0 left-0 right-0 z-[800] flex h-16 items-center justify-between"
+        className="fixed top-0 left-0 right-0 z-[800] flex h-16 items-center"
         style={{
           padding: '0 var(--px)',
-          background: scrolled ? 'rgba(7,22,44,0.94)' : 'rgba(7,22,44,0.18)',
+          background: scrolled ? 'rgba(7,22,44,0.95)' : 'transparent',
           backdropFilter: scrolled ? 'blur(20px)' : 'none',
           WebkitBackdropFilter: scrolled ? 'blur(20px)' : 'none',
           borderBottom: scrolled ? '1px solid rgba(255,255,255,.05)' : 'none',
           transition: 'background 0.2s ease, backdrop-filter 0.2s ease, border-bottom 0.2s ease',
         }}
       >
-        <a
-          href="#"
-          onClick={(e) => { e.preventDefault(); scrollTo('#') }}
-          className="flex items-center"
-          style={{ lineHeight: 0 }}
-        >
-          <Image
-            src="/alneva-logo.png"
-            alt="Alneva"
-            width={148}
-            height={38}
-            style={{ objectFit: 'contain', objectPosition: 'left center', filter: 'invert(1)', opacity: 0.92 }}
-          />
-        </a>
+        {/* Inner wrapper aligned with page content */}
+        <div className="flex items-center justify-between w-full" style={{ maxWidth: 'var(--max)', margin: '0 auto' }}>
+          <a
+            href="#"
+            onClick={(e) => { e.preventDefault(); scrollTo('#') }}
+            className="flex items-center"
+            style={{ lineHeight: 0 }}
+          >
+            <Image
+              src="/alneva-logo.png"
+              alt="Alneva"
+              width={148}
+              height={38}
+              style={{ objectFit: 'contain', objectPosition: 'left center', filter: 'invert(1)', opacity: 0.95 }}
+            />
+          </a>
 
-        <ul className="hidden lg:flex items-center gap-8 list-none">
-          {[
-            { href: '#about', label: 'About' },
-            { href: '#services', label: 'Services' },
-            { href: '#projects', label: 'Projects' },
-          ].map(({ href, label }) => (
-            <li key={href}>
+          <ul className="hidden lg:flex items-center gap-8 list-none">
+            {[
+              { href: '#about', label: 'About' },
+              { href: '#services', label: 'Services' },
+              { href: '#projects', label: 'Projects' },
+            ].map(({ href, label }) => (
+              <li key={href}>
+                <a
+                  href={href}
+                  onClick={(e) => { e.preventDefault(); scrollTo(href) }}
+                  className="nav-link text-[11px] font-medium tracking-[.16em] uppercase transition-colors duration-200"
+                  style={{ color: 'rgba(232,241,255,.75)' }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = '#fff')}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(232,241,255,.75)')}
+                >
+                  {label}
+                </a>
+              </li>
+            ))}
+            <li>
               <a
-                href={href}
-                onClick={(e) => { e.preventDefault(); scrollTo(href) }}
-                className="nav-link text-[11px] font-medium tracking-[.16em] uppercase transition-colors duration-200"
-                style={{ color: 'rgba(232,241,255,.6)' }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = '#fff')}
-                onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(232,241,255,.6)')}
+                href="#contact"
+                onClick={(e) => { e.preventDefault(); scrollTo('#contact') }}
+                className="text-[11px] font-medium tracking-[.14em] uppercase transition-all duration-200"
+                style={{
+                  padding: '9px 20px',
+                  border: '1px solid rgba(255,255,255,.4)',
+                  color: '#fff',
+                  borderRadius: '4px',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.borderColor = '#fff'
+                  e.currentTarget.style.background = 'rgba(255,255,255,.12)'
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.borderColor = 'rgba(255,255,255,.4)'
+                  e.currentTarget.style.background = 'transparent'
+                }}
               >
-                {label}
+                Request a quote
               </a>
             </li>
-          ))}
-          <li>
-            <a
-              href="#contact"
-              onClick={(e) => { e.preventDefault(); scrollTo('#contact') }}
-              className="text-[11px] font-medium tracking-[.14em] uppercase transition-all duration-200"
-              style={{
-                padding: '9px 20px',
-                border: '1px solid rgba(255,255,255,.25)',
-                color: 'rgba(232,241,255,.85)',
-                borderRadius: '4px',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = '#fff'
-                e.currentTarget.style.background = 'rgba(255,255,255,.1)'
-                e.currentTarget.style.color = '#fff'
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(255,255,255,.25)'
-                e.currentTarget.style.background = 'transparent'
-                e.currentTarget.style.color = 'rgba(232,241,255,.85)'
-              }}
-            >
-              Request a quote
-            </a>
-          </li>
-        </ul>
+          </ul>
 
-        <button
-          className="flex lg:hidden flex-col gap-[5px] cursor-pointer border-none bg-transparent p-1"
-          onClick={() => setMobOpen(true)}
-          aria-label="Menu"
-        >
-          <span className="block w-5" style={{ height: '1.5px', background: 'rgba(232,241,255,.8)' }} />
-          <span className="block" style={{ height: '1.5px', background: 'rgba(232,241,255,.8)', width: '14px' }} />
-          <span className="block w-5" style={{ height: '1.5px', background: 'rgba(232,241,255,.8)' }} />
-        </button>
+          <button
+            className="flex lg:hidden flex-col gap-[5px] cursor-pointer border-none bg-transparent p-1"
+            onClick={() => setMobOpen(true)}
+            aria-label="Menu"
+          >
+            <span className="block w-5" style={{ height: '1.5px', background: '#fff' }} />
+            <span className="block" style={{ height: '1.5px', background: '#fff', width: '14px' }} />
+            <span className="block w-5" style={{ height: '1.5px', background: '#fff' }} />
+          </button>
+        </div>
       </nav>
     </>
   )

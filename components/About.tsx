@@ -28,7 +28,7 @@ export default function About() {
           variants={up(0.07)}
           initial="hidden"
           animate={inView ? 'show' : 'hidden'}
-          style={{ marginBottom: '56px' }}
+          style={{ marginBottom: '20px' }}
         >
           <div className="lbl">About Levap</div>
         </motion.div>
