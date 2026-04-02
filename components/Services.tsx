@@ -48,7 +48,7 @@ function ServiceCard({ s, delay, inView }: { s: typeof services[0]; delay: numbe
       initial="hidden"
       animate={inView ? 'show' : 'hidden'}
       className="svc-card relative p-[36px_28px_30px] transition-[background] duration-[.25s] cursor-default overflow-hidden"
-      style={{ background: hovered ? 'var(--s1)' : 'transparent' }}
+      style={{ background: hovered ? 'var(--ink)' : 'transparent' }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
@@ -58,20 +58,20 @@ function ServiceCard({ s, delay, inView }: { s: typeof services[0]; delay: numbe
           fontFamily: 'var(--font-bebas)',
           fontSize: '44px',
           letterSpacing: '0.04em',
-          color: hovered ? 'rgba(154,116,40,.4)' : 'var(--ink4)',
+          color: hovered ? 'var(--gold)' : 'var(--ink4)',
         }}
       >
         {s.n}
       </span>
       <h3
-        className="mb-[10px] leading-[1.3]"
-        style={{ fontSize: '14px', fontWeight: 500, color: 'var(--ink)' }}
+        className="mb-[10px] leading-[1.3] transition-colors duration-[.25s]"
+        style={{ fontSize: '14px', fontWeight: 500, color: hovered ? 'var(--bg)' : 'var(--ink)' }}
       >
         {s.name}
       </h3>
       <p
-        className="font-light leading-[1.74]"
-        style={{ fontSize: '13px', color: 'var(--ink3)' }}
+        className="font-light leading-[1.74] transition-colors duration-[.25s]"
+        style={{ fontSize: '13px', color: hovered ? 'rgba(248,247,244,.55)' : 'var(--ink3)' }}
       >
         {s.desc}
       </p>
@@ -122,30 +122,12 @@ export default function Services() {
         </motion.div>
 
         {/* Grid */}
-        <div
-          className="grid"
-          style={{
-            gridTemplateColumns: 'repeat(3, 1fr)',
-            border: '1px solid var(--line)',
-            borderTop: 'none',
-          }}
-        >
-          {services.map((s, i) => {
-            const col = i % 3
-            const row = Math.floor(i / 3)
-            const totalRows = Math.ceil(services.length / 3)
-            return (
-              <div
-                key={s.n}
-                style={{
-                  borderRight: col < 2 ? '1px solid var(--line)' : 'none',
-                  borderBottom: row < totalRows - 1 ? '1px solid var(--line)' : 'none',
-                }}
-              >
-                <ServiceCard s={s} delay={0.07 * (i + 1)} inView={inView} />
-              </div>
-            )
-          })}
+        <div className="svc-grid">
+          {services.map((s, i) => (
+            <div key={s.n} className="svc-cell">
+              <ServiceCard s={s} delay={0.07 * (i + 1)} inView={inView} />
+            </div>
+          ))}
         </div>
       </div>
     </section>

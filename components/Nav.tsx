@@ -108,6 +108,7 @@ export default function Nav() {
                 padding: '9px 20px',
                 border: '1px solid var(--ink4)',
                 color: 'var(--ink2)',
+                borderRadius: '4px',
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.borderColor = 'var(--gold)'

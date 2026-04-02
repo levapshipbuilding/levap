@@ -12,8 +12,6 @@ const projects = [
   { i: '06', name: 'Aurora Botnia',       yard: 'Tallink',                     tag: 'Manning'          },
 ]
 
-const countries = ['Finland', 'Germany', 'Netherlands', 'France', 'Sweden']
-
 function ProjectRow({
   p,
   listHovered,
@@ -25,10 +23,8 @@ function ProjectRow({
 
   return (
     <li
-      className="grid items-center py-[26px] cursor-default transition-opacity duration-200"
+      className="prow-layout py-[26px] cursor-default transition-opacity duration-200"
       style={{
-        gridTemplateColumns: '52px 1fr auto auto',
-        columnGap: '32px',
         borderBottom: '1px solid rgba(255,255,255,.07)',
         opacity: listHovered ? (hovered ? 1 : 0.45) : 1,
       }}
@@ -36,7 +32,7 @@ function ProjectRow({
       onMouseLeave={() => setHovered(false)}
     >
       <span
-        className="text-right"
+        className="prow-num text-right"
         style={{
           fontFamily: 'var(--font-bebas)',
           fontSize: '11px',
@@ -47,7 +43,7 @@ function ProjectRow({
         {p.i}
       </span>
       <span
-        className="leading-none overflow-hidden text-ellipsis whitespace-nowrap transition-colors duration-[.22s]"
+        className="prow-name leading-none overflow-hidden text-ellipsis whitespace-nowrap transition-colors duration-[.22s]"
         style={{
           fontFamily: 'var(--font-bebas)',
           fontSize: 'clamp(22px,2.4vw,30px)',
@@ -58,7 +54,7 @@ function ProjectRow({
         {p.name}
       </span>
       <span
-        className="hidden md:block whitespace-nowrap"
+        className="prow-yard whitespace-nowrap"
         style={{
           fontSize: '10.5px',
           fontWeight: 400,
@@ -70,7 +66,7 @@ function ProjectRow({
         {p.yard}
       </span>
       <span
-        className="whitespace-nowrap px-[14px] py-[6px] transition-[color,border-color] duration-[.22s]"
+        className="prow-tag whitespace-nowrap px-[14px] py-[6px] transition-[color,border-color] duration-[.22s]"
         style={{
           fontSize: '9.5px',
           fontWeight: 500,
@@ -108,9 +104,7 @@ export default function Projects() {
           initial="hidden"
           animate={inView ? 'show' : 'hidden'}
           className="pb-10"
-          style={{
-            borderBottom: '1px solid rgba(255,255,255,.08)',
-          }}
+          style={{ borderBottom: '1px solid rgba(255,255,255,.08)' }}
         >
           <div
             style={{
@@ -154,50 +148,6 @@ export default function Projects() {
             <ProjectRow key={p.i} p={p} listHovered={listHovered} />
           ))}
         </motion.ul>
-
-        {/* Footer */}
-        <motion.div
-          variants={{
-            hidden: { opacity: 0, y: 20 },
-            show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.2 } },
-          }}
-          initial="hidden"
-          animate={inView ? 'show' : 'hidden'}
-          className="flex flex-wrap justify-between items-center gap-5 mt-9"
-        >
-          <p
-            className="font-light leading-[1.7]"
-            style={{ fontSize: '12px', letterSpacing: '0.06em', color: 'rgba(255,255,255,.22)' }}
-          >
-            Based in Turku, Finland — operating wherever the project demands.
-          </p>
-          <div className="flex flex-wrap gap-[6px]">
-            {countries.map((c) => (
-              <span
-                key={c}
-                className="px-[11px] py-1 transition-[color,border-color] duration-200 cursor-default"
-                style={{
-                  fontSize: '10px',
-                  fontWeight: 500,
-                  letterSpacing: '0.14em',
-                  textTransform: 'uppercase',
-                  color: 'rgba(255,255,255,.22)',
-                  border: '1px solid rgba(255,255,255,.1)',
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.color = 'var(--gold2)'
-                  e.currentTarget.style.borderColor = 'rgba(184,140,58,.35)'
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.color = 'rgba(255,255,255,.22)'
-                  e.currentTarget.style.borderColor = 'rgba(255,255,255,.1)'
-                }}
-              >
-                {c}
-              </span>
-            ))}
-          </div>
-        </motion.div>
       </div>
     </section>
   )

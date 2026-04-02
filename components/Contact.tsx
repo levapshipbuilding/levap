@@ -104,7 +104,7 @@ export default function Contact() {
       ref={ref}
     >
       <div className="wrap">
-        <div className="grid gap-20 items-start" style={{ gridTemplateColumns: '1fr 1fr' }}>
+        <div className="r-grid-2">
           {/* Left */}
           <div>
             <motion.div className="lbl" variants={up(0.07)} initial="hidden" animate={inView ? 'show' : 'hidden'}>
@@ -193,7 +193,7 @@ export default function Contact() {
               ) : (
                 <form className="flex flex-col gap-[14px]" onSubmit={handleSubmit}>
                   {/* Row 1 */}
-                  <div className="grid gap-[14px]" style={{ gridTemplateColumns: '1fr 1fr' }}>
+                  <div className="r-form-row">
                     <div className="flex flex-col gap-[6px]">
                       <label style={labelStyle}>Full name</label>
                       <input
@@ -222,7 +222,7 @@ export default function Contact() {
                   </div>
 
                   {/* Row 2 */}
-                  <div className="grid gap-[14px]" style={{ gridTemplateColumns: '1fr 1fr' }}>
+                  <div className="r-form-row">
                     <div className="flex flex-col gap-[6px]">
                       <label style={labelStyle}>Email</label>
                       <input
@@ -306,6 +306,7 @@ export default function Contact() {
                       fontWeight: 500,
                       letterSpacing: '0.2em',
                       textTransform: 'uppercase',
+                      borderRadius: '4px',
                     }}
                     onMouseEnter={(e) => {
                       e.currentTarget.style.background = 'var(--gold)'

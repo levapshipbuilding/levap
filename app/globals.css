@@ -93,3 +93,90 @@ button {
 .svc-card:hover::after {
   transform: scaleX(1);
 }
+
+/* ─── RESPONSIVE LAYOUT ─── */
+
+/* 2-col stacking grid (About, Contact) */
+.r-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+/* Contact form rows */
+.r-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+/* Services grid — borders handled via CSS selectors */
+.svc-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid var(--line);
+  border-top: none;
+}
+.svc-cell { border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.svc-cell:nth-child(3n) { border-right: none; }
+.svc-cell:nth-last-child(-n+3) { border-bottom: none; }
+
+/* Project rows */
+.prow-layout {
+  display: grid;
+  grid-template-columns: 52px 1fr auto auto;
+  column-gap: 32px;
+  align-items: center;
+}
+
+/* Footer grid */
+.foot-cols {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.2fr;
+  gap: 48px;
+}
+
+/* Hero stats strip */
+.hero-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 var(--px);
+}
+
+/* ── Tablet (≤ 768px) ── */
+@media (max-width: 768px) {
+  .r-grid-2 { grid-template-columns: 1fr; gap: 40px; }
+  .r-form-row { grid-template-columns: 1fr; }
+
+  .svc-grid { grid-template-columns: 1fr 1fr; }
+  .svc-cell:nth-child(3n) { border-right: 1px solid var(--line); }
+  .svc-cell:nth-last-child(-n+3) { border-bottom: 1px solid var(--line); }
+  .svc-cell:nth-child(2n) { border-right: none; }
+  .svc-cell:nth-last-child(-n+2) { border-bottom: none; }
+
+  .prow-layout { grid-template-columns: 1fr auto; column-gap: 16px; }
+  .prow-num { display: none; }
+  .prow-name { grid-area: 1 / 1; }
+  .prow-yard { display: none !important; }
+  .prow-tag { grid-area: 1 / 2; }
+
+  .foot-cols { grid-template-columns: 1fr 1fr; gap: 32px; }
+
+  .hero-stats-grid { grid-template-columns: 1fr 1fr; }
+  .hero-stat:nth-child(2) { border-right: none !important; }
+  .hero-stat:nth-child(3) { padding-left: 0 !important; border-top: 1px solid var(--line); }
+  .hero-stat:nth-child(4) { border-top: 1px solid var(--line); }
+}
+
+/* ── Mobile (≤ 480px) ── */
+@media (max-width: 480px) {
+  .svc-grid { grid-template-columns: 1fr; }
+  .svc-cell { border-right: none !important; }
+  .svc-cell:nth-last-child(-n+2) { border-bottom: 1px solid var(--line) !important; }
+  .svc-cell:last-child { border-bottom: none !important; }
+
+  .foot-cols { grid-template-columns: 1fr; }
+}

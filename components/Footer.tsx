@@ -13,8 +13,7 @@ export default function Footer() {
     <footer style={{ background: 'var(--ink)', borderTop: '1px solid var(--line)', paddingTop: 64 }}>
       <div className="wrap">
         <div
-          className="grid gap-12"
-          style={{ gridTemplateColumns: '2fr 1fr 1fr 1.2fr' }}
+          className="foot-cols"
         >
           {/* Brand */}
           <div>

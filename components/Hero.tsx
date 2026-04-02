@@ -31,7 +31,7 @@ export default function Hero() {
           custom={0.1}
           style={{
             fontFamily: 'var(--font-bebas)',
-            fontSize: 'clamp(80px,12vw,172px)',
+            fontSize: 'clamp(52px,13vw,172px)',
             lineHeight: '0.88',
             letterSpacing: '0.025em',
             color: 'var(--ink)',
@@ -81,15 +81,7 @@ export default function Hero() {
         className="relative z-[2]"
         style={{ borderTop: '1px solid var(--line)', background: 'var(--bg)' }}
       >
-        <div
-          className="grid"
-          style={{
-            maxWidth: 'var(--max)',
-            margin: '0 auto',
-            padding: '0 var(--px)',
-            gridTemplateColumns: 'repeat(4, 1fr)',
-          }}
-        >
+        <div className="hero-stats-grid">
           {[
             { n: '8', sup: '+', l: 'Years experience' },
             { n: '6', sup: '', l: 'Countries active' },
@@ -98,7 +90,7 @@ export default function Hero() {
           ].map((s, i) => (
             <div
               key={i}
-              className="py-[22px]"
+              className="hero-stat py-[22px]"
               style={{
                 paddingLeft: i === 0 ? 0 : '28px',
                 borderRight: i < 3 ? '1px solid var(--line)' : 'none',
@@ -146,7 +138,7 @@ function HeroBtn({
         href={href}
         onClick={(e) => { e.preventDefault(); scrollTo(href) }}
         className="inline-flex items-center text-[11px] font-medium tracking-[.16em] uppercase transition-[background] duration-200"
-        style={{ padding: '12px 28px', background: 'var(--ink)', color: 'var(--bg)' }}
+        style={{ padding: '12px 28px', background: 'var(--ink)', color: 'var(--bg)', borderRadius: '4px' }}
         onMouseEnter={(e) => (e.currentTarget.style.background = 'var(--gold)')}
         onMouseLeave={(e) => (e.currentTarget.style.background = 'var(--ink)')}
       >
@@ -160,7 +152,7 @@ function HeroBtn({
       href={href}
       onClick={(e) => { e.preventDefault(); scrollTo(href) }}
       className="inline-flex items-center text-[11px] font-medium tracking-[.16em] uppercase transition-[border-color,color] duration-200"
-      style={{ padding: '11px 28px', border: '1px solid var(--ink4)', color: 'var(--ink2)' }}
+      style={{ padding: '11px 28px', border: '1px solid var(--ink4)', color: 'var(--ink2)', borderRadius: '4px' }}
       onMouseEnter={(e) => {
         e.currentTarget.style.borderColor = 'var(--gold)'
         e.currentTarget.style.color = 'var(--gold)'
