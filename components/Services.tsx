@@ -86,7 +86,6 @@ function ServiceRow({ s, delay, inView }: { s: typeof services[0]; delay: number
       >
         {s.desc}
       </p>
-      {/* Hover arrow */}
       <span
         aria-hidden
         style={{
@@ -96,7 +95,6 @@ function ServiceRow({ s, delay, inView }: { s: typeof services[0]; delay: number
           transform: 'translateY(-50%)',
           fontFamily: 'var(--font-bebas)',
           fontSize: '20px',
-          letterSpacing: '0.04em',
           color: 'var(--gold)',
           opacity: hovered ? 1 : 0,
           transition: 'opacity .22s',
@@ -117,11 +115,10 @@ export default function Services() {
     <section
       id="services"
       className="py-[120px]"
-      style={{ background: 'var(--bg)', borderTop: '1px solid var(--line)' }}
+      style={{ background: 'var(--bg)' }}
       ref={ref}
     >
       <div className="wrap">
-        {/* Header */}
         <motion.div
           variants={{
             hidden: { opacity: 0, y: 20 },
@@ -129,11 +126,9 @@ export default function Services() {
           }}
           initial="hidden"
           animate={inView ? 'show' : 'hidden'}
-          className="pb-10"
-          style={{ borderBottom: '1px solid var(--line)', marginBottom: 0 }}
+          className="mb-2"
         >
           <div className="lbl">What we do</div>
-          <span className="accent-dash" />
           <h2
             style={{
               fontFamily: 'var(--font-bebas)',
@@ -141,6 +136,8 @@ export default function Services() {
               lineHeight: '0.88',
               letterSpacing: '0.025em',
               color: 'var(--ink)',
+              marginTop: 16,
+              marginBottom: 0,
             }}
           >
             SIX DISCIPLINES.<br />
@@ -148,8 +145,7 @@ export default function Services() {
           </h2>
         </motion.div>
 
-        {/* Row list */}
-        <div className="svc-list">
+        <div className="svc-list" style={{ marginTop: 48 }}>
           {services.map((s, i) => (
             <ServiceRow key={s.n} s={s} delay={0.07 * (i + 1)} inView={inView} />
           ))}

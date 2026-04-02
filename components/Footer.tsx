@@ -13,15 +13,15 @@ export default function Footer() {
 
   const linkStyle = {
     fontSize: '13px',
-    color: 'rgba(232,241,255,.4)',
+    color: 'rgba(168,196,222,.45)',
   }
   const linkHover = {
-    enter: (e: React.MouseEvent<HTMLAnchorElement>) => (e.currentTarget.style.color = 'rgba(232,241,255,.85)'),
-    leave: (e: React.MouseEvent<HTMLAnchorElement>) => (e.currentTarget.style.color = 'rgba(232,241,255,.4)'),
+    enter: (e: React.MouseEvent<HTMLAnchorElement>) => (e.currentTarget.style.color = 'rgba(232,241,255,.8)'),
+    leave: (e: React.MouseEvent<HTMLAnchorElement>) => (e.currentTarget.style.color = 'rgba(168,196,222,.45)'),
   }
 
   return (
-    <footer style={{ background: 'var(--deep)', borderTop: '1px solid var(--line)', paddingTop: 64 }}>
+    <footer style={{ background: 'var(--deep)', paddingTop: 64 }}>
       <div className="wrap">
         <div className="foot-cols">
           {/* Brand */}
@@ -29,20 +29,20 @@ export default function Footer() {
             <a
               href="#"
               onClick={(e) => { e.preventDefault(); scrollTo('#') }}
-              className="block mb-4"
+              className="block mb-5"
               style={{ lineHeight: 0 }}
             >
               <Image
                 src="/alneva-logo.png"
                 alt="Alneva"
-                width={100}
-                height={26}
-                style={{ objectFit: 'contain', filter: 'invert(1)', opacity: 0.7 }}
+                width={148}
+                height={38}
+                style={{ objectFit: 'contain', objectPosition: 'left center', filter: 'invert(1)', opacity: 0.65 }}
               />
             </a>
             <p
               className="font-light leading-[1.72] max-w-[210px]"
-              style={{ fontSize: '13px', color: 'rgba(232,241,255,.28)' }}
+              style={{ fontSize: '13px', color: 'rgba(168,196,222,.28)' }}
             >
               Leading marine and offshore engineering across Europe. Based in Turku, Finland.
             </p>
@@ -52,7 +52,7 @@ export default function Footer() {
           <div>
             <h5
               className="mb-4"
-              style={{ fontSize: '9px', fontWeight: 500, letterSpacing: '0.24em', textTransform: 'uppercase', color: 'rgba(232,241,255,.2)' }}
+              style={{ fontSize: '9px', fontWeight: 500, letterSpacing: '0.24em', textTransform: 'uppercase', color: 'rgba(168,196,222,.22)' }}
             >
               Company
             </h5>
@@ -82,7 +82,7 @@ export default function Footer() {
           <div>
             <h5
               className="mb-4"
-              style={{ fontSize: '9px', fontWeight: 500, letterSpacing: '0.24em', textTransform: 'uppercase', color: 'rgba(232,241,255,.2)' }}
+              style={{ fontSize: '9px', fontWeight: 500, letterSpacing: '0.24em', textTransform: 'uppercase', color: 'rgba(168,196,222,.22)' }}
             >
               Services
             </h5>
@@ -108,7 +108,7 @@ export default function Footer() {
           <div>
             <h5
               className="mb-4"
-              style={{ fontSize: '9px', fontWeight: 500, letterSpacing: '0.24em', textTransform: 'uppercase', color: 'rgba(232,241,255,.2)' }}
+              style={{ fontSize: '9px', fontWeight: 500, letterSpacing: '0.24em', textTransform: 'uppercase', color: 'rgba(168,196,222,.22)' }}
             >
               Contact
             </h5>
@@ -133,15 +133,14 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Bar */}
       <div
         className="flex flex-wrap justify-between items-center gap-3 mt-14"
-        style={{ padding: '18px var(--px)' }}
+        style={{ padding: '18px var(--px)', borderTop: '1px solid rgba(255,255,255,.04)' }}
       >
-        <span style={{ fontSize: '10px', fontWeight: 400, letterSpacing: '0.1em', color: 'rgba(232,241,255,.18)' }}>
+        <span style={{ fontSize: '10px', fontWeight: 400, letterSpacing: '0.1em', color: 'rgba(168,196,222,.18)' }}>
           © 2026 Alneva OY · Reg. 53477472-5 · All rights reserved
         </span>
-        <span style={{ fontSize: '10px', fontWeight: 400, letterSpacing: '0.1em', color: 'rgba(232,241,255,.18)' }}>
+        <span style={{ fontSize: '10px', fontWeight: 400, letterSpacing: '0.1em', color: 'rgba(168,196,222,.18)' }}>
           Built to last. At sea.
         </span>
       </div>

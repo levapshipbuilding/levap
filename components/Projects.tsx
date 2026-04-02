@@ -25,9 +25,9 @@ function ProjectRow({
     <li
       className="prow-layout py-[26px] cursor-default"
       style={{
-        borderBottom: '1px solid rgba(255,255,255,.07)',
+        borderBottom: '1px solid var(--line)',
         boxShadow: hovered ? 'inset 3px 0 0 var(--gold)' : 'inset 3px 0 0 transparent',
-        opacity: listHovered ? (hovered ? 1 : 0.4) : 1,
+        opacity: listHovered ? (hovered ? 1 : 0.35) : 1,
         transition: 'opacity .2s, box-shadow .28s cubic-bezier(0.16,1,0.3,1)',
       }}
       onMouseEnter={() => setHovered(true)}
@@ -39,7 +39,7 @@ function ProjectRow({
           fontFamily: 'var(--font-bebas)',
           fontSize: '14px',
           letterSpacing: '0.1em',
-          color: 'rgba(255,255,255,.22)',
+          color: 'var(--ink4)',
         }}
       >
         {p.i}
@@ -50,7 +50,7 @@ function ProjectRow({
           fontFamily: 'var(--font-bebas)',
           fontSize: 'clamp(24px, 3vw, 40px)',
           letterSpacing: '0.04em',
-          color: hovered ? 'var(--gold2)' : 'var(--ink)',
+          color: hovered ? 'var(--gold)' : 'var(--ink)',
         }}
       >
         {p.name}
@@ -62,7 +62,7 @@ function ProjectRow({
           fontWeight: 400,
           letterSpacing: '0.16em',
           textTransform: 'uppercase',
-          color: 'rgba(255,255,255,.22)',
+          color: 'var(--ink4)',
         }}
       >
         {p.yard}
@@ -73,7 +73,7 @@ function ProjectRow({
           fontFamily: 'var(--font-bebas)',
           fontSize: '16px',
           letterSpacing: '0.08em',
-          color: hovered ? 'rgba(184,140,58,.6)' : 'rgba(255,255,255,.18)',
+          color: hovered ? 'var(--gold)' : 'var(--ink4)',
           transition: 'color .22s',
         }}
       >
@@ -86,8 +86,8 @@ function ProjectRow({
           fontWeight: 500,
           letterSpacing: '0.16em',
           textTransform: 'uppercase',
-          color: hovered ? 'var(--gold2)' : 'rgba(255,255,255,.35)',
-          border: `1px solid ${hovered ? 'rgba(184,140,58,.4)' : 'rgba(255,255,255,.14)'}`,
+          color: hovered ? 'var(--gold)' : 'var(--ink3)',
+          border: `1px solid ${hovered ? 'var(--gold)' : 'var(--line)'}`,
         }}
       >
         {p.tag}
@@ -105,11 +105,10 @@ export default function Projects() {
     <section
       id="projects"
       className="py-[120px]"
-      style={{ background: 'var(--deep)', borderTop: '1px solid var(--line)' }}
+      style={{ background: 'var(--s1)' }}
       ref={ref}
     >
       <div className="wrap">
-        {/* Header */}
         <motion.div
           variants={{
             hidden: { opacity: 0, y: 20 },
@@ -118,20 +117,9 @@ export default function Projects() {
           initial="hidden"
           animate={inView ? 'show' : 'hidden'}
           className="pb-10"
-          style={{ borderBottom: '1px solid rgba(255,255,255,.08)' }}
+          style={{ borderBottom: '1px solid var(--line)' }}
         >
-          <div
-            style={{
-              fontSize: '10px',
-              fontWeight: 500,
-              letterSpacing: '0.24em',
-              textTransform: 'uppercase',
-              color: 'var(--gold)',
-            }}
-          >
-            Portfolio
-          </div>
-          <span className="accent-dash" />
+          <div className="lbl">Portfolio</div>
           <h2
             style={{
               fontFamily: 'var(--font-bebas)',
@@ -139,14 +127,14 @@ export default function Projects() {
               lineHeight: '0.88',
               letterSpacing: '0.025em',
               color: 'var(--ink)',
+              marginTop: 16,
             }}
           >
             THE WORK<br />
-            <em style={{ color: 'var(--gold2)', fontStyle: 'normal' }}>SPEAKS.</em>
+            <em style={{ color: 'var(--gold)', fontStyle: 'normal' }}>SPEAKS.</em>
           </h2>
         </motion.div>
 
-        {/* List */}
         <motion.ul
           variants={{
             hidden: { opacity: 0, y: 20 },

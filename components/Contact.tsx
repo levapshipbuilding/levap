@@ -43,7 +43,7 @@ function ContactDetail({ icon, label, children }: { icon: React.ReactNode; label
     <div className="flex items-center gap-[14px] mb-[14px]">
       <div
         className="flex items-center justify-center flex-shrink-0"
-        style={{ width: 38, height: 38, border: '1px solid var(--line)' }}
+        style={{ width: 38, height: 38, border: '1px solid var(--line)', background: 'var(--s2)' }}
       >
         {icon}
       </div>
@@ -77,7 +77,7 @@ export default function Contact() {
   const inputStyle: React.CSSProperties = {
     background: 'transparent',
     border: 'none',
-    borderBottom: '1px solid rgba(255,255,255,.14)',
+    borderBottom: '1px solid rgba(12,28,46,.15)',
     padding: '10px 0',
     fontFamily: 'var(--font-dm-sans)',
     fontSize: '14px',
@@ -100,7 +100,7 @@ export default function Contact() {
     <section
       id="contact"
       className="py-[120px]"
-      style={{ background: 'var(--s1)', borderTop: '1px solid var(--line)' }}
+      style={{ background: 'var(--bg)' }}
       ref={ref}
     >
       <div className="wrap">
@@ -110,11 +110,8 @@ export default function Contact() {
             <motion.div className="lbl" variants={up(0.07)} initial="hidden" animate={inView ? 'show' : 'hidden'}>
               Get in touch
             </motion.div>
-            <motion.div variants={up(0.11)} initial="hidden" animate={inView ? 'show' : 'hidden'}>
-              <span className="accent-dash" />
-            </motion.div>
             <motion.h2
-              variants={up(0.14)}
+              variants={up(0.12)}
               initial="hidden"
               animate={inView ? 'show' : 'hidden'}
               className="mb-5"
@@ -124,13 +121,14 @@ export default function Contact() {
                 lineHeight: '0.88',
                 letterSpacing: '0.025em',
                 color: 'var(--ink)',
+                marginTop: 16,
               }}
             >
               LET&apos;S TALK<br />
               <em style={{ color: 'var(--gold)', fontStyle: 'normal' }}>SCOPE.</em>
             </motion.h2>
             <motion.p
-              variants={up(0.21)}
+              variants={up(0.19)}
               initial="hidden"
               animate={inView ? 'show' : 'hidden'}
               className="font-light leading-[1.78] mb-10 max-w-[360px]"
@@ -139,7 +137,7 @@ export default function Contact() {
               Tell us about your project — yard, vessel type, timeline, scope. We&apos;ll come back with a concrete plan, not a brochure.
             </motion.p>
 
-            <motion.div variants={up(0.28)} initial="hidden" animate={inView ? 'show' : 'hidden'}>
+            <motion.div variants={up(0.26)} initial="hidden" animate={inView ? 'show' : 'hidden'}>
               <ContactDetail icon={<PhoneIcon />} label="Phone">
                 <a
                   href="tel:+358449536292"
@@ -153,7 +151,7 @@ export default function Contact() {
               </ContactDetail>
             </motion.div>
 
-            <motion.div variants={up(0.35)} initial="hidden" animate={inView ? 'show' : 'hidden'}>
+            <motion.div variants={up(0.32)} initial="hidden" animate={inView ? 'show' : 'hidden'}>
               <ContactDetail icon={<EmailIcon />} label="Email">
                 <a
                   href="mailto:info@levap.fi"
@@ -167,7 +165,7 @@ export default function Contact() {
               </ContactDetail>
             </motion.div>
 
-            <motion.div variants={up(0.42)} initial="hidden" animate={inView ? 'show' : 'hidden'}>
+            <motion.div variants={up(0.38)} initial="hidden" animate={inView ? 'show' : 'hidden'}>
               <ContactDetail icon={<MapIcon />} label="Address">
                 <span className="font-light" style={{ fontSize: '14px', color: 'var(--ink)' }}>
                   Kupittaankatu 63 A32, Turku
@@ -176,7 +174,7 @@ export default function Contact() {
             </motion.div>
 
             <motion.div
-              variants={up(0.49)}
+              variants={up(0.44)}
               initial="hidden"
               animate={inView ? 'show' : 'hidden'}
               className="flex gap-6 flex-wrap"
@@ -204,9 +202,9 @@ export default function Contact() {
             <div
               className="p-8"
               style={{
-                border: '1px solid rgba(255,255,255,.07)',
-                borderTop: '1px solid var(--lineg)',
-                background: 'rgba(255,255,255,.03)',
+                border: '1px solid var(--line)',
+                borderTop: '2px solid var(--gold)',
+                background: 'var(--s1)',
               }}
             >
               {submitted ? (
@@ -218,7 +216,6 @@ export default function Contact() {
                 </p>
               ) : (
                 <form className="flex flex-col gap-[14px]" onSubmit={handleSubmit}>
-                  {/* Row 1 */}
                   <div className="r-form-row">
                     <div className="flex flex-col gap-[6px]">
                       <label style={labelStyle}>Full name</label>
@@ -230,7 +227,7 @@ export default function Contact() {
                         value={form.name}
                         onChange={(e) => setForm({ ...form, name: e.target.value })}
                         onFocus={(e) => (e.currentTarget.style.borderBottomColor = 'var(--gold)')}
-                        onBlur={(e) => (e.currentTarget.style.borderBottomColor = 'rgba(255,255,255,.14)')}
+                        onBlur={(e) => (e.currentTarget.style.borderBottomColor = 'rgba(12,28,46,.15)')}
                       />
                     </div>
                     <div className="flex flex-col gap-[6px]">
@@ -242,12 +239,11 @@ export default function Contact() {
                         value={form.company}
                         onChange={(e) => setForm({ ...form, company: e.target.value })}
                         onFocus={(e) => (e.currentTarget.style.borderBottomColor = 'var(--gold)')}
-                        onBlur={(e) => (e.currentTarget.style.borderBottomColor = 'rgba(255,255,255,.14)')}
+                        onBlur={(e) => (e.currentTarget.style.borderBottomColor = 'rgba(12,28,46,.15)')}
                       />
                     </div>
                   </div>
 
-                  {/* Row 2 */}
                   <div className="r-form-row">
                     <div className="flex flex-col gap-[6px]">
                       <label style={labelStyle}>Email</label>
@@ -259,7 +255,7 @@ export default function Contact() {
                         value={form.email}
                         onChange={(e) => setForm({ ...form, email: e.target.value })}
                         onFocus={(e) => (e.currentTarget.style.borderBottomColor = 'var(--gold)')}
-                        onBlur={(e) => (e.currentTarget.style.borderBottomColor = 'rgba(255,255,255,.14)')}
+                        onBlur={(e) => (e.currentTarget.style.borderBottomColor = 'rgba(12,28,46,.15)')}
                       />
                     </div>
                     <div className="flex flex-col gap-[6px]">
@@ -271,12 +267,11 @@ export default function Contact() {
                         value={form.phone}
                         onChange={(e) => setForm({ ...form, phone: e.target.value })}
                         onFocus={(e) => (e.currentTarget.style.borderBottomColor = 'var(--gold)')}
-                        onBlur={(e) => (e.currentTarget.style.borderBottomColor = 'rgba(255,255,255,.14)')}
+                        onBlur={(e) => (e.currentTarget.style.borderBottomColor = 'rgba(12,28,46,.15)')}
                       />
                     </div>
                   </div>
 
-                  {/* Scope */}
                   <div className="flex flex-col gap-[6px]">
                     <label style={labelStyle}>Project type</label>
                     <select
@@ -285,7 +280,7 @@ export default function Contact() {
                         cursor: 'pointer',
                         appearance: 'none',
                         WebkitAppearance: 'none',
-                        backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23ffffff' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E")`,
+                        backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%230c1c2e' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E")`,
                         backgroundRepeat: 'no-repeat',
                         backgroundPosition: 'right 4px center',
                         paddingRight: '22px',
@@ -293,7 +288,7 @@ export default function Contact() {
                       value={form.scope}
                       onChange={(e) => setForm({ ...form, scope: e.target.value })}
                       onFocus={(e) => (e.currentTarget.style.borderBottomColor = 'var(--gold)')}
-                      onBlur={(e) => (e.currentTarget.style.borderBottomColor = 'rgba(255,255,255,.14)')}
+                      onBlur={(e) => (e.currentTarget.style.borderBottomColor = 'rgba(12,28,46,.15)')}
                     >
                       <option value="">Select scope…</option>
                       <option>Piping installation</option>
@@ -307,7 +302,6 @@ export default function Contact() {
                     </select>
                   </div>
 
-                  {/* Message */}
                   <div className="flex flex-col gap-[6px]">
                     <label style={labelStyle}>Project details</label>
                     <textarea
@@ -316,7 +310,7 @@ export default function Contact() {
                       value={form.message}
                       onChange={(e) => setForm({ ...form, message: e.target.value })}
                       onFocus={(e) => (e.currentTarget.style.borderBottomColor = 'var(--gold)')}
-                      onBlur={(e) => (e.currentTarget.style.borderBottomColor = 'rgba(255,255,255,.14)')}
+                      onBlur={(e) => (e.currentTarget.style.borderBottomColor = 'rgba(12,28,46,.15)')}
                     />
                   </div>
 
@@ -336,7 +330,7 @@ export default function Contact() {
                     }}
                     onMouseEnter={(e) => {
                       e.currentTarget.style.background = 'var(--gold)'
-                      e.currentTarget.style.color = 'var(--bg)'
+                      e.currentTarget.style.color = '#fff'
                     }}
                     onMouseLeave={(e) => {
                       e.currentTarget.style.background = 'transparent'

@@ -20,7 +20,7 @@ export default function About() {
     <section
       id="about"
       className="py-[120px]"
-      style={{ background: 'var(--s1)', borderTop: '1px solid var(--line)' }}
+      style={{ background: 'var(--s1)' }}
       ref={ref}
     >
       <div className="wrap">
@@ -33,18 +33,11 @@ export default function About() {
           <div className="lbl">About Levap</div>
         </motion.div>
 
-        {/* Editorial 2-col split */}
         <div className="about-grid">
           {/* Left — heading */}
           <div style={{ paddingRight: '40px' }}>
-            <motion.div
-              variants={up(0.1)}
-              initial="hidden"
-              animate={inView ? 'show' : 'hidden'}
-              className="accent-dash"
-            />
             <motion.h2
-              variants={up(0.14)}
+              variants={up(0.12)}
               initial="hidden"
               animate={inView ? 'show' : 'hidden'}
               style={{
@@ -57,7 +50,7 @@ export default function About() {
             >
               8 YEARS.<br />
               <span style={{ color: 'var(--gold)' }}>ZERO</span><br />
-              <span style={{ WebkitTextStroke: '1.5px rgba(232,241,255,.22)', color: 'transparent' }}>SHORTCUTS.</span>
+              <span style={{ WebkitTextStroke: '1.5px rgba(12,28,46,.18)', color: 'transparent' }}>SHORTCUTS.</span>
             </motion.h2>
           </div>
 
@@ -66,11 +59,11 @@ export default function About() {
             {([
               <>Levap operates at the sharp end of marine engineering — where deadlines are tight, tolerances are tighter, and the margin for error is <strong style={{ color: 'var(--ink)', fontWeight: 500 }}>zero</strong>.</>,
               <>We&apos;ve delivered for Meyer Turku, Chantiers de l&apos;Atlantique, and Tallink. That&apos;s not a credential. That&apos;s a standard.</>,
-              <>Based in Turku, Finland. Operating in Germany, Netherlands, France and Sweden.</>,
+              <>Based in Turku, Finland. Operating across Germany, Netherlands, France and Sweden.</>,
             ] as React.ReactNode[]).map((txt, i) => (
               <motion.p
                 key={i}
-                variants={up(0.21 + i * 0.07)}
+                variants={up(0.18 + i * 0.07)}
                 initial="hidden"
                 animate={inView ? 'show' : 'hidden'}
                 className="font-light leading-[1.82] mb-[20px] last:mb-0"

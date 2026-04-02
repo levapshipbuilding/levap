@@ -8,7 +8,8 @@ export default function Nav() {
   const [mobOpen, setMobOpen] = useState(false)
 
   useEffect(() => {
-    const handler = () => setScrolled(window.scrollY > 30)
+    const handler = () => setScrolled(window.scrollY > 5)
+    handler()
     window.addEventListener('scroll', handler, { passive: true })
     return () => window.removeEventListener('scroll', handler)
   }, [])
@@ -32,32 +33,28 @@ export default function Nav() {
       {mobOpen && (
         <div
           className="fixed inset-0 z-[900] flex flex-col"
-          style={{
-            background: 'radial-gradient(ellipse at 25% 35%, #132E52 0%, #071628 65%)',
-          }}
+          style={{ background: 'radial-gradient(ellipse at 25% 35%, #132E52 0%, #071628 65%)' }}
         >
-          {/* Mobile header */}
           <div
             className="flex items-center justify-between flex-shrink-0"
-            style={{ padding: '0 var(--px)', height: 64, borderBottom: '1px solid var(--line)' }}
+            style={{ padding: '0 var(--px)', height: 64, borderBottom: '1px solid rgba(255,255,255,.08)' }}
           >
             <Image
               src="/alneva-logo.png"
               alt="Alneva"
-              width={110}
-              height={28}
-              style={{ objectFit: 'contain', filter: 'invert(1)', opacity: 0.9 }}
+              width={160}
+              height={40}
+              style={{ objectFit: 'contain', objectPosition: 'left center', filter: 'invert(1)', opacity: 0.9 }}
             />
             <button
               onClick={() => setMobOpen(false)}
               aria-label="Close menu"
-              style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--ink3)', fontSize: '20px', lineHeight: 1 }}
+              style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'rgba(168,196,222,.7)', fontSize: '20px', lineHeight: 1 }}
             >
               ✕
             </button>
           </div>
 
-          {/* Links */}
           <div className="flex-1 flex flex-col justify-center" style={{ padding: '0 var(--px)' }}>
             {(['#about', '#services', '#projects', '#contact'] as const).map((href) => (
               <a
@@ -70,36 +67,37 @@ export default function Nav() {
                   fontSize: 'clamp(40px, 10vw, 56px)',
                   letterSpacing: '0.06em',
                   lineHeight: '1',
-                  color: 'var(--ink)',
+                  color: 'rgba(232,241,255,.9)',
                   padding: '18px 0',
-                  borderBottom: '1px solid var(--line)',
+                  borderBottom: '1px solid rgba(255,255,255,.06)',
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--gold)')}
-                onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--ink)')}
+                onMouseEnter={(e) => (e.currentTarget.style.color = '#5AAED0')}
+                onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(232,241,255,.9)')}
               >
                 {href.replace('#', '')}
               </a>
             ))}
           </div>
 
-          {/* Contact info */}
-          <div style={{ padding: '24px var(--px) 32px', borderTop: '1px solid var(--line)' }}>
-            <div className="lbl" style={{ marginBottom: 10 }}>Get in touch</div>
+          <div style={{ padding: '24px var(--px) 32px', borderTop: '1px solid rgba(255,255,255,.06)' }}>
+            <div style={{ fontSize: '9px', fontWeight: 500, letterSpacing: '0.24em', textTransform: 'uppercase', color: '#5AAED0', marginBottom: 10 }}>
+              Get in touch
+            </div>
             <a
               href="tel:+358449536292"
               className="block font-light transition-colors duration-200"
-              style={{ fontSize: '13px', color: 'var(--ink3)', marginBottom: 6 }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--ink2)')}
-              onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--ink3)')}
+              style={{ fontSize: '13px', color: 'rgba(168,196,222,.6)', marginBottom: 6 }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = 'rgba(232,241,255,.9)')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(168,196,222,.6)')}
             >
               +358 449 536 292
             </a>
             <a
               href="mailto:info@levap.fi"
               className="block font-light transition-colors duration-200"
-              style={{ fontSize: '13px', color: 'var(--ink3)' }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--ink2)')}
-              onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--ink3)')}
+              style={{ fontSize: '13px', color: 'rgba(168,196,222,.6)' }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = 'rgba(232,241,255,.9)')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(168,196,222,.6)')}
             >
               info@levap.fi
             </a>
@@ -109,36 +107,31 @@ export default function Nav() {
 
       {/* Nav bar */}
       <nav
-        className="fixed top-0 left-0 right-0 z-[800] flex h-16 items-center justify-between transition-all duration-300"
+        className="fixed top-0 left-0 right-0 z-[800] flex h-16 items-center justify-between"
         style={{
           padding: '0 var(--px)',
-          ...(scrolled
-            ? {
-                background: 'rgba(13,34,64,0.92)',
-                backdropFilter: 'blur(20px)',
-                WebkitBackdropFilter: 'blur(20px)',
-                borderBottom: '1px solid rgba(255,255,255,.06)',
-              }
-            : {}),
+          background: scrolled ? 'rgba(7,22,44,0.94)' : 'rgba(7,22,44,0.18)',
+          backdropFilter: scrolled ? 'blur(20px)' : 'none',
+          WebkitBackdropFilter: scrolled ? 'blur(20px)' : 'none',
+          borderBottom: scrolled ? '1px solid rgba(255,255,255,.05)' : 'none',
+          transition: 'background 0.2s ease, backdrop-filter 0.2s ease, border-bottom 0.2s ease',
         }}
       >
-        {/* Logo */}
         <a
           href="#"
           onClick={(e) => { e.preventDefault(); scrollTo('#') }}
-          className="block"
+          className="flex items-center"
           style={{ lineHeight: 0 }}
         >
           <Image
             src="/alneva-logo.png"
             alt="Alneva"
-            width={110}
-            height={28}
-            style={{ objectFit: 'contain', filter: 'invert(1)', opacity: 0.92 }}
+            width={148}
+            height={38}
+            style={{ objectFit: 'contain', objectPosition: 'left center', filter: 'invert(1)', opacity: 0.92 }}
           />
         </a>
 
-        {/* Desktop links */}
         <ul className="hidden lg:flex items-center gap-8 list-none">
           {[
             { href: '#about', label: 'About' },
@@ -150,9 +143,9 @@ export default function Nav() {
                 href={href}
                 onClick={(e) => { e.preventDefault(); scrollTo(href) }}
                 className="nav-link text-[11px] font-medium tracking-[.16em] uppercase transition-colors duration-200"
-                style={{ color: 'rgba(232,241,255,.55)' }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--ink)')}
-                onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(232,241,255,.55)')}
+                style={{ color: 'rgba(232,241,255,.6)' }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = '#fff')}
+                onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(232,241,255,.6)')}
               >
                 {label}
               </a>
@@ -165,19 +158,19 @@ export default function Nav() {
               className="text-[11px] font-medium tracking-[.14em] uppercase transition-all duration-200"
               style={{
                 padding: '9px 20px',
-                border: '1px solid rgba(90,174,208,.45)',
-                color: 'var(--gold)',
+                border: '1px solid rgba(255,255,255,.25)',
+                color: 'rgba(232,241,255,.85)',
                 borderRadius: '4px',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = 'var(--gold)'
-                e.currentTarget.style.background = 'var(--gold)'
-                e.currentTarget.style.color = 'var(--deep)'
+                e.currentTarget.style.borderColor = '#fff'
+                e.currentTarget.style.background = 'rgba(255,255,255,.1)'
+                e.currentTarget.style.color = '#fff'
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(90,174,208,.45)'
+                e.currentTarget.style.borderColor = 'rgba(255,255,255,.25)'
                 e.currentTarget.style.background = 'transparent'
-                e.currentTarget.style.color = 'var(--gold)'
+                e.currentTarget.style.color = 'rgba(232,241,255,.85)'
               }}
             >
               Request a quote
@@ -185,15 +178,14 @@ export default function Nav() {
           </li>
         </ul>
 
-        {/* Burger */}
         <button
           className="flex lg:hidden flex-col gap-[5px] cursor-pointer border-none bg-transparent p-1"
           onClick={() => setMobOpen(true)}
           aria-label="Menu"
         >
-          <span className="block w-5 transition-all duration-300" style={{ height: '1.5px', background: 'var(--ink)' }} />
-          <span className="block w-5 transition-all duration-300" style={{ height: '1.5px', background: 'var(--ink)', width: '14px' }} />
-          <span className="block w-5 transition-all duration-300" style={{ height: '1.5px', background: 'var(--ink)' }} />
+          <span className="block w-5" style={{ height: '1.5px', background: 'rgba(232,241,255,.8)' }} />
+          <span className="block" style={{ height: '1.5px', background: 'rgba(232,241,255,.8)', width: '14px' }} />
+          <span className="block w-5" style={{ height: '1.5px', background: 'rgba(232,241,255,.8)' }} />
         </button>
       </nav>
     </>
