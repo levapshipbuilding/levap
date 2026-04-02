@@ -16,14 +16,34 @@ export default function Hero() {
     <section
       id="hero"
       className="relative flex min-h-[100svh] flex-col overflow-hidden pt-16"
-      style={{ background: 'var(--bg)' }}
+      style={{
+        backgroundColor: 'var(--bg)',
+        backgroundImage: 'url(/hero-ship.png)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center 30%',
+      }}
     >
+      {/* Gradient overlay */}
+      <div
+        className="absolute inset-0 z-[1]"
+        style={{
+          background: 'linear-gradient(135deg, rgba(7,22,44,0.93) 0%, rgba(10,28,56,0.58) 50%, rgba(7,22,44,0.45) 100%)',
+        }}
+      />
+
       {/* Hero body */}
       <div
         className="relative z-[2] flex flex-1 flex-col justify-center"
         style={{ padding: '80px var(--px) 48px', maxWidth: 'var(--max)', width: '100%', margin: '0 auto' }}
       >
-        {/* H1 */}
+        <motion.div
+          variants={up}
+          initial="hidden"
+          animate="show"
+          custom={0.05}
+          className="accent-dash"
+        />
+
         <motion.h1
           variants={up}
           initial="hidden"
@@ -40,11 +60,10 @@ export default function Hero() {
         >
           WE BUILD<br />
           <span style={{ color: 'var(--gold)' }}>SHIPS.</span><br />
-          <span style={{ WebkitTextStroke: '1.5px var(--ink4)', color: 'transparent' }}>WE KEEP</span><br />
+          <span style={{ WebkitTextStroke: '1.5px rgba(232,241,255,.28)', color: 'transparent' }}>WE KEEP</span><br />
           THEM RUNNING.
         </motion.h1>
 
-        {/* Tag + subtitle + CTA */}
         <motion.div
           variants={up}
           initial="hidden"
@@ -69,6 +88,17 @@ export default function Hero() {
           >
             Refit, piping, steel, HVAC and interior — delivered on schedule at Europe&apos;s most demanding shipyards.
           </p>
+          <span
+            style={{
+              fontSize: '9.5px',
+              fontWeight: 500,
+              letterSpacing: '0.2em',
+              textTransform: 'uppercase',
+              color: 'rgba(232,241,255,.3)',
+            }}
+          >
+            60.4519° N &nbsp;·&nbsp; 22.2666° E &nbsp;·&nbsp; Est. 2017
+          </span>
           <div className="flex gap-[10px] items-center flex-wrap mt-2">
             <HeroBtn href="#projects" dark>See our work</HeroBtn>
             <HeroBtn href="#contact">Request a quote</HeroBtn>
@@ -76,10 +106,15 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* Stats strip */}
+      {/* Stats strip — frosted glass over image */}
       <div
         className="relative z-[2]"
-        style={{ borderTop: '1px solid var(--line)', background: 'var(--bg)' }}
+        style={{
+          borderTop: '1px solid rgba(255,255,255,.1)',
+          background: 'rgba(7,22,44,0.72)',
+          backdropFilter: 'blur(20px)',
+          WebkitBackdropFilter: 'blur(20px)',
+        }}
       >
         <div className="hero-stats-grid">
           {[
@@ -93,12 +128,12 @@ export default function Hero() {
               className="hero-stat py-[22px]"
               style={{
                 paddingLeft: i === 0 ? 0 : '28px',
-                borderRight: i < 3 ? '1px solid var(--line)' : 'none',
+                borderRight: i < 3 ? '1px solid rgba(255,255,255,.1)' : 'none',
               }}
             >
               <span
                 className="block leading-none"
-                style={{ fontFamily: 'var(--font-bebas)', fontSize: '32px', letterSpacing: '0.03em', color: 'var(--ink)' }}
+                style={{ fontFamily: 'var(--font-bebas)', fontSize: '44px', letterSpacing: '0.03em', color: 'var(--ink)' }}
               >
                 {s.n}
                 {s.sup && <b style={{ color: 'var(--gold)' }}>{s.sup}</b>}
@@ -137,10 +172,10 @@ function HeroBtn({
       <a
         href={href}
         onClick={(e) => { e.preventDefault(); scrollTo(href) }}
-        className="inline-flex items-center text-[11px] font-medium tracking-[.16em] uppercase transition-[background] duration-200"
-        style={{ padding: '12px 28px', background: 'var(--ink)', color: 'var(--bg)', borderRadius: '4px' }}
-        onMouseEnter={(e) => (e.currentTarget.style.background = 'var(--gold)')}
-        onMouseLeave={(e) => (e.currentTarget.style.background = 'var(--ink)')}
+        className="inline-flex items-center text-[11px] font-medium tracking-[.16em] uppercase transition-all duration-200"
+        style={{ padding: '12px 28px', background: 'var(--gold)', border: '1px solid var(--gold)', color: 'var(--deep)', borderRadius: '4px' }}
+        onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--gold2)'; e.currentTarget.style.borderColor = 'var(--gold2)' }}
+        onMouseLeave={(e) => { e.currentTarget.style.background = 'var(--gold)'; e.currentTarget.style.borderColor = 'var(--gold)' }}
       >
         {children}
       </a>
@@ -151,15 +186,15 @@ function HeroBtn({
     <a
       href={href}
       onClick={(e) => { e.preventDefault(); scrollTo(href) }}
-      className="inline-flex items-center text-[11px] font-medium tracking-[.16em] uppercase transition-[border-color,color] duration-200"
-      style={{ padding: '11px 28px', border: '1px solid var(--ink4)', color: 'var(--ink2)', borderRadius: '4px' }}
+      className="inline-flex items-center text-[11px] font-medium tracking-[.16em] uppercase transition-all duration-200"
+      style={{ padding: '12px 28px', border: '1px solid rgba(255,255,255,.25)', color: 'var(--ink)', borderRadius: '4px' }}
       onMouseEnter={(e) => {
         e.currentTarget.style.borderColor = 'var(--gold)'
         e.currentTarget.style.color = 'var(--gold)'
       }}
       onMouseLeave={(e) => {
-        e.currentTarget.style.borderColor = 'var(--ink4)'
-        e.currentTarget.style.color = 'var(--ink2)'
+        e.currentTarget.style.borderColor = 'rgba(255,255,255,.25)'
+        e.currentTarget.style.color = 'var(--ink)'
       }}
     >
       {children}

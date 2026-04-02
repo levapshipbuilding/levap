@@ -1,5 +1,7 @@
 'use client'
 
+import Image from 'next/image'
+
 export default function Footer() {
   const scrollTo = (id: string) => {
     if (typeof window === 'undefined') return
@@ -9,25 +11,38 @@ export default function Footer() {
     window.scrollTo({ top: (el as HTMLElement).getBoundingClientRect().top + window.scrollY - 64, behavior: 'smooth' })
   }
 
+  const linkStyle = {
+    fontSize: '13px',
+    color: 'rgba(232,241,255,.4)',
+  }
+  const linkHover = {
+    enter: (e: React.MouseEvent<HTMLAnchorElement>) => (e.currentTarget.style.color = 'rgba(232,241,255,.85)'),
+    leave: (e: React.MouseEvent<HTMLAnchorElement>) => (e.currentTarget.style.color = 'rgba(232,241,255,.4)'),
+  }
+
   return (
-    <footer style={{ background: 'var(--ink)', borderTop: '1px solid var(--line)', paddingTop: 64 }}>
+    <footer style={{ background: 'var(--deep)', borderTop: '1px solid var(--line)', paddingTop: 64 }}>
       <div className="wrap">
-        <div
-          className="foot-cols"
-        >
+        <div className="foot-cols">
           {/* Brand */}
           <div>
             <a
               href="#"
               onClick={(e) => { e.preventDefault(); scrollTo('#') }}
-              className="block mb-3"
-              style={{ fontFamily: 'var(--font-bebas)', fontSize: '24px', letterSpacing: '0.1em', color: 'var(--bg)' }}
+              className="block mb-4"
+              style={{ lineHeight: 0 }}
             >
-              LEVA<em style={{ fontStyle: 'normal', color: 'var(--gold2)' }}>P</em>
+              <Image
+                src="/alneva-logo.png"
+                alt="Alneva"
+                width={100}
+                height={26}
+                style={{ objectFit: 'contain', filter: 'invert(1)', opacity: 0.7 }}
+              />
             </a>
             <p
               className="font-light leading-[1.72] max-w-[210px]"
-              style={{ fontSize: '13px', color: 'rgba(248,247,244,.32)' }}
+              style={{ fontSize: '13px', color: 'rgba(232,241,255,.28)' }}
             >
               Leading marine and offshore engineering across Europe. Based in Turku, Finland.
             </p>
@@ -37,7 +52,7 @@ export default function Footer() {
           <div>
             <h5
               className="mb-4"
-              style={{ fontSize: '9px', fontWeight: 500, letterSpacing: '0.24em', textTransform: 'uppercase', color: 'rgba(248,247,244,.22)' }}
+              style={{ fontSize: '9px', fontWeight: 500, letterSpacing: '0.24em', textTransform: 'uppercase', color: 'rgba(232,241,255,.2)' }}
             >
               Company
             </h5>
@@ -52,9 +67,9 @@ export default function Footer() {
                     href={href}
                     onClick={(e) => { e.preventDefault(); scrollTo(href) }}
                     className="font-light transition-colors duration-200"
-                    style={{ fontSize: '13px', color: 'rgba(248,247,244,.45)' }}
-                    onMouseEnter={(e) => (e.currentTarget.style.color = 'rgba(248,247,244,.88)')}
-                    onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(248,247,244,.45)')}
+                    style={linkStyle}
+                    onMouseEnter={linkHover.enter}
+                    onMouseLeave={linkHover.leave}
                   >
                     {label}
                   </a>
@@ -67,7 +82,7 @@ export default function Footer() {
           <div>
             <h5
               className="mb-4"
-              style={{ fontSize: '9px', fontWeight: 500, letterSpacing: '0.24em', textTransform: 'uppercase', color: 'rgba(248,247,244,.22)' }}
+              style={{ fontSize: '9px', fontWeight: 500, letterSpacing: '0.24em', textTransform: 'uppercase', color: 'rgba(232,241,255,.2)' }}
             >
               Services
             </h5>
@@ -78,9 +93,9 @@ export default function Footer() {
                     href="#services"
                     onClick={(e) => { e.preventDefault(); scrollTo('#services') }}
                     className="font-light transition-colors duration-200"
-                    style={{ fontSize: '13px', color: 'rgba(248,247,244,.45)' }}
-                    onMouseEnter={(e) => (e.currentTarget.style.color = 'rgba(248,247,244,.88)')}
-                    onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(248,247,244,.45)')}
+                    style={linkStyle}
+                    onMouseEnter={linkHover.enter}
+                    onMouseLeave={linkHover.leave}
                   >
                     {s}
                   </a>
@@ -93,42 +108,23 @@ export default function Footer() {
           <div>
             <h5
               className="mb-4"
-              style={{ fontSize: '9px', fontWeight: 500, letterSpacing: '0.24em', textTransform: 'uppercase', color: 'rgba(248,247,244,.22)' }}
+              style={{ fontSize: '9px', fontWeight: 500, letterSpacing: '0.24em', textTransform: 'uppercase', color: 'rgba(232,241,255,.2)' }}
             >
               Contact
             </h5>
             <ul className="list-none flex flex-col gap-[9px]">
               <li>
-                <a
-                  href="tel:+358449536292"
-                  className="font-light transition-colors duration-200"
-                  style={{ fontSize: '13px', color: 'rgba(248,247,244,.45)' }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = 'rgba(248,247,244,.88)')}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(248,247,244,.45)')}
-                >
+                <a href="tel:+358449536292" className="font-light transition-colors duration-200" style={linkStyle} onMouseEnter={linkHover.enter} onMouseLeave={linkHover.leave}>
                   +358 449 536 292
                 </a>
               </li>
               <li>
-                <a
-                  href="mailto:info@levap.fi"
-                  className="font-light transition-colors duration-200"
-                  style={{ fontSize: '13px', color: 'rgba(248,247,244,.45)' }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = 'rgba(248,247,244,.88)')}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(248,247,244,.45)')}
-                >
+                <a href="mailto:info@levap.fi" className="font-light transition-colors duration-200" style={linkStyle} onMouseEnter={linkHover.enter} onMouseLeave={linkHover.leave}>
                   info@levap.fi
                 </a>
               </li>
               <li>
-                <a
-                  href="#contact"
-                  onClick={(e) => { e.preventDefault(); scrollTo('#contact') }}
-                  className="font-light transition-colors duration-200"
-                  style={{ fontSize: '13px', color: 'rgba(248,247,244,.45)' }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = 'rgba(248,247,244,.88)')}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(248,247,244,.45)')}
-                >
+                <a href="#contact" onClick={(e) => { e.preventDefault(); scrollTo('#contact') }} className="font-light transition-colors duration-200" style={linkStyle} onMouseEnter={linkHover.enter} onMouseLeave={linkHover.leave}>
                   Get a quote
                 </a>
               </li>
@@ -140,15 +136,12 @@ export default function Footer() {
       {/* Bar */}
       <div
         className="flex flex-wrap justify-between items-center gap-3 mt-14"
-        style={{
-          borderTop: '1px solid rgba(255,255,255,.06)',
-          padding: '18px var(--px)',
-        }}
+        style={{ padding: '18px var(--px)' }}
       >
-        <span style={{ fontSize: '10px', fontWeight: 400, letterSpacing: '0.1em', color: 'rgba(248,247,244,.22)' }}>
-          © 2025 Levap OY · Reg. 53477472-5 · All rights reserved
+        <span style={{ fontSize: '10px', fontWeight: 400, letterSpacing: '0.1em', color: 'rgba(232,241,255,.18)' }}>
+          © 2026 Alneva OY · Reg. 53477472-5 · All rights reserved
         </span>
-        <span style={{ fontSize: '10px', fontWeight: 400, letterSpacing: '0.1em', color: 'rgba(248,247,244,.22)' }}>
+        <span style={{ fontSize: '10px', fontWeight: 400, letterSpacing: '0.1em', color: 'rgba(232,241,255,.18)' }}>
           Built to last. At sea.
         </span>
       </div>

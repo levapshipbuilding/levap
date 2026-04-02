@@ -77,7 +77,7 @@ export default function Contact() {
   const inputStyle: React.CSSProperties = {
     background: 'transparent',
     border: 'none',
-    borderBottom: '1px solid var(--ink4)',
+    borderBottom: '1px solid rgba(255,255,255,.14)',
     padding: '10px 0',
     fontFamily: 'var(--font-dm-sans)',
     fontSize: '14px',
@@ -110,11 +110,14 @@ export default function Contact() {
             <motion.div className="lbl" variants={up(0.07)} initial="hidden" animate={inView ? 'show' : 'hidden'}>
               Get in touch
             </motion.div>
+            <motion.div variants={up(0.11)} initial="hidden" animate={inView ? 'show' : 'hidden'}>
+              <span className="accent-dash" />
+            </motion.div>
             <motion.h2
               variants={up(0.14)}
               initial="hidden"
               animate={inView ? 'show' : 'hidden'}
-              className="mt-[18px] mb-5"
+              className="mb-5"
               style={{
                 fontFamily: 'var(--font-bebas)',
                 fontSize: 'clamp(50px,6vw,84px)',
@@ -171,6 +174,29 @@ export default function Contact() {
                 </span>
               </ContactDetail>
             </motion.div>
+
+            <motion.div
+              variants={up(0.49)}
+              initial="hidden"
+              animate={inView ? 'show' : 'hidden'}
+              className="flex gap-6 flex-wrap"
+              style={{ marginTop: 32, paddingTop: 24, borderTop: '1px solid var(--line)' }}
+            >
+              {['Reg. 53477472-5', 'Turku, Finland', 'Est. 2017'].map((item) => (
+                <span
+                  key={item}
+                  style={{
+                    fontSize: '9px',
+                    fontWeight: 500,
+                    letterSpacing: '0.22em',
+                    textTransform: 'uppercase',
+                    color: 'var(--ink4)',
+                  }}
+                >
+                  {item}
+                </span>
+              ))}
+            </motion.div>
           </div>
 
           {/* Right – form */}
@@ -178,9 +204,9 @@ export default function Contact() {
             <div
               className="p-8"
               style={{
-                border: '1px solid var(--line)',
+                border: '1px solid rgba(255,255,255,.07)',
                 borderTop: '1px solid var(--lineg)',
-                background: 'var(--bg)',
+                background: 'rgba(255,255,255,.03)',
               }}
             >
               {submitted ? (
@@ -204,7 +230,7 @@ export default function Contact() {
                         value={form.name}
                         onChange={(e) => setForm({ ...form, name: e.target.value })}
                         onFocus={(e) => (e.currentTarget.style.borderBottomColor = 'var(--gold)')}
-                        onBlur={(e) => (e.currentTarget.style.borderBottomColor = 'var(--ink4)')}
+                        onBlur={(e) => (e.currentTarget.style.borderBottomColor = 'rgba(255,255,255,.14)')}
                       />
                     </div>
                     <div className="flex flex-col gap-[6px]">
@@ -216,7 +242,7 @@ export default function Contact() {
                         value={form.company}
                         onChange={(e) => setForm({ ...form, company: e.target.value })}
                         onFocus={(e) => (e.currentTarget.style.borderBottomColor = 'var(--gold)')}
-                        onBlur={(e) => (e.currentTarget.style.borderBottomColor = 'var(--ink4)')}
+                        onBlur={(e) => (e.currentTarget.style.borderBottomColor = 'rgba(255,255,255,.14)')}
                       />
                     </div>
                   </div>
@@ -233,7 +259,7 @@ export default function Contact() {
                         value={form.email}
                         onChange={(e) => setForm({ ...form, email: e.target.value })}
                         onFocus={(e) => (e.currentTarget.style.borderBottomColor = 'var(--gold)')}
-                        onBlur={(e) => (e.currentTarget.style.borderBottomColor = 'var(--ink4)')}
+                        onBlur={(e) => (e.currentTarget.style.borderBottomColor = 'rgba(255,255,255,.14)')}
                       />
                     </div>
                     <div className="flex flex-col gap-[6px]">
@@ -245,7 +271,7 @@ export default function Contact() {
                         value={form.phone}
                         onChange={(e) => setForm({ ...form, phone: e.target.value })}
                         onFocus={(e) => (e.currentTarget.style.borderBottomColor = 'var(--gold)')}
-                        onBlur={(e) => (e.currentTarget.style.borderBottomColor = 'var(--ink4)')}
+                        onBlur={(e) => (e.currentTarget.style.borderBottomColor = 'rgba(255,255,255,.14)')}
                       />
                     </div>
                   </div>
@@ -259,7 +285,7 @@ export default function Contact() {
                         cursor: 'pointer',
                         appearance: 'none',
                         WebkitAppearance: 'none',
-                        backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23C8C6BE' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E")`,
+                        backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23ffffff' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E")`,
                         backgroundRepeat: 'no-repeat',
                         backgroundPosition: 'right 4px center',
                         paddingRight: '22px',
@@ -267,7 +293,7 @@ export default function Contact() {
                       value={form.scope}
                       onChange={(e) => setForm({ ...form, scope: e.target.value })}
                       onFocus={(e) => (e.currentTarget.style.borderBottomColor = 'var(--gold)')}
-                      onBlur={(e) => (e.currentTarget.style.borderBottomColor = 'var(--ink4)')}
+                      onBlur={(e) => (e.currentTarget.style.borderBottomColor = 'rgba(255,255,255,.14)')}
                     >
                       <option value="">Select scope…</option>
                       <option>Piping installation</option>
@@ -290,7 +316,7 @@ export default function Contact() {
                       value={form.message}
                       onChange={(e) => setForm({ ...form, message: e.target.value })}
                       onFocus={(e) => (e.currentTarget.style.borderBottomColor = 'var(--gold)')}
-                      onBlur={(e) => (e.currentTarget.style.borderBottomColor = 'var(--ink4)')}
+                      onBlur={(e) => (e.currentTarget.style.borderBottomColor = 'rgba(255,255,255,.14)')}
                     />
                   </div>
 

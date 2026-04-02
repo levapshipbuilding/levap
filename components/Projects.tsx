@@ -4,12 +4,12 @@ import { useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
 
 const projects = [
-  { i: '01', name: 'Icon of the Seas',    yard: 'Meyer Turku Shipyard',        tag: 'Piping & Steel'    },
-  { i: '02', name: 'Mein Schiff 7',       yard: 'Meyer Turku Shipyard',        tag: 'Interior & HVAC'  },
-  { i: '03', name: 'Ritz-Carlton Ilma',   yard: "Chantiers de l'Atlantique",   tag: 'Full refit'       },
-  { i: '04', name: 'MSC World America',   yard: "Chantiers de l'Atlantique",   tag: 'Piping'           },
-  { i: '05', name: 'MyStar',              yard: 'Tallink',                     tag: 'Steel & outfitting'},
-  { i: '06', name: 'Aurora Botnia',       yard: 'Tallink',                     tag: 'Manning'          },
+  { i: '01', name: 'Icon of the Seas',    yard: 'Meyer Turku Shipyard',        tag: 'Piping & Steel',     year: '2024' },
+  { i: '02', name: 'Mein Schiff 7',       yard: 'Meyer Turku Shipyard',        tag: 'Interior & HVAC',   year: '2024' },
+  { i: '03', name: 'Ritz-Carlton Ilma',   yard: "Chantiers de l'Atlantique",   tag: 'Full refit',         year: '2023' },
+  { i: '04', name: 'MSC World America',   yard: "Chantiers de l'Atlantique",   tag: 'Piping',             year: '2023' },
+  { i: '05', name: 'MyStar',              yard: 'Tallink',                     tag: 'Steel & outfitting', year: '2022' },
+  { i: '06', name: 'Aurora Botnia',       yard: 'Tallink',                     tag: 'Manning',            year: '2022' },
 ]
 
 function ProjectRow({
@@ -23,10 +23,12 @@ function ProjectRow({
 
   return (
     <li
-      className="prow-layout py-[26px] cursor-default transition-opacity duration-200"
+      className="prow-layout py-[26px] cursor-default"
       style={{
         borderBottom: '1px solid rgba(255,255,255,.07)',
-        opacity: listHovered ? (hovered ? 1 : 0.45) : 1,
+        boxShadow: hovered ? 'inset 3px 0 0 var(--gold)' : 'inset 3px 0 0 transparent',
+        opacity: listHovered ? (hovered ? 1 : 0.4) : 1,
+        transition: 'opacity .2s, box-shadow .28s cubic-bezier(0.16,1,0.3,1)',
       }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
@@ -35,9 +37,9 @@ function ProjectRow({
         className="prow-num text-right"
         style={{
           fontFamily: 'var(--font-bebas)',
-          fontSize: '11px',
+          fontSize: '14px',
           letterSpacing: '0.1em',
-          color: 'rgba(255,255,255,.2)',
+          color: 'rgba(255,255,255,.22)',
         }}
       >
         {p.i}
@@ -46,9 +48,9 @@ function ProjectRow({
         className="prow-name leading-none overflow-hidden text-ellipsis whitespace-nowrap transition-colors duration-[.22s]"
         style={{
           fontFamily: 'var(--font-bebas)',
-          fontSize: 'clamp(22px,2.4vw,30px)',
+          fontSize: 'clamp(24px, 3vw, 40px)',
           letterSpacing: '0.04em',
-          color: hovered ? 'var(--gold2)' : 'var(--bg)',
+          color: hovered ? 'var(--gold2)' : 'var(--ink)',
         }}
       >
         {p.name}
@@ -64,6 +66,18 @@ function ProjectRow({
         }}
       >
         {p.yard}
+      </span>
+      <span
+        className="prow-year whitespace-nowrap"
+        style={{
+          fontFamily: 'var(--font-bebas)',
+          fontSize: '16px',
+          letterSpacing: '0.08em',
+          color: hovered ? 'rgba(184,140,58,.6)' : 'rgba(255,255,255,.18)',
+          transition: 'color .22s',
+        }}
+      >
+        {p.year}
       </span>
       <span
         className="prow-tag whitespace-nowrap px-[14px] py-[6px] transition-[color,border-color] duration-[.22s]"
@@ -91,7 +105,7 @@ export default function Projects() {
     <section
       id="projects"
       className="py-[120px]"
-      style={{ background: 'var(--ink)', borderTop: '1px solid var(--line)' }}
+      style={{ background: 'var(--deep)', borderTop: '1px solid var(--line)' }}
       ref={ref}
     >
       <div className="wrap">
@@ -112,19 +126,19 @@ export default function Projects() {
               fontWeight: 500,
               letterSpacing: '0.24em',
               textTransform: 'uppercase',
-              color: 'rgba(154,116,40,.6)',
+              color: 'var(--gold)',
             }}
           >
             Portfolio
           </div>
+          <span className="accent-dash" />
           <h2
-            className="mt-[18px]"
             style={{
               fontFamily: 'var(--font-bebas)',
               fontSize: 'clamp(50px,6vw,84px)',
               lineHeight: '0.88',
               letterSpacing: '0.025em',
-              color: 'var(--bg)',
+              color: 'var(--ink)',
             }}
           >
             THE WORK<br />
