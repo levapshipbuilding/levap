@@ -107,46 +107,35 @@ export default function Projects() {
           }}
           initial="hidden"
           animate={inView ? 'show' : 'hidden'}
-          className="grid gap-10 items-end pb-10"
+          className="pb-10"
           style={{
-            gridTemplateColumns: '1fr 1fr',
             borderBottom: '1px solid rgba(255,255,255,.08)',
           }}
         >
-          <div>
-            <div
-              className="inline-flex items-center gap-[10px]"
-              style={{
-                fontSize: '10px',
-                fontWeight: 500,
-                letterSpacing: '0.24em',
-                textTransform: 'uppercase',
-                color: 'rgba(154,116,40,.6)',
-              }}
-            >
-              <span style={{ width: '20px', height: '1px', background: 'rgba(154,116,40,.4)', flexShrink: 0, display: 'inline-block' }} />
-              Portfolio
-            </div>
-            <h2
-              className="mt-[18px]"
-              style={{
-                fontFamily: 'var(--font-bebas)',
-                fontSize: 'clamp(50px,6vw,84px)',
-                lineHeight: '0.88',
-                letterSpacing: '0.025em',
-                color: 'var(--bg)',
-              }}
-            >
-              THE WORK<br />
-              <em style={{ color: 'var(--gold2)', fontStyle: 'normal' }}>SPEAKS.</em>
-            </h2>
-          </div>
-          <p
-            className="font-light leading-[1.72] self-end"
-            style={{ fontSize: '14px', color: 'rgba(248,247,244,.35)' }}
+          <div
+            style={{
+              fontSize: '10px',
+              fontWeight: 500,
+              letterSpacing: '0.24em',
+              textTransform: 'uppercase',
+              color: 'rgba(154,116,40,.6)',
+            }}
           >
-            Selected projects. Every name on this list is a reference you can call.
-          </p>
+            Portfolio
+          </div>
+          <h2
+            className="mt-[18px]"
+            style={{
+              fontFamily: 'var(--font-bebas)',
+              fontSize: 'clamp(50px,6vw,84px)',
+              lineHeight: '0.88',
+              letterSpacing: '0.025em',
+              color: 'var(--bg)',
+            }}
+          >
+            THE WORK<br />
+            <em style={{ color: 'var(--gold2)', fontStyle: 'normal' }}>SPEAKS.</em>
+          </h2>
         </motion.div>
 
         {/* List */}

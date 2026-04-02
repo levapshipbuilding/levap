@@ -23,23 +23,12 @@ export default function Hero() {
         className="relative z-[2] flex flex-1 flex-col justify-center"
         style={{ padding: '80px var(--px) 48px', maxWidth: 'var(--max)', width: '100%', margin: '0 auto' }}
       >
-        {/* Tag */}
-        <motion.div
-          className="mb-8"
-          variants={up}
-          initial="hidden"
-          animate="show"
-          custom={0.05}
-        >
-          <span className="lbl">Marine &amp; Offshore Engineering — Finland</span>
-        </motion.div>
-
         {/* H1 */}
         <motion.h1
           variants={up}
           initial="hidden"
           animate="show"
-          custom={0.18}
+          custom={0.1}
           style={{
             fontFamily: 'var(--font-bebas)',
             fontSize: 'clamp(80px,12vw,172px)',
@@ -51,33 +40,36 @@ export default function Hero() {
         >
           WE BUILD<br />
           <span style={{ color: 'var(--gold)' }}>SHIPS.</span><br />
-          <span
-            style={{
-              WebkitTextStroke: '1.5px var(--ink4)',
-              color: 'transparent',
-            }}
-          >
-            WE KEEP
-          </span><br />
+          <span style={{ WebkitTextStroke: '1.5px var(--ink4)', color: 'transparent' }}>WE KEEP</span><br />
           THEM RUNNING.
         </motion.h1>
 
-        {/* Bottom row */}
+        {/* Tag + subtitle + CTA */}
         <motion.div
           variants={up}
           initial="hidden"
           animate="show"
-          custom={0.42}
-          className="flex flex-wrap items-end justify-between gap-10 mt-12 pt-10"
-          style={{ borderTop: '1px solid var(--line)' }}
+          custom={0.32}
+          className="mt-10 flex flex-col gap-4"
         >
+          <span
+            style={{
+              fontSize: '10px',
+              fontWeight: 500,
+              letterSpacing: '0.24em',
+              textTransform: 'uppercase',
+              color: 'var(--gold)',
+            }}
+          >
+            Marine &amp; Offshore Engineering — Finland
+          </span>
           <p
-            className="font-light leading-[1.72] max-w-[380px]"
-            style={{ fontSize: '15px', color: 'var(--ink2)' }}
+            className="font-light leading-[1.72]"
+            style={{ fontSize: '15px', color: 'var(--ink2)', maxWidth: '480px' }}
           >
             Refit, piping, steel, HVAC and interior — delivered on schedule at Europe&apos;s most demanding shipyards.
           </p>
-          <div className="flex gap-[10px] items-center flex-shrink-0 flex-wrap">
+          <div className="flex gap-[10px] items-center flex-wrap mt-2">
             <HeroBtn href="#projects" dark>See our work</HeroBtn>
             <HeroBtn href="#contact">Request a quote</HeroBtn>
           </div>

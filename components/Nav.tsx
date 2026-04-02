@@ -57,16 +57,14 @@ export default function Nav() {
 
       {/* Nav bar */}
       <nav
-        className="fixed top-0 left-0 right-0 z-[800] flex h-16 items-center justify-between transition-[background,border-color] duration-300"
+        className="fixed top-0 left-0 right-0 z-[800] flex h-16 items-center justify-between transition-[background] duration-300"
         style={{
           padding: '0 var(--px)',
-          borderBottom: '1px solid transparent',
           ...(scrolled
             ? {
                 background: 'rgba(248,247,244,.96)',
                 backdropFilter: 'blur(16px)',
                 WebkitBackdropFilter: 'blur(16px)',
-                borderColor: 'var(--line)',
               }
             : {}),
         }}

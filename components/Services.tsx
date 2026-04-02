@@ -99,35 +99,26 @@ export default function Services() {
           }}
           initial="hidden"
           animate={inView ? 'show' : 'hidden'}
-          className="grid gap-10 items-end pb-10"
+          className="pb-10"
           style={{
-            gridTemplateColumns: '1fr 1fr',
             borderBottom: '1px solid var(--line)',
             marginBottom: '1px',
           }}
         >
-          <div>
-            <div className="lbl">What we do</div>
-            <h2
-              className="mt-[18px]"
-              style={{
-                fontFamily: 'var(--font-bebas)',
-                fontSize: 'clamp(50px,6vw,84px)',
-                lineHeight: '0.88',
-                letterSpacing: '0.025em',
-                color: 'var(--ink)',
-              }}
-            >
-              SIX DISCIPLINES.<br />
-              <em style={{ color: 'var(--gold)', fontStyle: 'normal' }}>ONE CREW.</em>
-            </h2>
-          </div>
-          <p
-            className="font-light leading-[1.72] self-end"
-            style={{ fontSize: '14px', color: 'var(--ink3)' }}
+          <div className="lbl">What we do</div>
+          <h2
+            className="mt-[18px]"
+            style={{
+              fontFamily: 'var(--font-bebas)',
+              fontSize: 'clamp(50px,6vw,84px)',
+              lineHeight: '0.88',
+              letterSpacing: '0.025em',
+              color: 'var(--ink)',
+            }}
           >
-            Executed with the precision applied on the world&apos;s biggest ships.
-          </p>
+            SIX DISCIPLINES.<br />
+            <em style={{ color: 'var(--gold)', fontStyle: 'normal' }}>ONE CREW.</em>
+          </h2>
         </motion.div>
 
         {/* Grid */}
