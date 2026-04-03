@@ -127,6 +127,7 @@ export default function Services() {
           initial="hidden"
           animate={inView ? 'show' : 'hidden'}
           className="mb-2"
+          style={{ marginBottom: 8 }}
         >
           <div className="lbl">What we do</div>
         </motion.div>

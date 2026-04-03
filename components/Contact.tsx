@@ -80,7 +80,7 @@ export default function Contact() {
     borderBottom: '1px solid var(--line)',
     padding: '10px 0',
     fontFamily: 'var(--font-body)',
-    fontSize: '14px',
+    fontSize: '16px',
     fontWeight: 400,
     color: 'var(--ink)',
     outline: 'none',
@@ -178,7 +178,7 @@ export default function Contact() {
               initial="hidden"
               animate={inView ? 'show' : 'hidden'}
               className="flex gap-6 flex-wrap"
-              style={{ marginTop: 28, paddingTop: 20, borderTop: '1px solid var(--line)' }}
+              style={{ marginTop: 28 }}
             >
               {['Reg. 53477472-5', 'Turku, Finland', 'Est. 2017'].map((item) => (
                 <span
@@ -299,7 +299,7 @@ export default function Contact() {
                     <label style={labelStyle}>Project details</label>
                     <textarea
                       placeholder="Vessel type, yard, timeline — any context helps us respond faster."
-                      style={{ ...inputStyle, resize: 'vertical', minHeight: '100px' }}
+                      style={{ ...inputStyle, resize: 'vertical', minHeight: '100px', borderBottom: 'none' }}
                       value={form.message}
                       onChange={(e) => setForm({ ...form, message: e.target.value })}
                       onFocus={(e) => (e.currentTarget.style.borderBottomColor = 'var(--gold)')}
@@ -309,7 +309,7 @@ export default function Contact() {
 
                   <button
                     type="submit"
-                    className="mt-[6px] self-start inline-flex items-center gap-[10px] cursor-pointer transition-[background,color] duration-[.22s]"
+                    className="mt-[6px] w-full inline-flex items-center justify-center gap-[10px] cursor-pointer transition-[background,color] duration-[.22s] sm:w-auto sm:self-start"
                     style={{
                       padding: '13px 28px',
                       background: 'var(--gold)',

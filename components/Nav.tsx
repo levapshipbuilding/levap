@@ -183,7 +183,7 @@ export default function Nav() {
             aria-label="Menu"
           >
             <span className="block w-5" style={{ height: '2px', background: '#fff' }} />
-            <span className="block" style={{ height: '2px', background: '#fff', width: '14px' }} />
+            <span className="block w-5" style={{ height: '2px', background: '#fff' }} />
             <span className="block w-5" style={{ height: '2px', background: '#fff' }} />
           </button>
         </div>
