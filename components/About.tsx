@@ -25,7 +25,7 @@ export default function About() {
     >
       <div className="wrap">
         <motion.div variants={up(0.07)} initial="hidden" animate={inView ? 'show' : 'hidden'} style={{ marginBottom: '16px' }}>
-          <div className="lbl">About Levap</div>
+          <div className="lbl">About Alneva</div>
         </motion.div>
 
         <div className="about-grid">
@@ -52,7 +52,7 @@ export default function About() {
           {/* Right */}
           <div className="about-right-col">
             {([
-              <>Levap operates at the sharp end of marine engineering - where deadlines are tight, tolerances are tighter, and the margin for error is <strong style={{ color: 'var(--ink)', fontWeight: 700 }}>zero</strong>.</>,
+              <>Alneva operates at the sharp end of marine engineering - where deadlines are tight, tolerances are tighter, and the margin for error is <strong style={{ color: 'var(--ink)', fontWeight: 700 }}>zero</strong>.</>,
               <>We&apos;ve delivered for Meyer Turku, Chantiers de l&apos;Atlantique, and Tallink. That&apos;s not a credential. That&apos;s a standard.</>,
               <>Based in Turku, Finland. Operating across Germany, Netherlands, France and Sweden.</>,
             ] as React.ReactNode[]).map((txt, i) => (

@@ -47,7 +47,7 @@ export default function Nav() {
             >
               <Image
                 src="/levap-logo.png"
-                alt="Levap"
+                alt="Alneva"
                 width={148}
                 height={38}
                 style={{ objectFit: 'contain', objectPosition: 'left center', opacity: 0.95 }}
@@ -87,15 +87,30 @@ export default function Nav() {
           </div>
 
           <div style={{ padding: '24px var(--px) 32px' }}>
-            <div style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.24em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: 10 }}>
-              Get in touch
-            </div>
+            <a
+              href="#contact"
+              onClick={(e) => { e.preventDefault(); scrollTo('#contact') }}
+              className="flex items-center justify-center transition-all duration-200"
+              style={{
+                padding: '14px 0',
+                border: '2px solid rgba(255,255,255,.4)',
+                color: '#fff',
+                background: 'transparent',
+                borderRadius: '6px',
+                fontSize: '11px',
+                fontWeight: 700,
+                letterSpacing: '0.14em',
+                textTransform: 'uppercase',
+                marginBottom: 20,
+                width: '100%',
+              }}
+            >
+              Request a quote
+            </a>
             <a
               href="tel:+358449536292"
               className="block transition-colors duration-200"
               style={{ fontSize: '13px', color: 'rgba(255,255,255,.4)', marginBottom: 6 }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,.9)')}
-              onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,.4)')}
             >
               +358 449 536 292
             </a>
@@ -103,8 +118,6 @@ export default function Nav() {
               href="mailto:info@levap.fi"
               className="block transition-colors duration-200"
               style={{ fontSize: '13px', color: 'rgba(255,255,255,.4)' }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,.9)')}
-              onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,.4)')}
             >
               info@levap.fi
             </a>
@@ -132,7 +145,7 @@ export default function Nav() {
           >
             <Image
               src="/levap-logo.png"
-              alt="Levap"
+              alt="Alneva"
               width={148}
               height={38}
               style={{ objectFit: 'contain', objectPosition: 'left center', opacity: 0.95 }}

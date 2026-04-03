@@ -34,7 +34,7 @@ export default function Footer() {
             >
               <Image
                 src="/levap-logo.png"
-                alt="Levap"
+                alt="Alneva"
                 width={148}
                 height={38}
                 style={{ objectFit: 'contain', objectPosition: 'left center', opacity: 1 }}
