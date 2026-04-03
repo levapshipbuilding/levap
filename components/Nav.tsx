@@ -33,11 +33,11 @@ export default function Nav() {
       {mobOpen && (
         <div
           className="fixed inset-0 z-[900] flex flex-col"
-          style={{ background: 'var(--bg)' }}
+          style={{ background: '#0C0C0C' }}
         >
           <div
             className="wrap flex items-center justify-between flex-shrink-0"
-            style={{ height: 64, borderBottom: '1px solid var(--line)' }}
+            style={{ height: 64, borderBottom: '1px solid rgba(255,255,255,.08)' }}
           >
             <a
               href="#"
@@ -50,13 +50,13 @@ export default function Nav() {
                 alt="Levap"
                 width={148}
                 height={38}
-                style={{ objectFit: 'contain', objectPosition: 'left center', opacity: 0.95, filter: 'invert(1)' }}
+                style={{ objectFit: 'contain', objectPosition: 'left center', opacity: 0.95 }}
               />
             </a>
             <button
               onClick={() => setMobOpen(false)}
               aria-label="Close menu"
-              style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--ink3)', fontSize: '20px', lineHeight: 1 }}
+              style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'rgba(255,255,255,.5)', fontSize: '20px', lineHeight: 1 }}
             >
               ✕
             </button>
@@ -74,37 +74,37 @@ export default function Nav() {
                   fontSize: 'clamp(40px, 10vw, 56px)',
                   letterSpacing: '0.06em',
                   lineHeight: '1',
-                  color: 'var(--ink)',
+                  color: 'rgba(255,255,255,.85)',
                   padding: '18px 0',
-                  borderBottom: '1px solid var(--line)',
+                  borderBottom: '1px solid rgba(255,255,255,.06)',
                 }}
                 onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--gold)')}
-                onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--ink)')}
+                onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,.85)')}
               >
                 {href.replace('#', '')}
               </a>
             ))}
           </div>
 
-          <div style={{ padding: '24px var(--px) 32px', borderTop: '1px solid var(--line)' }}>
+          <div style={{ padding: '24px var(--px) 32px', borderTop: '1px solid rgba(255,255,255,.06)' }}>
             <div style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.24em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: 10 }}>
               Get in touch
             </div>
             <a
               href="tel:+358449536292"
               className="block transition-colors duration-200"
-              style={{ fontSize: '13px', color: 'var(--ink3)', marginBottom: 6 }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--ink)')}
-              onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--ink3)')}
+              style={{ fontSize: '13px', color: 'rgba(255,255,255,.4)', marginBottom: 6 }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,.9)')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,.4)')}
             >
               +358 449 536 292
             </a>
             <a
               href="mailto:info@levap.fi"
               className="block transition-colors duration-200"
-              style={{ fontSize: '13px', color: 'var(--ink3)' }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--ink)')}
-              onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--ink3)')}
+              style={{ fontSize: '13px', color: 'rgba(255,255,255,.4)' }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,.9)')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,.4)')}
             >
               info@levap.fi
             </a>
