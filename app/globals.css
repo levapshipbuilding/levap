@@ -63,7 +63,7 @@ button { font-family: inherit; }
 /* Service rows */
 .svc-row {
   display: grid;
-  grid-template-columns: 48px 1fr auto;
+  grid-template-columns: 48px 1fr;
   column-gap: 24px;
   align-items: center;
   padding: 20px 0 20px 16px;
@@ -160,7 +160,7 @@ button { font-family: inherit; }
   .r-form-row { grid-template-columns: 1fr; }
   .about-grid { grid-template-columns: 1fr; }
   .about-right-col { border-left: none; padding-left: 0; padding-top: 8px; }
-  .svc-row { grid-template-columns: 36px 1fr auto; column-gap: 12px; padding-left: 12px; }
+  .svc-row { grid-template-columns: 36px 1fr; column-gap: 12px; padding-left: 12px; }
   .svc-row-desc { padding-left: 48px; padding-right: 16px; }
   .prow-layout { grid-template-columns: 1fr auto; column-gap: 16px; }
   .prow-num { display: none; }

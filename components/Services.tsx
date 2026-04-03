@@ -94,23 +94,6 @@ function ServiceRow({
       >
         {s.name}
       </h3>
-      <motion.span
-        aria-hidden
-        className="svc-row-chevron"
-        animate={{ rotate: isOpen ? 180 : 0 }}
-        transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-        style={{
-          fontFamily: 'var(--font-bebas)',
-          fontSize: '20px',
-          color: 'var(--gold)',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          userSelect: 'none',
-        }}
-      >
-        &#x25BE;
-      </motion.span>
       <AnimatePresence initial={false}>
         {isOpen && (
           <motion.div
