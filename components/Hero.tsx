@@ -63,13 +63,13 @@ export default function Hero() {
           <p
             style={{ fontSize: '15px', fontWeight: 400, color: 'rgba(220,225,230,.85)', maxWidth: '440px', lineHeight: '1.6' }}
           >
-            Refit, piping, steel, HVAC and interior — delivered on schedule at Europe&apos;s most demanding shipyards.
+            Refit, piping, steel, HVAC and interior - delivered on schedule at Europe&apos;s most demanding shipyards.
           </p>
           <div
             className="lbl"
             style={{ color: 'rgba(255,255,255,.45)', fontSize: '10px', letterSpacing: '0.24em' }}
           >
-            Marine &amp; Offshore Engineering — Finland
+            Marine &amp; Offshore Engineering - Finland
           </div>
           <span
             style={{

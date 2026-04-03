@@ -7,7 +7,7 @@ const services = [
   {
     n: '01',
     name: 'Piping Installation & Maintenance',
-    desc: "Complex systems, clean installs. Full piping scopes from routing to pressure testing — with crews who've done it on the world's biggest ships.",
+    desc: "Complex systems, clean installs. Full piping scopes from routing to pressure testing - with crews who've done it on the world's biggest ships.",
   },
   {
     n: '02',
@@ -27,12 +27,12 @@ const services = [
   {
     n: '05',
     name: 'Interior Installation & Maintenance',
-    desc: 'From crew quarters to passenger areas — joinery, panels, flooring. We turn raw steel into spaces people want to be in.',
+    desc: 'From crew quarters to passenger areas - joinery, panels, flooring. We turn raw steel into spaces people want to be in.',
   },
   {
     n: '06',
     name: 'Manning & Workforce Solutions',
-    desc: 'Skilled hands on short notice. Pre-vetted welders, fitters and pipe engineers — ready to integrate with your team from day one.',
+    desc: 'Skilled hands on short notice. Pre-vetted welders, fitters and pipe engineers - ready to integrate with your team from day one.',
   },
 ]
 

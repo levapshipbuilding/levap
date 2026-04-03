@@ -134,7 +134,7 @@ export default function Contact() {
               className="leading-[1.7] mb-8 max-w-[360px]"
               style={{ fontSize: '14px', color: 'var(--ink2)' }}
             >
-              Tell us about your project — yard, vessel type, timeline, scope. We&apos;ll come back with a concrete plan, not a brochure.
+              Tell us about your project - yard, vessel type, timeline, scope. We&apos;ll come back with a concrete plan, not a brochure.
             </motion.p>
 
             <motion.div variants={up(0.26)} initial="hidden" animate={inView ? 'show' : 'hidden'}>
@@ -197,7 +197,7 @@ export default function Contact() {
             </motion.div>
           </div>
 
-          {/* Right – form */}
+          {/* Right - form */}
           <motion.div variants={up(0.14)} initial="hidden" animate={inView ? 'show' : 'hidden'} style={{ paddingTop: 6 }}>
             <div>
               {submitted ? (
@@ -205,7 +205,7 @@ export default function Contact() {
                   className="leading-[1.7]"
                   style={{ fontSize: '15px', color: 'var(--ink2)', padding: '40px 0' }}
                 >
-                  Thank you — we&apos;ll be in touch shortly.
+                  Thank you - we&apos;ll be in touch shortly.
                 </p>
               ) : (
                 <form className="flex flex-col gap-[14px]" onSubmit={handleSubmit}>
@@ -298,7 +298,7 @@ export default function Contact() {
                   <div className="flex flex-col gap-[6px]">
                     <label style={labelStyle}>Project details</label>
                     <textarea
-                      placeholder="Vessel type, yard, timeline — any context helps us respond faster."
+                      placeholder="Vessel type, yard, timeline - any context helps us respond faster."
                       style={{ ...inputStyle, resize: 'vertical', minHeight: '100px', borderBottom: 'none' }}
                       value={form.message}
                       onChange={(e) => setForm({ ...form, message: e.target.value })}
