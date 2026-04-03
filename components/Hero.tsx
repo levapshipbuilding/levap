@@ -15,7 +15,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative flex min-h-[100svh] flex-col overflow-hidden pt-16 hero-bg"
+      className="relative flex min-h-[110svh] flex-col overflow-hidden pt-16 hero-bg"
     >
       {/* Left-to-right gradient */}
       <div className="absolute inset-0 z-[1]" style={{ background: 'linear-gradient(to right, rgba(4,4,4,0.88) 0%, rgba(4,4,4,0.55) 45%, rgba(4,4,4,0.15) 100%)' }} />
@@ -79,49 +79,6 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* Stats strip */}
-      <div
-        className="relative z-[2]"
-        style={{
-          borderTop: '1px solid rgba(255,255,255,.1)',
-          background: 'rgba(15,27,45,0.92)',
-          backdropFilter: 'blur(20px)',
-          WebkitBackdropFilter: 'blur(20px)',
-        }}
-      >
-        <div className="hero-stats-grid">
-          {[
-            { n: '8', sup: '+', l: 'Years experience' },
-            { n: '6', sup: '',  l: 'Countries active' },
-            { n: '10', sup: '+', l: 'Major vessels' },
-            { n: '500', sup: '+', l: 'Workers deployed' },
-          ].map((s, i) => (
-            <div
-              key={i}
-              className="hero-stat py-[18px]"
-              style={{
-                paddingLeft: i === 0 ? 0 : '24px',
-                borderRight: i < 3 ? '1px solid rgba(255,255,255,.1)' : 'none',
-                textAlign: 'center',
-              }}
-            >
-              <span
-                className="block leading-none stat-num"
-                style={{ fontFamily: 'var(--font-bebas)', fontSize: '64px', letterSpacing: '0.02em', color: '#FFFFFF' }}
-              >
-                {s.n}
-                {s.sup && <b style={{ color: '#FFFFFF' }}>{s.sup}</b>}
-              </span>
-              <span
-                className="block mt-[4px]"
-                style={{ fontSize: '10px', fontWeight: 700, letterSpacing: '0.22em', textTransform: 'uppercase', color: 'rgba(255,255,255,.35)' }}
-              >
-                {s.l}
-              </span>
-            </div>
-          ))}
-        </div>
-      </div>
     </section>
   )
 }

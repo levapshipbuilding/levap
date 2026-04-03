@@ -1,7 +1,7 @@
 'use client'
 
 import { useRef, useState } from 'react'
-import { motion, useInView } from 'framer-motion'
+import { motion, useInView, AnimatePresence } from 'framer-motion'
 
 const services = [
   {
@@ -36,8 +36,21 @@ const services = [
   },
 ]
 
-function ServiceRow({ s, delay, inView }: { s: typeof services[0]; delay: number; inView: boolean }) {
+function ServiceRow({
+  s,
+  delay,
+  inView,
+  isOpen,
+  onToggle,
+}: {
+  s: typeof services[0]
+  delay: number
+  inView: boolean
+  isOpen: boolean
+  onToggle: () => void
+}) {
   const [hovered, setHovered] = useState(false)
+  const active = isOpen || hovered
 
   return (
     <motion.div
@@ -48,9 +61,10 @@ function ServiceRow({ s, delay, inView }: { s: typeof services[0]; delay: number
       initial="hidden"
       animate={inView ? 'show' : 'hidden'}
       className="svc-row"
-      style={{ background: hovered ? 'var(--s1)' : 'transparent', transition: 'background .22s' }}
+      style={{ background: active ? 'var(--s1)' : 'transparent', transition: 'background .22s', cursor: 'pointer' }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
+      onClick={onToggle}
     >
       <span
         className="svc-row-num"
@@ -58,7 +72,7 @@ function ServiceRow({ s, delay, inView }: { s: typeof services[0]; delay: number
           fontFamily: 'var(--font-bebas)',
           fontSize: '20px',
           letterSpacing: '0.06em',
-          color: hovered ? 'var(--gold)' : 'var(--ink4)',
+          color: active ? 'var(--gold)' : 'var(--ink4)',
           transition: 'color .22s',
           paddingTop: '2px',
           display: 'block',
@@ -73,36 +87,49 @@ function ServiceRow({ s, delay, inView }: { s: typeof services[0]; delay: number
           fontSize: 'clamp(22px, 2.6vw, 34px)',
           letterSpacing: '0.04em',
           lineHeight: '1.1',
-          color: hovered ? 'var(--gold)' : 'var(--ink)',
+          color: active ? 'var(--gold)' : 'var(--ink)',
           fontWeight: 400,
           transition: 'color .22s',
         }}
       >
         {s.name}
       </h3>
-      <p
-        className="svc-row-desc leading-[1.7]"
-        style={{ fontSize: '13px', color: 'var(--ink3)', fontWeight: 400 }}
-      >
-        {s.desc}
-      </p>
-      <span
+      <motion.span
         aria-hidden
+        className="svc-row-chevron"
+        animate={{ rotate: isOpen ? 180 : 0 }}
+        transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
         style={{
-          position: 'absolute',
-          right: 20,
-          top: '50%',
-          transform: 'translateY(-50%)',
           fontFamily: 'var(--font-bebas)',
           fontSize: '20px',
           color: 'var(--gold)',
-          opacity: hovered ? 1 : 0,
-          transition: 'opacity .22s',
-          pointerEvents: 'none',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          userSelect: 'none',
         }}
       >
-        →
-      </span>
+        &#x25BE;
+      </motion.span>
+      <AnimatePresence initial={false}>
+        {isOpen && (
+          <motion.div
+            className="svc-row-desc"
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+            style={{ overflow: 'hidden' }}
+          >
+            <p
+              className="leading-[1.7]"
+              style={{ fontSize: '13px', color: 'var(--ink3)', fontWeight: 400, paddingTop: 12, paddingBottom: 4 }}
+            >
+              {s.desc}
+            </p>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.div>
   )
 }
@@ -110,6 +137,7 @@ function ServiceRow({ s, delay, inView }: { s: typeof services[0]; delay: number
 export default function Services() {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '0px 0px -10px 0px' })
+  const [openIndex, setOpenIndex] = useState<number | null>(null)
 
   return (
     <section
@@ -133,7 +161,14 @@ export default function Services() {
 
         <div className="svc-list" style={{ marginTop: 16 }}>
           {services.map((s, i) => (
-            <ServiceRow key={s.n} s={s} delay={0.07 * (i + 1)} inView={inView} />
+            <ServiceRow
+              key={s.n}
+              s={s}
+              delay={0.07 * (i + 1)}
+              inView={inView}
+              isOpen={openIndex === i}
+              onToggle={() => setOpenIndex(openIndex === i ? null : i)}
+            />
           ))}
         </div>
       </div>

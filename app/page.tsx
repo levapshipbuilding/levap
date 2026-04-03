@@ -1,6 +1,7 @@
 import Nav from '@/components/Nav'
 import Hero from '@/components/Hero'
 import About from '@/components/About'
+import StatsBar from '@/components/StatsBar'
 import Services from '@/components/Services'
 import ShipAerial from '@/components/ShipAerial'
 import Projects from '@/components/Projects'
@@ -14,6 +15,7 @@ export default function Home() {
       <main>
         <Hero />
         <About />
+        <StatsBar />
         <Services />
         <ShipAerial />
         <Projects />
