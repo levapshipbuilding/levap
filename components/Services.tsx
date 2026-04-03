@@ -127,12 +127,11 @@ export default function Services() {
           initial="hidden"
           animate={inView ? 'show' : 'hidden'}
           className="mb-2"
-          style={{ marginBottom: 8 }}
         >
           <div className="lbl">What we do</div>
         </motion.div>
 
-        <div className="svc-list" style={{ marginTop: 36 }}>
+        <div className="svc-list" style={{ marginTop: 16 }}>
           {services.map((s, i) => (
             <ServiceRow key={s.n} s={s} delay={0.07 * (i + 1)} inView={inView} />
           ))}
