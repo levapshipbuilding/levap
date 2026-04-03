@@ -4,10 +4,7 @@ export default function StatsBar() {
   return (
     <div
       style={{
-        borderTop: '1px solid rgba(255,255,255,.1)',
-        background: 'rgba(15,27,45,0.92)',
-        backdropFilter: 'blur(20px)',
-        WebkitBackdropFilter: 'blur(20px)',
+        background: '#0F1B2D',
       }}
     >
       <div className="hero-stats-grid">
