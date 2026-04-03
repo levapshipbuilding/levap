@@ -15,13 +15,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative flex min-h-[100svh] flex-col overflow-hidden pt-16"
-      style={{
-        backgroundColor: '#060606',
-        backgroundImage: 'url(/hero-ship.png)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center 40%',
-      }}
+      className="relative flex min-h-[100svh] flex-col overflow-hidden pt-16 hero-bg"
     >
       {/* Left-to-right gradient */}
       <div className="absolute inset-0 z-[1]" style={{ background: 'linear-gradient(to right, rgba(4,4,4,0.88) 0%, rgba(4,4,4,0.55) 45%, rgba(4,4,4,0.15) 100%)' }} />

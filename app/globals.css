@@ -130,6 +130,14 @@ button { font-family: inherit; }
   padding: 0 var(--px);
 }
 
+/* Hero background */
+.hero-bg {
+  background-color: #060606;
+  background-image: url(/hero-ship.png);
+  background-size: cover;
+  background-position: center 40%;
+}
+
 /* Nav link hover underline */
 .nav-link { position: relative; }
 .nav-link::after {
@@ -144,6 +152,7 @@ button { font-family: inherit; }
 
 /* ── Tablet (≤ 768px) ── */
 @media (max-width: 768px) {
+  .hero-bg { background-position: center 25%; }
   .r-grid-2 { grid-template-columns: 1fr; gap: 40px; }
   .r-form-row { grid-template-columns: 1fr; }
   .about-grid { grid-template-columns: 1fr; }

@@ -36,7 +36,7 @@ export default function Nav() {
           style={{ background: '#0C0C0C' }}
         >
           <div
-            className="wrap flex items-center justify-between flex-shrink-0"
+            className="wrap flex items-center justify-between flex-shrink-0 w-full"
             style={{ height: 64, borderBottom: '1px solid rgba(255,255,255,.08)' }}
           >
             <a
