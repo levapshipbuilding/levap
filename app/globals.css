@@ -121,8 +121,8 @@ button { font-family: inherit; }
 
 .foot-cols {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  gap: 48px;
+  grid-template-columns: 3fr auto auto;
+  gap: 64px;
 }
 
 .hero-stats-grid {
