@@ -133,7 +133,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="wrap mt-12" style={{ paddingTop: 16 }}>
+      <div className="wrap mt-12" style={{ paddingTop: 16, paddingBottom: 32 }}>
         <div style={{ fontSize: '10px', fontWeight: 500, letterSpacing: '0.1em', color: 'rgba(255,255,255,.35)' }}>
           © 2026 Alneva OY · Reg. 53477472-5 · All rights reserved
         </div>

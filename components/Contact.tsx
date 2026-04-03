@@ -198,7 +198,7 @@ export default function Contact() {
           </div>
 
           {/* Right – form */}
-          <motion.div variants={up(0.14)} initial="hidden" animate={inView ? 'show' : 'hidden'}>
+          <motion.div variants={up(0.14)} initial="hidden" animate={inView ? 'show' : 'hidden'} style={{ paddingTop: 6 }}>
             <div>
               {submitted ? (
                 <p

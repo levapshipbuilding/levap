@@ -117,6 +117,7 @@ export default function Hero() {
               style={{
                 paddingLeft: i === 0 ? 0 : '24px',
                 borderRight: i < 3 ? '1px solid rgba(255,255,255,.1)' : 'none',
+                textAlign: 'center',
               }}
             >
               <span
@@ -161,9 +162,9 @@ function HeroBtn({
         href={href}
         onClick={(e) => { e.preventDefault(); scrollTo(href) }}
         className="hero-btn inline-flex items-center justify-center text-[11px] font-bold tracking-[.2em] uppercase transition-all duration-200"
-        style={{ padding: '14px 32px', background: '#1A6FE8', border: '1px solid #1A6FE8', color: '#FFFFFF', borderRadius: '6px' }}
-        onMouseEnter={(e) => { e.currentTarget.style.background = '#3584F0'; e.currentTarget.style.borderColor = '#3584F0' }}
-        onMouseLeave={(e) => { e.currentTarget.style.background = '#1A6FE8'; e.currentTarget.style.borderColor = '#1A6FE8' }}
+        style={{ padding: '14px 32px', background: 'transparent', border: '2px solid rgba(255,255,255,.45)', color: '#FFFFFF', borderRadius: '6px' }}
+        onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#fff'; e.currentTarget.style.background = 'rgba(255,255,255,.08)' }}
+        onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,.45)'; e.currentTarget.style.background = 'transparent' }}
       >
         {children}
       </a>
@@ -175,9 +176,9 @@ function HeroBtn({
       href={href}
       onClick={(e) => { e.preventDefault(); scrollTo(href) }}
       className="hero-btn inline-flex items-center justify-center text-[11px] font-bold tracking-[.2em] uppercase transition-all duration-200"
-      style={{ padding: '14px 32px', border: '1px solid rgba(255,255,255,.3)', color: '#FFFFFF', borderRadius: '6px' }}
-      onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#4D94FF'; e.currentTarget.style.color = '#4D94FF' }}
-      onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,.3)'; e.currentTarget.style.color = '#FFFFFF' }}
+      style={{ padding: '14px 32px', border: '2px solid rgba(255,255,255,.45)', color: '#FFFFFF', borderRadius: '6px' }}
+      onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#fff'; e.currentTarget.style.background = 'rgba(255,255,255,.08)' }}
+      onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,.45)'; e.currentTarget.style.background = 'transparent' }}
     >
       {children}
     </a>
