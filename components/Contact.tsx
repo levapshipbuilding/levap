@@ -312,8 +312,8 @@ export default function Contact() {
                     className="mt-[6px] w-full inline-flex items-center justify-center gap-[10px] cursor-pointer transition-[background,color] duration-[.22s] sm:w-auto sm:self-start"
                     style={{
                       padding: '13px 28px',
-                      background: 'var(--gold)',
-                      border: '1px solid var(--gold)',
+                      background: 'var(--ink)',
+                      border: '1px solid var(--ink)',
                       color: '#FFFFFF',
                       fontSize: '11px',
                       fontWeight: 700,
@@ -322,12 +322,12 @@ export default function Contact() {
                       borderRadius: '6px',
                     }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.background = 'var(--gold2)'
-                      e.currentTarget.style.borderColor = 'var(--gold2)'
+                      e.currentTarget.style.background = '#1A2840'
+                      e.currentTarget.style.borderColor = '#1A2840'
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.background = 'var(--gold)'
-                      e.currentTarget.style.borderColor = 'var(--gold)'
+                      e.currentTarget.style.background = 'var(--ink)'
+                      e.currentTarget.style.borderColor = 'var(--ink)'
                     }}
                   >
                     Send enquiry →
