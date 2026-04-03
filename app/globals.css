@@ -168,7 +168,9 @@ button { font-family: inherit; }
   .prow-year { display: none !important; }
   .prow-tag { grid-area: 1 / 2; }
   .foot-cols { grid-template-columns: 1fr 1fr; gap: 32px; }
-  .hero-stats-grid { grid-template-columns: 1fr 1fr; }
+  .hero-stats-grid { grid-template-columns: 1fr 1fr; padding: 0; }
+  .hero-stat { padding-top: 14px !important; padding-bottom: 14px !important; }
+  .hero-stat .stat-num { font-size: 40px !important; }
   .hero-stat:nth-child(2) { border-right: none !important; }
   .hero-stat:nth-child(3) { padding-left: 0 !important; border-top: 1px solid rgba(255,255,255,.1); }
   .hero-stat:nth-child(4) { border-top: 1px solid rgba(255,255,255,.1); }

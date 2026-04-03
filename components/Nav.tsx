@@ -37,7 +37,7 @@ export default function Nav() {
         >
           <div
             className="wrap flex items-center justify-between flex-shrink-0 w-full"
-            style={{ height: 64, borderBottom: '1px solid rgba(255,255,255,.08)' }}
+            style={{ height: 64 }}
           >
             <a
               href="#"
@@ -62,7 +62,7 @@ export default function Nav() {
             </button>
           </div>
 
-          <div className="flex-1 flex flex-col justify-center" style={{ padding: '0 var(--px)' }}>
+          <div className="flex-1 flex flex-col justify-center" style={{ padding: '0 0' }}>
             {(['#about', '#services', '#projects', '#contact'] as const).map((href) => (
               <a
                 key={href}
@@ -75,7 +75,7 @@ export default function Nav() {
                   letterSpacing: '0.06em',
                   lineHeight: '1',
                   color: 'rgba(255,255,255,.85)',
-                  padding: '18px 0',
+                  padding: '18px var(--px)',
                   borderBottom: '1px solid rgba(255,255,255,.06)',
                 }}
                 onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--gold)')}
@@ -86,7 +86,7 @@ export default function Nav() {
             ))}
           </div>
 
-          <div style={{ padding: '24px var(--px) 32px', borderTop: '1px solid rgba(255,255,255,.06)' }}>
+          <div style={{ padding: '24px var(--px) 32px' }}>
             <div style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.24em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: 10 }}>
               Get in touch
             </div>

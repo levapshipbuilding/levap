@@ -106,7 +106,7 @@ export default function Hero() {
               }}
             >
               <span
-                className="block leading-none"
+                className="block leading-none stat-num"
                 style={{ fontFamily: 'var(--font-bebas)', fontSize: '64px', letterSpacing: '0.02em', color: '#FFFFFF' }}
               >
                 {s.n}
