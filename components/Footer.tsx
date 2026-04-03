@@ -13,11 +13,11 @@ export default function Footer() {
 
   const linkStyle = {
     fontSize: '13px',
-    color: 'rgba(255,255,255,.45)',
+    color: 'rgba(255,255,255,.7)',
   }
   const linkHover = {
-    enter: (e: React.MouseEvent<HTMLAnchorElement>) => (e.currentTarget.style.color = 'rgba(255,255,255,.85)'),
-    leave: (e: React.MouseEvent<HTMLAnchorElement>) => (e.currentTarget.style.color = 'rgba(255,255,255,.45)'),
+    enter: (e: React.MouseEvent<HTMLAnchorElement>) => (e.currentTarget.style.color = '#fff'),
+    leave: (e: React.MouseEvent<HTMLAnchorElement>) => (e.currentTarget.style.color = 'rgba(255,255,255,.7)'),
   }
 
   return (
@@ -37,12 +37,12 @@ export default function Footer() {
                 alt="Levap"
                 width={148}
                 height={38}
-                style={{ objectFit: 'contain', objectPosition: 'left center', opacity: 0.5 }}
+                style={{ objectFit: 'contain', objectPosition: 'left center', opacity: 1 }}
               />
             </a>
             <p
               className="leading-[1.65] max-w-[210px]"
-              style={{ fontSize: '13px', color: 'rgba(255,255,255,.4)' }}
+              style={{ fontSize: '13px', color: 'rgba(255,255,255,.7)' }}
             >
               Leading marine and offshore engineering across Europe. Based in Turku, Finland.
             </p>
@@ -52,7 +52,7 @@ export default function Footer() {
           <div>
             <h5
               className="mb-4"
-              style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.24em', textTransform: 'uppercase', color: 'rgba(255,255,255,.35)' }}
+              style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.24em', textTransform: 'uppercase', color: 'rgba(255,255,255,.5)' }}
             >
               Company
             </h5>
@@ -82,7 +82,7 @@ export default function Footer() {
           <div>
             <h5
               className="mb-4"
-              style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.24em', textTransform: 'uppercase', color: 'rgba(255,255,255,.35)' }}
+              style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.24em', textTransform: 'uppercase', color: 'rgba(255,255,255,.5)' }}
             >
               Services
             </h5>
@@ -108,7 +108,7 @@ export default function Footer() {
           <div>
             <h5
               className="mb-4"
-              style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.24em', textTransform: 'uppercase', color: 'rgba(255,255,255,.35)' }}
+              style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.24em', textTransform: 'uppercase', color: 'rgba(255,255,255,.5)' }}
             >
               Contact
             </h5>
@@ -134,10 +134,10 @@ export default function Footer() {
       </div>
 
       <div className="wrap mt-12" style={{ paddingTop: 16, paddingBottom: 32 }}>
-        <div style={{ fontSize: '10px', fontWeight: 500, letterSpacing: '0.1em', color: 'rgba(255,255,255,.35)' }}>
+        <div style={{ fontSize: '10px', fontWeight: 500, letterSpacing: '0.1em', color: 'rgba(255,255,255,.55)' }}>
           © 2026 Alneva OY · Reg. 53477472-5 · All rights reserved
         </div>
-        <div style={{ fontSize: '10px', fontWeight: 700, letterSpacing: '0.1em', color: 'rgba(255,255,255,.25)', marginTop: 4 }}>
+        <div style={{ fontSize: '10px', fontWeight: 700, letterSpacing: '0.1em', color: 'rgba(255,255,255,.45)', marginTop: 4 }}>
           Built to last. At sea.
         </div>
       </div>
