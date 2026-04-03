@@ -125,7 +125,7 @@ export default function Contact() {
               }}
             >
               LET&apos;S TALK<br />
-              <em style={{ color: 'var(--gold)', fontStyle: 'normal' }}>SCOPE.</em>
+              <em style={{ color: 'var(--ink)', fontStyle: 'normal' }}>SCOPE.</em>
             </motion.h2>
             <motion.p
               variants={up(0.19)}
@@ -199,14 +199,7 @@ export default function Contact() {
 
           {/* Right – form */}
           <motion.div variants={up(0.14)} initial="hidden" animate={inView ? 'show' : 'hidden'}>
-            <div
-              className="p-8"
-              style={{
-                border: '1px solid var(--line)',
-                borderTop: '3px solid var(--gold)',
-                background: 'var(--s1)',
-              }}
-            >
+            <div>
               {submitted ? (
                 <p
                   className="leading-[1.7]"
@@ -326,6 +319,7 @@ export default function Contact() {
                       fontWeight: 700,
                       letterSpacing: '0.2em',
                       textTransform: 'uppercase',
+                      borderRadius: '6px',
                     }}
                     onMouseEnter={(e) => {
                       e.currentTarget.style.background = 'var(--gold2)'

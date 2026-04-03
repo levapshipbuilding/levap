@@ -162,6 +162,7 @@ export default function Nav() {
                   border: '1px solid rgba(255,255,255,.4)',
                   color: '#fff',
                   background: 'transparent',
+                  borderRadius: '6px',
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.background = 'rgba(255,255,255,.12)'

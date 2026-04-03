@@ -100,7 +100,6 @@ button { font-family: inherit; }
   align-items: start;
 }
 .about-right-col {
-  border-left: 1px solid var(--lineg);
   padding-left: 48px;
 }
 

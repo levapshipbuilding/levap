@@ -44,7 +44,7 @@ export default function About() {
               }}
             >
               8 YEARS.<br />
-              <span style={{ color: 'var(--gold)' }}>ZERO</span><br />
+              <span style={{ color: 'var(--ink)' }}>ZERO</span><br />
               <span style={{ color: 'var(--ink)' }}>SHORTCUTS.</span>
             </motion.h2>
           </div>

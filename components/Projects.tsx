@@ -131,7 +131,7 @@ export default function Projects() {
             }}
           >
             THE WORK<br />
-            <em style={{ color: 'var(--gold)', fontStyle: 'normal' }}>SPEAKS.</em>
+            <em style={{ color: 'var(--ink)', fontStyle: 'normal' }}>SPEAKS.</em>
           </h2>
         </motion.div>
 

@@ -24,7 +24,7 @@ export default function Hero() {
       }}
     >
       {/* Left-to-right gradient */}
-      <div className="absolute inset-0 z-[1]" style={{ background: 'linear-gradient(to right, rgba(4,4,4,0.95) 0%, rgba(4,4,4,0.72) 45%, rgba(4,4,4,0.3) 100%)' }} />
+      <div className="absolute inset-0 z-[1]" style={{ background: 'linear-gradient(to right, rgba(4,4,4,0.88) 0%, rgba(4,4,4,0.55) 45%, rgba(4,4,4,0.15) 100%)' }} />
       {/* Top fade for nav */}
       <div className="absolute inset-x-0 top-0 z-[1]" style={{ height: 100, background: 'linear-gradient(to bottom, rgba(4,4,4,0.7) 0%, transparent 100%)' }} />
 
@@ -59,7 +59,7 @@ export default function Hero() {
           }}
         >
           WE BUILD<br />
-          <span style={{ color: '#4D94FF' }}>SHIPS.</span><br />
+          <span style={{ color: '#FFFFFF' }}>SHIPS.</span><br />
           <span style={{ color: '#FFFFFF' }}>WE KEEP</span><br />
           THEM RUNNING.
         </motion.h1>
@@ -124,7 +124,7 @@ export default function Hero() {
                 style={{ fontFamily: 'var(--font-bebas)', fontSize: '64px', letterSpacing: '0.02em', color: '#FFFFFF' }}
               >
                 {s.n}
-                {s.sup && <b style={{ color: '#4D94FF' }}>{s.sup}</b>}
+                {s.sup && <b style={{ color: '#FFFFFF' }}>{s.sup}</b>}
               </span>
               <span
                 className="block mt-[4px]"
@@ -161,7 +161,7 @@ function HeroBtn({
         href={href}
         onClick={(e) => { e.preventDefault(); scrollTo(href) }}
         className="hero-btn inline-flex items-center justify-center text-[11px] font-bold tracking-[.2em] uppercase transition-all duration-200"
-        style={{ padding: '14px 32px', background: '#1A6FE8', border: '1px solid #1A6FE8', color: '#FFFFFF' }}
+        style={{ padding: '14px 32px', background: '#1A6FE8', border: '1px solid #1A6FE8', color: '#FFFFFF', borderRadius: '6px' }}
         onMouseEnter={(e) => { e.currentTarget.style.background = '#3584F0'; e.currentTarget.style.borderColor = '#3584F0' }}
         onMouseLeave={(e) => { e.currentTarget.style.background = '#1A6FE8'; e.currentTarget.style.borderColor = '#1A6FE8' }}
       >
@@ -175,7 +175,7 @@ function HeroBtn({
       href={href}
       onClick={(e) => { e.preventDefault(); scrollTo(href) }}
       className="hero-btn inline-flex items-center justify-center text-[11px] font-bold tracking-[.2em] uppercase transition-all duration-200"
-      style={{ padding: '14px 32px', border: '1px solid rgba(255,255,255,.3)', color: '#FFFFFF' }}
+      style={{ padding: '14px 32px', border: '1px solid rgba(255,255,255,.3)', color: '#FFFFFF', borderRadius: '6px' }}
       onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#4D94FF'; e.currentTarget.style.color = '#4D94FF' }}
       onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,.3)'; e.currentTarget.style.color = '#FFFFFF' }}
     >

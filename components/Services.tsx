@@ -129,20 +129,6 @@ export default function Services() {
           className="mb-2"
         >
           <div className="lbl">What we do</div>
-          <h2
-            style={{
-              fontFamily: 'var(--font-bebas)',
-              fontSize: 'clamp(52px, 7vw, 88px)',
-              lineHeight: '0.88',
-              letterSpacing: '0.025em',
-              color: 'var(--ink)',
-              marginTop: 14,
-              marginBottom: 0,
-            }}
-          >
-            SIX DISCIPLINES.<br />
-            <em style={{ color: 'var(--gold)', fontStyle: 'normal' }}>ONE CREW.</em>
-          </h2>
         </motion.div>
 
         <div className="svc-list" style={{ marginTop: 36 }}>
