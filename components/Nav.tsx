@@ -33,7 +33,7 @@ export default function Nav() {
       {mobOpen && (
         <div
           className="fixed inset-0 z-[900] flex flex-col"
-          style={{ background: '#0C0C0C' }}
+          style={{ background: '#0F1B2D' }}
         >
           <div
             className="wrap flex items-center justify-between flex-shrink-0 w-full"
@@ -116,7 +116,7 @@ export default function Nav() {
       <nav
         className="fixed top-0 left-0 right-0 z-[800] flex h-16 items-center"
         style={{
-          background: scrolled ? 'rgba(6,6,6,0.92)' : 'transparent',
+          background: scrolled ? 'rgba(15,27,45,0.95)' : 'transparent',
           backdropFilter: scrolled ? 'blur(20px)' : 'none',
           WebkitBackdropFilter: scrolled ? 'blur(20px)' : 'none',
           borderBottom: scrolled ? '1px solid rgba(255,255,255,.06)' : 'none',

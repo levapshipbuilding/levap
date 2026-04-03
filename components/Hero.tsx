@@ -84,7 +84,7 @@ export default function Hero() {
         className="relative z-[2]"
         style={{
           borderTop: '1px solid rgba(255,255,255,.1)',
-          background: 'rgba(6,6,6,0.8)',
+          background: 'rgba(15,27,45,0.92)',
           backdropFilter: 'blur(20px)',
           WebkitBackdropFilter: 'blur(20px)',
         }}
