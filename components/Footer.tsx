@@ -133,16 +133,13 @@ export default function Footer() {
         </div>
       </div>
 
-      <div
-        className="flex flex-wrap justify-between items-center gap-3 mt-12"
-        style={{ padding: '16px var(--px)' }}
-      >
-        <span style={{ fontSize: '10px', fontWeight: 500, letterSpacing: '0.1em', color: 'rgba(255,255,255,.35)' }}>
+      <div className="wrap mt-12" style={{ paddingTop: 16 }}>
+        <div style={{ fontSize: '10px', fontWeight: 500, letterSpacing: '0.1em', color: 'rgba(255,255,255,.35)' }}>
           © 2026 Alneva OY · Reg. 53477472-5 · All rights reserved
-        </span>
-        <span style={{ fontSize: '10px', fontWeight: 700, letterSpacing: '0.1em', color: 'rgba(255,255,255,.25)' }}>
+        </div>
+        <div style={{ fontSize: '10px', fontWeight: 700, letterSpacing: '0.1em', color: 'rgba(255,255,255,.25)', marginTop: 4 }}>
           Built to last. At sea.
-        </span>
+        </div>
       </div>
     </footer>
   )

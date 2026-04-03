@@ -109,7 +109,6 @@ export default function Nav() {
       <nav
         className="fixed top-0 left-0 right-0 z-[800] flex h-16 items-center"
         style={{
-          padding: '0 var(--px)',
           background: scrolled ? 'rgba(7,12,24,0.95)' : 'transparent',
           backdropFilter: scrolled ? 'blur(20px)' : 'none',
           WebkitBackdropFilter: scrolled ? 'blur(20px)' : 'none',
@@ -117,7 +116,7 @@ export default function Nav() {
           transition: 'background 0.2s ease, backdrop-filter 0.2s ease, border-bottom 0.2s ease',
         }}
       >
-        <div className="flex items-center justify-between w-full" style={{ maxWidth: 'var(--max)', margin: '0 auto' }}>
+        <div className="wrap flex items-center justify-between w-full">
           <a
             href="#"
             onClick={(e) => { e.preventDefault(); scrollTo('#') }}
