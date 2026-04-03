@@ -17,9 +17,9 @@ const spaceGrotesk = Space_Grotesk({
 })
 
 export const metadata: Metadata = {
-  title: 'Levap OY — Marine Engineering | Finland',
+  title: 'Alneva OY - Marine Engineering | Finland',
   description:
-    "Marine refit, piping, steel, HVAC and interior — delivered on schedule at Europe's most demanding shipyards.",
+    'Marine refit, piping, steel, HVAC and interior.',
 }
 
 export default function RootLayout({
