@@ -21,7 +21,7 @@ export default function Footer() {
   }
 
   return (
-    <footer style={{ background: 'var(--deep)', paddingTop: 56 }}>
+    <footer style={{ background: 'var(--deep)', paddingTop: 40 }}>
       <div className="wrap">
         <div className="foot-cols">
           {/* Brand */}
@@ -78,32 +78,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Services */}
-          <div>
-            <h5
-              className="mb-4"
-              style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.24em', textTransform: 'uppercase', color: 'rgba(255,255,255,.5)' }}
-            >
-              Services
-            </h5>
-            <ul className="list-none flex flex-col gap-[9px]">
-              {['Piping', 'Steel works', 'HVAC', 'Interior', 'Manning'].map((s) => (
-                <li key={s}>
-                  <a
-                    href="#services"
-                    onClick={(e) => { e.preventDefault(); scrollTo('#services') }}
-                    className="transition-colors duration-200"
-                    style={linkStyle}
-                    onMouseEnter={linkHover.enter}
-                    onMouseLeave={linkHover.leave}
-                  >
-                    {s}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
           {/* Contact */}
           <div>
             <h5
@@ -133,7 +107,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="wrap mt-12" style={{ paddingTop: 16, paddingBottom: 32 }}>
+      <div className="wrap mt-8" style={{ paddingTop: 16, paddingBottom: 24 }}>
         <div style={{ fontSize: '10px', fontWeight: 500, letterSpacing: '0.1em', color: 'rgba(255,255,255,.55)' }}>
           © 2026 Alneva OY · Reg. 53477472-5 · All rights reserved
         </div>
