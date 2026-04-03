@@ -75,25 +75,25 @@ export default function Contact() {
   }
 
   const inputStyle: React.CSSProperties = {
-    background: 'transparent',
-    border: 'none',
-    borderBottom: '1px solid var(--line)',
-    padding: '10px 0',
+    background: '#FFFFFF',
+    border: '1px solid var(--line)',
+    borderRadius: '6px',
+    padding: '12px 14px',
     fontFamily: 'var(--font-body)',
-    fontSize: '16px',
+    fontSize: '15px',
     fontWeight: 400,
     color: 'var(--ink)',
     outline: 'none',
     width: '100%',
-    transition: 'border-color .2s',
+    transition: 'border-color .2s, box-shadow .2s',
   }
 
   const labelStyle: React.CSSProperties = {
-    fontSize: '9px',
+    fontSize: '10px',
     fontWeight: 700,
-    letterSpacing: '0.22em',
+    letterSpacing: '0.18em',
     textTransform: 'uppercase',
-    color: 'var(--ink3)',
+    color: 'var(--ink2)',
   }
 
   return (
@@ -199,7 +199,7 @@ export default function Contact() {
 
           {/* Right - form */}
           <motion.div variants={up(0.14)} initial="hidden" animate={inView ? 'show' : 'hidden'} style={{ paddingTop: 6 }}>
-            <div>
+            <div style={{ background: 'var(--s1)', border: '1px solid var(--line)', borderRadius: '10px', padding: '32px 28px' }}>
               {submitted ? (
                 <p
                   className="leading-[1.7]"
@@ -219,8 +219,8 @@ export default function Contact() {
                         style={inputStyle}
                         value={form.name}
                         onChange={(e) => setForm({ ...form, name: e.target.value })}
-                        onFocus={(e) => (e.currentTarget.style.borderBottomColor = 'var(--gold)')}
-                        onBlur={(e) => (e.currentTarget.style.borderBottomColor = 'var(--line)')}
+                        onFocus={(e) => { e.currentTarget.style.borderColor = 'var(--gold)'; e.currentTarget.style.boxShadow = '0 0 0 3px rgba(191,155,48,0.12)' }}
+                        onBlur={(e) => { e.currentTarget.style.borderColor = 'var(--line)'; e.currentTarget.style.boxShadow = 'none' }}
                       />
                     </div>
                     <div className="flex flex-col gap-[6px]">
@@ -231,8 +231,8 @@ export default function Contact() {
                         style={inputStyle}
                         value={form.company}
                         onChange={(e) => setForm({ ...form, company: e.target.value })}
-                        onFocus={(e) => (e.currentTarget.style.borderBottomColor = 'var(--gold)')}
-                        onBlur={(e) => (e.currentTarget.style.borderBottomColor = 'var(--line)')}
+                        onFocus={(e) => { e.currentTarget.style.borderColor = 'var(--gold)'; e.currentTarget.style.boxShadow = '0 0 0 3px rgba(191,155,48,0.12)' }}
+                        onBlur={(e) => { e.currentTarget.style.borderColor = 'var(--line)'; e.currentTarget.style.boxShadow = 'none' }}
                       />
                     </div>
                   </div>
@@ -247,8 +247,8 @@ export default function Contact() {
                         style={inputStyle}
                         value={form.email}
                         onChange={(e) => setForm({ ...form, email: e.target.value })}
-                        onFocus={(e) => (e.currentTarget.style.borderBottomColor = 'var(--gold)')}
-                        onBlur={(e) => (e.currentTarget.style.borderBottomColor = 'var(--line)')}
+                        onFocus={(e) => { e.currentTarget.style.borderColor = 'var(--gold)'; e.currentTarget.style.boxShadow = '0 0 0 3px rgba(191,155,48,0.12)' }}
+                        onBlur={(e) => { e.currentTarget.style.borderColor = 'var(--line)'; e.currentTarget.style.boxShadow = 'none' }}
                       />
                     </div>
                     <div className="flex flex-col gap-[6px]">
@@ -259,8 +259,8 @@ export default function Contact() {
                         style={inputStyle}
                         value={form.phone}
                         onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                        onFocus={(e) => (e.currentTarget.style.borderBottomColor = 'var(--gold)')}
-                        onBlur={(e) => (e.currentTarget.style.borderBottomColor = 'var(--line)')}
+                        onFocus={(e) => { e.currentTarget.style.borderColor = 'var(--gold)'; e.currentTarget.style.boxShadow = '0 0 0 3px rgba(191,155,48,0.12)' }}
+                        onBlur={(e) => { e.currentTarget.style.borderColor = 'var(--line)'; e.currentTarget.style.boxShadow = 'none' }}
                       />
                     </div>
                   </div>
@@ -275,13 +275,13 @@ export default function Contact() {
                         WebkitAppearance: 'none',
                         backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%230A0F1A' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E")`,
                         backgroundRepeat: 'no-repeat',
-                        backgroundPosition: 'right 4px center',
-                        paddingRight: '22px',
+                        backgroundPosition: 'right 14px center',
+                        paddingRight: '32px',
                       }}
                       value={form.scope}
                       onChange={(e) => setForm({ ...form, scope: e.target.value })}
-                      onFocus={(e) => (e.currentTarget.style.borderBottomColor = 'var(--gold)')}
-                      onBlur={(e) => (e.currentTarget.style.borderBottomColor = 'var(--line)')}
+                      onFocus={(e) => { e.currentTarget.style.borderColor = 'var(--gold)'; e.currentTarget.style.boxShadow = '0 0 0 3px rgba(191,155,48,0.12)' }}
+                      onBlur={(e) => { e.currentTarget.style.borderColor = 'var(--line)'; e.currentTarget.style.boxShadow = 'none' }}
                     >
                       <option value="">Select scope…</option>
                       <option>Piping installation</option>
@@ -299,38 +299,38 @@ export default function Contact() {
                     <label style={labelStyle}>Project details</label>
                     <textarea
                       placeholder="Vessel type, yard, timeline - any context helps us respond faster."
-                      style={{ ...inputStyle, resize: 'vertical', minHeight: '100px', borderBottom: 'none' }}
+                      style={{ ...inputStyle, resize: 'vertical', minHeight: '100px' }}
                       value={form.message}
                       onChange={(e) => setForm({ ...form, message: e.target.value })}
-                      onFocus={(e) => (e.currentTarget.style.borderBottomColor = 'var(--gold)')}
-                      onBlur={(e) => (e.currentTarget.style.borderBottomColor = 'var(--line)')}
+                      onFocus={(e) => { e.currentTarget.style.borderColor = 'var(--gold)'; e.currentTarget.style.boxShadow = '0 0 0 3px rgba(191,155,48,0.12)' }}
+                      onBlur={(e) => { e.currentTarget.style.borderColor = 'var(--line)'; e.currentTarget.style.boxShadow = 'none' }}
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="mt-[6px] w-full inline-flex items-center justify-center gap-[10px] cursor-pointer transition-[background,color] duration-[.22s] sm:w-auto sm:self-start"
+                    className="mt-[8px] w-full inline-flex items-center justify-center gap-[10px] cursor-pointer transition-[background,color] duration-[.22s]"
                     style={{
-                      padding: '13px 28px',
-                      background: 'var(--ink)',
-                      border: '1px solid var(--ink)',
+                      padding: '15px 32px',
+                      background: 'var(--gold)',
+                      border: '1px solid var(--gold)',
                       color: '#FFFFFF',
-                      fontSize: '11px',
+                      fontSize: '12px',
                       fontWeight: 700,
                       letterSpacing: '0.2em',
                       textTransform: 'uppercase',
                       borderRadius: '6px',
                     }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.background = '#1A2840'
-                      e.currentTarget.style.borderColor = '#1A2840'
+                      e.currentTarget.style.background = '#A8872A'
+                      e.currentTarget.style.borderColor = '#A8872A'
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.background = 'var(--ink)'
-                      e.currentTarget.style.borderColor = 'var(--ink)'
+                      e.currentTarget.style.background = 'var(--gold)'
+                      e.currentTarget.style.borderColor = 'var(--gold)'
                     }}
                   >
-                    Send enquiry →
+                    Send enquiry
                   </button>
                 </form>
               )}
