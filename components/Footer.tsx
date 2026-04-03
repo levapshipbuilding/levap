@@ -140,7 +140,7 @@ export default function Footer() {
         <span style={{ fontSize: '10px', fontWeight: 500, letterSpacing: '0.1em', color: 'rgba(255,255,255,.12)' }}>
           © 2026 Alneva OY · Reg. 53477472-5 · All rights reserved
         </span>
-        <span style={{ fontSize: '10px', fontWeight: 700, letterSpacing: '0.1em', color: 'rgba(255,107,0,.3)' }}>
+        <span style={{ fontSize: '10px', fontWeight: 700, letterSpacing: '0.1em', color: 'rgba(26,111,232,.3)' }}>
           Built to last. At sea.
         </span>
       </div>

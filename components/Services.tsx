@@ -48,7 +48,7 @@ function ServiceRow({ s, delay, inView }: { s: typeof services[0]; delay: number
       initial="hidden"
       animate={inView ? 'show' : 'hidden'}
       className="svc-row"
-      style={{ background: hovered ? 'rgba(255,107,0,0.04)' : 'transparent', transition: 'background .22s' }}
+      style={{ background: hovered ? 'var(--s1)' : 'transparent', transition: 'background .22s' }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >

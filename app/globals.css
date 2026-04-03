@@ -3,18 +3,18 @@
 @tailwind utilities;
 
 :root {
-  --bg:    #0C0C0C;
-  --s1:    #131313;
-  --s2:    #1A1A1A;
-  --deep:  #060606;
-  --ink:   #FFFFFF;
-  --ink2:  #999999;
-  --ink3:  #666666;
-  --ink4:  #3D3D3D;
-  --gold:  #FF6B00;
-  --gold2: #FF8534;
-  --line:  rgba(255,255,255,.1);
-  --lineg: rgba(255,107,0,.25);
+  --bg:    #FFFFFF;
+  --s1:    #F5F7FA;
+  --s2:    #EDF0F5;
+  --deep:  #0A0F1A;
+  --ink:   #0A0F1A;
+  --ink2:  #3A4A5C;
+  --ink3:  #6B7B8D;
+  --ink4:  #A0ABB8;
+  --gold:  #1A6FE8;
+  --gold2: #3584F0;
+  --line:  rgba(10,15,26,.08);
+  --lineg: rgba(26,111,232,.15);
   --max:   1160px;
   --px:    clamp(20px, 5vw, 64px);
 }
@@ -138,7 +138,7 @@ button { font-family: inherit; }
   position: absolute;
   bottom: -3px; left: 0;
   width: 0; height: 2px;
-  background: var(--gold);
+  background: rgba(255,255,255,.7);
   transition: width .25s ease;
 }
 .nav-link:hover::after { width: 100%; }

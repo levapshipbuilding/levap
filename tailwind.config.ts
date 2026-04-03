@@ -9,15 +9,15 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        bg: '#0C0C0C',
-        s1: '#131313',
-        s2: '#1A1A1A',
-        ink: '#FFFFFF',
-        ink2: '#999999',
-        ink3: '#666666',
-        ink4: '#3D3D3D',
-        gold: '#FF6B00',
-        gold2: '#FF8534',
+        bg: '#FFFFFF',
+        s1: '#F5F7FA',
+        s2: '#EDF0F5',
+        ink: '#0A0F1A',
+        ink2: '#3A4A5C',
+        ink3: '#6B7B8D',
+        ink4: '#A0ABB8',
+        gold: '#1A6FE8',
+        gold2: '#3584F0',
       },
       fontFamily: {
         disp: ['var(--font-bebas)', 'sans-serif'],

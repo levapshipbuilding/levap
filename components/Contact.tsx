@@ -77,7 +77,7 @@ export default function Contact() {
   const inputStyle: React.CSSProperties = {
     background: 'transparent',
     border: 'none',
-    borderBottom: '1px solid rgba(255,255,255,.12)',
+    borderBottom: '1px solid var(--line)',
     padding: '10px 0',
     fontFamily: 'var(--font-body)',
     fontSize: '14px',
@@ -227,7 +227,7 @@ export default function Contact() {
                         value={form.name}
                         onChange={(e) => setForm({ ...form, name: e.target.value })}
                         onFocus={(e) => (e.currentTarget.style.borderBottomColor = 'var(--gold)')}
-                        onBlur={(e) => (e.currentTarget.style.borderBottomColor = 'rgba(255,255,255,.12)')}
+                        onBlur={(e) => (e.currentTarget.style.borderBottomColor = 'var(--line)')}
                       />
                     </div>
                     <div className="flex flex-col gap-[6px]">
@@ -239,7 +239,7 @@ export default function Contact() {
                         value={form.company}
                         onChange={(e) => setForm({ ...form, company: e.target.value })}
                         onFocus={(e) => (e.currentTarget.style.borderBottomColor = 'var(--gold)')}
-                        onBlur={(e) => (e.currentTarget.style.borderBottomColor = 'rgba(255,255,255,.12)')}
+                        onBlur={(e) => (e.currentTarget.style.borderBottomColor = 'var(--line)')}
                       />
                     </div>
                   </div>
@@ -255,7 +255,7 @@ export default function Contact() {
                         value={form.email}
                         onChange={(e) => setForm({ ...form, email: e.target.value })}
                         onFocus={(e) => (e.currentTarget.style.borderBottomColor = 'var(--gold)')}
-                        onBlur={(e) => (e.currentTarget.style.borderBottomColor = 'rgba(255,255,255,.12)')}
+                        onBlur={(e) => (e.currentTarget.style.borderBottomColor = 'var(--line)')}
                       />
                     </div>
                     <div className="flex flex-col gap-[6px]">
@@ -267,7 +267,7 @@ export default function Contact() {
                         value={form.phone}
                         onChange={(e) => setForm({ ...form, phone: e.target.value })}
                         onFocus={(e) => (e.currentTarget.style.borderBottomColor = 'var(--gold)')}
-                        onBlur={(e) => (e.currentTarget.style.borderBottomColor = 'rgba(255,255,255,.12)')}
+                        onBlur={(e) => (e.currentTarget.style.borderBottomColor = 'var(--line)')}
                       />
                     </div>
                   </div>
@@ -280,7 +280,7 @@ export default function Contact() {
                         cursor: 'pointer',
                         appearance: 'none',
                         WebkitAppearance: 'none',
-                        backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23666' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E")`,
+                        backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%230A0F1A' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E")`,
                         backgroundRepeat: 'no-repeat',
                         backgroundPosition: 'right 4px center',
                         paddingRight: '22px',
@@ -288,7 +288,7 @@ export default function Contact() {
                       value={form.scope}
                       onChange={(e) => setForm({ ...form, scope: e.target.value })}
                       onFocus={(e) => (e.currentTarget.style.borderBottomColor = 'var(--gold)')}
-                      onBlur={(e) => (e.currentTarget.style.borderBottomColor = 'rgba(255,255,255,.12)')}
+                      onBlur={(e) => (e.currentTarget.style.borderBottomColor = 'var(--line)')}
                     >
                       <option value="">Select scope…</option>
                       <option>Piping installation</option>
@@ -310,7 +310,7 @@ export default function Contact() {
                       value={form.message}
                       onChange={(e) => setForm({ ...form, message: e.target.value })}
                       onFocus={(e) => (e.currentTarget.style.borderBottomColor = 'var(--gold)')}
-                      onBlur={(e) => (e.currentTarget.style.borderBottomColor = 'rgba(255,255,255,.12)')}
+                      onBlur={(e) => (e.currentTarget.style.borderBottomColor = 'var(--line)')}
                     />
                   </div>
 
@@ -321,7 +321,7 @@ export default function Contact() {
                       padding: '13px 28px',
                       background: 'var(--gold)',
                       border: '1px solid var(--gold)',
-                      color: '#000000',
+                      color: '#FFFFFF',
                       fontSize: '11px',
                       fontWeight: 700,
                       letterSpacing: '0.2em',

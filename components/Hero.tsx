@@ -39,7 +39,7 @@ export default function Hero() {
           animate="show"
           custom={0.05}
           className="lbl"
-          style={{ color: '#FF6B00', marginBottom: 20 }}
+          style={{ color: '#4D94FF', marginBottom: 20 }}
         >
           Marine &amp; Offshore Engineering — Finland
         </motion.div>
@@ -51,7 +51,7 @@ export default function Hero() {
           custom={0.1}
           style={{
             fontFamily: 'var(--font-bebas)',
-            fontSize: 'clamp(64px,15vw,200px)',
+            fontSize: 'clamp(52px,11vw,148px)',
             lineHeight: '0.88',
             letterSpacing: '0.02em',
             color: '#FFFFFF',
@@ -59,7 +59,7 @@ export default function Hero() {
           }}
         >
           WE BUILD<br />
-          <span style={{ color: '#FF6B00' }}>SHIPS.</span><br />
+          <span style={{ color: '#4D94FF' }}>SHIPS.</span><br />
           <span style={{ color: '#FFFFFF' }}>WE KEEP</span><br />
           THEM RUNNING.
         </motion.h1>
@@ -72,7 +72,7 @@ export default function Hero() {
           className="mt-6 flex flex-col gap-3"
         >
           <p
-            style={{ fontSize: '15px', fontWeight: 400, color: 'rgba(200,200,200,.85)', maxWidth: '440px', lineHeight: '1.6' }}
+            style={{ fontSize: '15px', fontWeight: 400, color: 'rgba(200,210,220,.85)', maxWidth: '440px', lineHeight: '1.6' }}
           >
             Refit, piping, steel, HVAC and interior — delivered on schedule at Europe&apos;s most demanding shipyards.
           </p>
@@ -124,7 +124,7 @@ export default function Hero() {
                 style={{ fontFamily: 'var(--font-bebas)', fontSize: '64px', letterSpacing: '0.02em', color: '#FFFFFF' }}
               >
                 {s.n}
-                {s.sup && <b style={{ color: '#FF6B00' }}>{s.sup}</b>}
+                {s.sup && <b style={{ color: '#4D94FF' }}>{s.sup}</b>}
               </span>
               <span
                 className="block mt-[4px]"
@@ -161,9 +161,9 @@ function HeroBtn({
         href={href}
         onClick={(e) => { e.preventDefault(); scrollTo(href) }}
         className="hero-btn inline-flex items-center justify-center text-[11px] font-bold tracking-[.2em] uppercase transition-all duration-200"
-        style={{ padding: '14px 32px', background: '#FF6B00', border: '1px solid #FF6B00', color: '#000000' }}
-        onMouseEnter={(e) => { e.currentTarget.style.background = '#FF8534'; e.currentTarget.style.borderColor = '#FF8534' }}
-        onMouseLeave={(e) => { e.currentTarget.style.background = '#FF6B00'; e.currentTarget.style.borderColor = '#FF6B00' }}
+        style={{ padding: '14px 32px', background: '#1A6FE8', border: '1px solid #1A6FE8', color: '#FFFFFF' }}
+        onMouseEnter={(e) => { e.currentTarget.style.background = '#3584F0'; e.currentTarget.style.borderColor = '#3584F0' }}
+        onMouseLeave={(e) => { e.currentTarget.style.background = '#1A6FE8'; e.currentTarget.style.borderColor = '#1A6FE8' }}
       >
         {children}
       </a>
@@ -176,7 +176,7 @@ function HeroBtn({
       onClick={(e) => { e.preventDefault(); scrollTo(href) }}
       className="hero-btn inline-flex items-center justify-center text-[11px] font-bold tracking-[.2em] uppercase transition-all duration-200"
       style={{ padding: '14px 32px', border: '1px solid rgba(255,255,255,.3)', color: '#FFFFFF' }}
-      onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#FF6B00'; e.currentTarget.style.color = '#FF6B00' }}
+      onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#4D94FF'; e.currentTarget.style.color = '#4D94FF' }}
       onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,.3)'; e.currentTarget.style.color = '#FFFFFF' }}
     >
       {children}

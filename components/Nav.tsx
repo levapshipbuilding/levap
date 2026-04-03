@@ -33,7 +33,7 @@ export default function Nav() {
       {mobOpen && (
         <div
           className="fixed inset-0 z-[900] flex flex-col"
-          style={{ background: '#0A0A0A' }}
+          style={{ background: '#0A0F1A' }}
         >
           <div
             className="flex items-center justify-between flex-shrink-0"
@@ -71,7 +71,7 @@ export default function Nav() {
                   padding: '18px 0',
                   borderBottom: '1px solid rgba(255,255,255,.06)',
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = '#FF6B00')}
+                onMouseEnter={(e) => (e.currentTarget.style.color = '#4D94FF')}
                 onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,.85)')}
               >
                 {href.replace('#', '')}
@@ -80,7 +80,7 @@ export default function Nav() {
           </div>
 
           <div style={{ padding: '24px var(--px) 32px', borderTop: '1px solid rgba(255,255,255,.06)' }}>
-            <div style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.24em', textTransform: 'uppercase', color: '#FF6B00', marginBottom: 10 }}>
+            <div style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.24em', textTransform: 'uppercase', color: '#4D94FF', marginBottom: 10 }}>
               Get in touch
             </div>
             <a
@@ -110,14 +110,13 @@ export default function Nav() {
         className="fixed top-0 left-0 right-0 z-[800] flex h-16 items-center"
         style={{
           padding: '0 var(--px)',
-          background: scrolled ? 'rgba(12,12,12,0.95)' : 'transparent',
+          background: scrolled ? 'rgba(7,12,24,0.95)' : 'transparent',
           backdropFilter: scrolled ? 'blur(20px)' : 'none',
           WebkitBackdropFilter: scrolled ? 'blur(20px)' : 'none',
           borderBottom: scrolled ? '1px solid rgba(255,255,255,.06)' : 'none',
           transition: 'background 0.2s ease, backdrop-filter 0.2s ease, border-bottom 0.2s ease',
         }}
       >
-        {/* Inner wrapper aligned with page content */}
         <div className="flex items-center justify-between w-full" style={{ maxWidth: 'var(--max)', margin: '0 auto' }}>
           <a
             href="#"
@@ -160,17 +159,17 @@ export default function Nav() {
                 className="text-[11px] font-bold tracking-[.14em] uppercase transition-all duration-200"
                 style={{
                   padding: '10px 22px',
-                  border: '1px solid #FF6B00',
-                  color: '#FF6B00',
+                  border: '1px solid rgba(255,255,255,.4)',
+                  color: '#fff',
                   background: 'transparent',
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.background = '#FF6B00'
-                  e.currentTarget.style.color = '#000'
+                  e.currentTarget.style.background = 'rgba(255,255,255,.12)'
+                  e.currentTarget.style.borderColor = '#fff'
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.background = 'transparent'
-                  e.currentTarget.style.color = '#FF6B00'
+                  e.currentTarget.style.borderColor = 'rgba(255,255,255,.4)'
                 }}
               >
                 Request a quote
@@ -184,7 +183,7 @@ export default function Nav() {
             aria-label="Menu"
           >
             <span className="block w-5" style={{ height: '2px', background: '#fff' }} />
-            <span className="block" style={{ height: '2px', background: '#FF6B00', width: '14px' }} />
+            <span className="block" style={{ height: '2px', background: '#fff', width: '14px' }} />
             <span className="block w-5" style={{ height: '2px', background: '#fff' }} />
           </button>
         </div>
