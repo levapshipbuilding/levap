@@ -33,17 +33,6 @@ export default function Hero() {
         className="relative z-[2] flex flex-1 flex-col justify-center"
         style={{ padding: '80px var(--px) 40px', maxWidth: 'var(--max)', width: '100%', margin: '0 auto' }}
       >
-        <motion.div
-          variants={up}
-          initial="hidden"
-          animate="show"
-          custom={0.05}
-          className="lbl"
-          style={{ color: '#4D94FF', marginBottom: 20 }}
-        >
-          Marine &amp; Offshore Engineering — Finland
-        </motion.div>
-
         <motion.h1
           variants={up}
           initial="hidden"
@@ -59,8 +48,8 @@ export default function Hero() {
           }}
         >
           WE BUILD<br />
-          <span style={{ color: '#FFFFFF' }}>SHIPS.</span><br />
-          <span style={{ color: '#FFFFFF' }}>WE KEEP</span><br />
+          SHIPS.<br />
+          WE KEEP<br />
           THEM RUNNING.
         </motion.h1>
 
@@ -68,29 +57,31 @@ export default function Hero() {
           variants={up}
           initial="hidden"
           animate="show"
-          custom={0.28}
-          className="mt-6 flex flex-col gap-3"
+          custom={0.22}
+          className="mt-6 flex flex-col gap-4"
         >
           <p
-            style={{ fontSize: '15px', fontWeight: 400, color: 'rgba(200,210,220,.85)', maxWidth: '440px', lineHeight: '1.6' }}
+            style={{ fontSize: '15px', fontWeight: 400, color: 'rgba(220,225,230,.85)', maxWidth: '440px', lineHeight: '1.6' }}
           >
             Refit, piping, steel, HVAC and interior — delivered on schedule at Europe&apos;s most demanding shipyards.
           </p>
+          <div
+            className="lbl"
+            style={{ color: 'rgba(255,255,255,.45)', fontSize: '10px', letterSpacing: '0.24em' }}
+          >
+            Marine &amp; Offshore Engineering — Finland
+          </div>
           <span
             style={{
-              fontSize: '10px',
-              fontWeight: 700,
-              letterSpacing: '0.22em',
+              fontSize: '11px',
+              fontWeight: 500,
+              letterSpacing: '0.18em',
               textTransform: 'uppercase',
-              color: 'rgba(255,255,255,.2)',
+              color: 'rgba(255,255,255,.4)',
             }}
           >
             60.4519° N &nbsp;·&nbsp; 22.2666° E &nbsp;·&nbsp; Est. 2017
           </span>
-          <div className="hero-btns flex gap-[10px] items-center flex-wrap mt-3">
-            <HeroBtn href="#projects" solid>See our work</HeroBtn>
-            <HeroBtn href="#contact">Request a quote</HeroBtn>
-          </div>
         </motion.div>
       </div>
 
@@ -141,46 +132,3 @@ export default function Hero() {
   )
 }
 
-function HeroBtn({
-  href,
-  solid,
-  children,
-}: {
-  href: string
-  solid?: boolean
-  children: React.ReactNode
-}) {
-  const scrollTo = (id: string) => {
-    const el = document.querySelector(id)
-    if (!el) return
-    window.scrollTo({ top: (el as HTMLElement).getBoundingClientRect().top + window.scrollY - 64, behavior: 'smooth' })
-  }
-
-  if (solid) {
-    return (
-      <a
-        href={href}
-        onClick={(e) => { e.preventDefault(); scrollTo(href) }}
-        className="hero-btn inline-flex items-center justify-center text-[11px] font-bold tracking-[.2em] uppercase transition-all duration-200"
-        style={{ padding: '14px 32px', background: 'transparent', border: '2px solid rgba(255,255,255,.45)', color: '#FFFFFF', borderRadius: '6px' }}
-        onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#fff'; e.currentTarget.style.background = 'rgba(255,255,255,.08)' }}
-        onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,.45)'; e.currentTarget.style.background = 'transparent' }}
-      >
-        {children}
-      </a>
-    )
-  }
-
-  return (
-    <a
-      href={href}
-      onClick={(e) => { e.preventDefault(); scrollTo(href) }}
-      className="hero-btn inline-flex items-center justify-center text-[11px] font-bold tracking-[.2em] uppercase transition-all duration-200"
-      style={{ padding: '14px 32px', border: '2px solid rgba(255,255,255,.45)', color: '#FFFFFF', borderRadius: '6px' }}
-      onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#fff'; e.currentTarget.style.background = 'rgba(255,255,255,.08)' }}
-      onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,.45)'; e.currentTarget.style.background = 'transparent' }}
-    >
-      {children}
-    </a>
-  )
-}

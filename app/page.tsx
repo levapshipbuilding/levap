@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import Nav from '@/components/Nav'
 import Hero from '@/components/Hero'
 import About from '@/components/About'
@@ -15,14 +14,6 @@ export default function Home() {
         <Hero />
         <About />
         <Services />
-        <div className="relative w-full" style={{ height: 'clamp(280px, 40vw, 520px)', overflow: 'hidden' }}>
-          <Image
-            src="/ship-aerial.jpg"
-            alt="Aerial view of cruise ship"
-            fill
-            style={{ objectFit: 'cover', objectPosition: 'center' }}
-          />
-        </div>
         <Projects />
         <Contact />
       </main>

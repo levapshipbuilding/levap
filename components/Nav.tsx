@@ -40,11 +40,11 @@ export default function Nav() {
             style={{ padding: '0 var(--px)', height: 64, borderBottom: '1px solid rgba(255,255,255,.08)' }}
           >
             <Image
-              src="/alneva-logo.png"
-              alt="Alneva"
+              src="/levap-logo.png"
+              alt="Levap"
               width={160}
               height={40}
-              style={{ objectFit: 'contain', objectPosition: 'left center', filter: 'invert(1)', opacity: 0.9 }}
+              style={{ objectFit: 'contain', objectPosition: 'left center', opacity: 0.9 }}
             />
             <button
               onClick={() => setMobOpen(false)}
@@ -124,11 +124,11 @@ export default function Nav() {
             style={{ lineHeight: 0 }}
           >
             <Image
-              src="/alneva-logo.png"
-              alt="Alneva"
+              src="/levap-logo.png"
+              alt="Levap"
               width={148}
               height={38}
-              style={{ objectFit: 'contain', objectPosition: 'left center', filter: 'invert(1)', opacity: 0.95 }}
+              style={{ objectFit: 'contain', objectPosition: 'left center', opacity: 0.95 }}
             />
           </a>
 

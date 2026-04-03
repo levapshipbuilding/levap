@@ -33,11 +33,11 @@ export default function Footer() {
               style={{ lineHeight: 0 }}
             >
               <Image
-                src="/alneva-logo.png"
-                alt="Alneva"
+                src="/levap-logo.png"
+                alt="Levap"
                 width={148}
                 height={38}
-                style={{ objectFit: 'contain', objectPosition: 'left center', filter: 'invert(1)', opacity: 0.5 }}
+                style={{ objectFit: 'contain', objectPosition: 'left center', opacity: 0.5 }}
               />
             </a>
             <p
